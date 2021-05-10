@@ -112,7 +112,7 @@ struct MainTaskView: View {
                             
                             VStack(spacing: 0){
                                 
-                                
+                                SearchViewForMainPage()
                                 
                                 // MARK: BASIC STATS
                                 

@@ -25,7 +25,7 @@ struct NavigationBarView: View {
     var appIconShow: Bool = false
     
     @State private var shoppingListOpen = false
-    @State private var searchOpen = false
+    
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
 
     
@@ -86,7 +86,7 @@ struct NavigationBarView: View {
             
             if searchIcon {
                 Button(action: {
-                    searchOpen.toggle()
+                    //searchOpen.toggle()
                     //actionSearch()
                     activeSheet = .first
                     haptics.impactOccurred()
@@ -150,7 +150,7 @@ struct NavigationBarView: View {
 //            SearchView
 //        }))
         
-        .background(EmptyView().sheet(isPresented : $shoppingListOpen) {ShoppingListView()}.background(EmptyView().sheet(isPresented : $searchOpen) {SearchView().environmentObject(obj)}))
+        .background(EmptyView().sheet(isPresented : $shoppingListOpen) {ShoppingListView()})
         
 
         

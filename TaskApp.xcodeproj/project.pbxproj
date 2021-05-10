@@ -18,6 +18,7 @@
 		4B2833E7264947F4003BFC40 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833E6264947F4003BFC40 /* SideMenuHeaderView.swift */; };
 		4B2833EB2649480C003BFC40 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */; };
 		4B2833ED26494817003BFC40 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */; };
+		4B2833EF26495BE6003BFC40 /* SearchViewForMainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */; };
 		4B28999E263D430C00A0E270 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28999D263D430C00A0E270 /* UITextField+Extension.swift */; };
 		4B42229C26359D89000AEA36 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42229B26359D89000AEA36 /* MailView.swift */; };
 		4B46AF042638385500232F64 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46AF032638385500232F64 /* NotificationPermissionView.swift */; };
@@ -107,6 +108,7 @@
 		4B2833E6264947F4003BFC40 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
 		4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewForMainPage.swift; sourceTree = "<group>"; };
 		4B28999D263D430C00A0E270 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		4B42229B26359D89000AEA36 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4B46AF032638385500232F64 /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 			children = (
 				4BD6557E263CAC0100E18C06 /* SearchManager.swift */,
 				4BD6557B263CAAD300E18C06 /* SearchView.swift */,
+				4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				4BC5708426331AF40018910F /* Extensions.swift in Sources */,
 				4B049FBE2634AFB5004DAA27 /* ImportantRowView.swift in Sources */,
 				4B4A6FE22639F48200F9D01C /* ShoppingListViewModel.swift in Sources */,
+				4B2833EF26495BE6003BFC40 /* SearchViewForMainPage.swift in Sources */,
 				4BEF3BEF26393BE7003C7820 /* SettingsRowWithToggleView.swift in Sources */,
 				4B75A581262C6C2B00B2214E /* NewDataView.swift in Sources */,
 			);
