@@ -190,6 +190,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B2C45C32649384A00A13F06 /* SidebarView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SidebarView;
+			sourceTree = "<group>";
+		};
 		4B4A6FE32639F5C200F9D01C /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +287,7 @@
 		4B75A56E262C6B2C00B2214E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4B2C45C32649384A00A13F06 /* SidebarView */,
 				4B8345C926321AF7004A08DF /* MainTaskView.swift */,
 				4BA1AE3D26473F1700A73ED5 /* CalenderView */,
 				4BF5E8FA262F723F004084F1 /* OnboardingViewSources */,
