@@ -22,15 +22,15 @@ struct SearchViewForMainPage: View {
                     .foregroundColor(Color(Utils.AppColor1))
                     .padding(.leading, 4)
                 
-                Text("Görevlerin içinde ara...")
+                Text("Görevler içinde ara...")
                     .font(.system(.subheadline, design: .rounded))
-                    .foregroundColor(Utils.isDarkMode ? Color.white.opacity(0.8) : Color.black.opacity(0.8))
+                    .foregroundColor(Color.secondary)
                 
                 Spacer()
             }
-            .padding(.horizontal)
+            .padding(.horizontal,5)
             .padding(.vertical, 8)
-            .background(Utils.isDarkMode ? Color.gray.opacity(0.5) : Color.gray.opacity(0.1))
+            .background(Color.secondary.opacity(0.1))
             .cornerRadius(8)
             .onTapGesture {
                 searchOpen.toggle()

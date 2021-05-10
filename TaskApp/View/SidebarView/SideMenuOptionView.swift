@@ -11,20 +11,28 @@ struct SideMenuOptionView: View {
     // MARK: PROPERTIES
     
     let viewmodel: SideMenuViewModel
-    
+    var isSelectedTab: Bool = true
     
     // MARK: BODY
     var body: some View {
-        HStack{
-            Image(systemName: viewmodel.imageName)
-                .frame(width: 24, height: 24)
+        HStack {
+            HStack{
+                Image(systemName: viewmodel.imageName)
+                    .frame(width: 24, height: 24)
+                
+                Text(viewmodel.title)
+                    .font(.system(.headline, design: .rounded))
+                    .fontWeight(.semibold)
+            }
+            .padding()
+            .foregroundColor(.white)
             
-            Text(viewmodel.title)
-                .font(.system(.headline, design: .rounded))
-                .fontWeight(.semibold)
+            Spacer()
         }
-        .padding()
-        .foregroundColor(.white)
+        .background(Color.white.opacity(isSelectedTab ? 0.2 : 0).edgesIgnoringSafeArea(.all))
+        
+        
+        
     }
 }
 

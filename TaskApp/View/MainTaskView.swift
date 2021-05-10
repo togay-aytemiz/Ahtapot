@@ -66,37 +66,18 @@ struct MainTaskView: View {
                 SideMenuView(isShowingSideMenu: $isShowingSideMenu, selectedTab: $selectedTab)
             }
             
+            
+            
             ZStack {
                 // MAIN VIEW
                 VStack(spacing: 0){
                     
 
                     // MARK: HEADER
-                    NavigationBarView(title: homeData.getTimeOfTheDay(), showDate: true, shoppingIcon: true, searchIcon: true, shoppingItem: openShoppingListItem.count)
-                        .padding(.top)
-                        .padding(.horizontal, 15)
-                        .padding(.bottom)
-                        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                        //.background(isDarkMode ? Color.black : Color.white)
-                        .animation(.easeIn)
-                    
-                    
-                    HStack{
-                        Button(action: {
-                            withAnimation(.spring()) {
-                                isShowingSideMenu.toggle()
-                            }
-                        }, label: {
-                            Image(systemName: "text.alignleft")
-                                .font(.system(size: 24, weight: .light, design: .rounded))
-                                .padding(.trailing)
-                                .foregroundColor(.black)
-                        })
-                        .padding()
+                    CustomNavigationBarView(shoppingItem: openShoppingListItem.count, isShowingSideMenu: $isShowingSideMenu)
+                        .background(Utils.isDarkMode ? Color.black : Color.white)
+
                         
-                        Spacer()
-                            
-                    }
                     
                     Spacer()
                     
@@ -279,14 +260,18 @@ struct MainTaskView: View {
                 }
                 
             }
-            .ignoresSafeArea()
+            .edgesIgnoringSafeArea(.bottom)
             .onAppear { UIApplication.shared.applicationIconBadgeNumber = 0 }
             .background(Utils.isDarkMode ? Color.black : Color.white)
 
             
-            .cornerRadius(isShowingSideMenu ? 20 : 10)
+            // SIDE MENU ACTIONS
+            .cornerRadius(isShowingSideMenu ? 20 : 0)
             .scaleEffect(isShowingSideMenu ? 0.8 : 1)
-            .offset(x: isShowingSideMenu ? 300.0 : 0, y: isShowingSideMenu ? 44 : 0)
+            .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 20) : 0)
+            .shadow(color: Color.black.opacity(isShowingSideMenu ? 0.2 : 0), radius: 8, x: -5, y: 5 )
+            .disabled(isShowingSideMenu)
+
             
             
             // SETTINGS VIEW

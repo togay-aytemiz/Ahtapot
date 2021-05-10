@@ -73,7 +73,7 @@ struct SearchView: View {
                             
                             ZStack(alignment: .leading){
                                 if searchTerm == "" {
-                                    Text("Görev ara...")
+                                    Text("Görevler içinde ara...")
                                         .font(.system(.headline, design: .rounded))
                                         .foregroundColor(!Utils.isDarkMode ? Color.gray : .white.opacity(0.6))
                                         .padding(.leading, 5)

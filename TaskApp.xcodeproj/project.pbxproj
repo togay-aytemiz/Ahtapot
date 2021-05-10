@@ -19,6 +19,7 @@
 		4B2833EB2649480C003BFC40 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */; };
 		4B2833ED26494817003BFC40 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */; };
 		4B2833EF26495BE6003BFC40 /* SearchViewForMainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */; };
+		4B2833F12649611A003BFC40 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */; };
 		4B28999E263D430C00A0E270 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28999D263D430C00A0E270 /* UITextField+Extension.swift */; };
 		4B42229C26359D89000AEA36 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42229B26359D89000AEA36 /* MailView.swift */; };
 		4B46AF042638385500232F64 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46AF032638385500232F64 /* NotificationPermissionView.swift */; };
@@ -109,6 +110,7 @@
 		4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
 		4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewForMainPage.swift; sourceTree = "<group>"; };
+		4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		4B28999D263D430C00A0E270 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		4B42229B26359D89000AEA36 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4B46AF032638385500232F64 /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				4B8C9298263C43F4005FFF97 /* StatsView.swift */,
 				4B8AFDBB262D5439006DA14E /* CustomPopup.swift */,
 				4BA8B61B263F4B2300225B9A /* WelcomeMessageView.swift */,
+				4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				4B95C5CC263458FA00EC24A0 /* DeleteAllView.swift in Sources */,
 				4BF5E8FF262F7271004084F1 /* OnboardingView.swift in Sources */,
 				4B95C5B22634047C00EC24A0 /* SettingsLabelView.swift in Sources */,
+				4B2833F12649611A003BFC40 /* CustomNavigationBarView.swift in Sources */,
 				4B8345E2263228AF004A08DF /* TitleView.swift in Sources */,
 				4B8C9299263C43F4005FFF97 /* StatsView.swift in Sources */,
 				4B1EA94B263A9DCD0092DD9D /* ShoppingBagEmptyView.swift in Sources */,

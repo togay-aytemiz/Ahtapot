@@ -33,10 +33,12 @@ struct SideMenuView: View {
                     Button(action: {
                         withAnimation(.spring()) {
                             selectedTab = options.title
+                            isShowingSideMenu = false
                         }
                     }, label: {
-                        SideMenuOptionView(viewmodel: options)
+                        SideMenuOptionView(viewmodel: options, isSelectedTab: selectedTab == options.title ? true : false)
                     })
+                    
                     
                 }
                 
