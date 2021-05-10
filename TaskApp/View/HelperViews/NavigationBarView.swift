@@ -46,6 +46,11 @@ struct NavigationBarView: View {
     
     
     
+    
+    
+    
+    
+    
     // MARK: BODY
     var body: some View {
         HStack(spacing: 0){
@@ -58,6 +63,10 @@ struct NavigationBarView: View {
                         .scaledToFit()
                         .frame(width: 40, height: 40)
                 }
+                
+                
+                    
+                
                 VStack(alignment: .leading, spacing: 8) {
                     Text(title)
                         .font(.system(.title, design: .rounded))
