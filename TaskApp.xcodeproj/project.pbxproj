@@ -14,6 +14,7 @@
 		4B1EA947263A85350092DD9D /* ShoppingListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA946263A85350092DD9D /* ShoppingListRowView.swift */; };
 		4B1EA949263A8FBE0092DD9D /* AddShoppingTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA948263A8FBE0092DD9D /* AddShoppingTextFieldView.swift */; };
 		4B1EA94B263A9DCD0092DD9D /* ShoppingBagEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA94A263A9DCD0092DD9D /* ShoppingBagEmptyView.swift */; };
+		4B2833E326493C27003BFC40 /* deneme3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833E226493C27003BFC40 /* deneme3.swift */; };
 		4B28999E263D430C00A0E270 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28999D263D430C00A0E270 /* UITextField+Extension.swift */; };
 		4B42229C26359D89000AEA36 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42229B26359D89000AEA36 /* MailView.swift */; };
 		4B46AF042638385500232F64 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46AF032638385500232F64 /* NotificationPermissionView.swift */; };
@@ -99,6 +100,7 @@
 		4B1EA946263A85350092DD9D /* ShoppingListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRowView.swift; sourceTree = "<group>"; };
 		4B1EA948263A8FBE0092DD9D /* AddShoppingTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShoppingTextFieldView.swift; sourceTree = "<group>"; };
 		4B1EA94A263A9DCD0092DD9D /* ShoppingBagEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBagEmptyView.swift; sourceTree = "<group>"; };
+		4B2833E226493C27003BFC40 /* deneme3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deneme3.swift; sourceTree = "<group>"; };
 		4B28999D263D430C00A0E270 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		4B42229B26359D89000AEA36 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4B46AF032638385500232F64 /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		4B2C45C32649384A00A13F06 /* SidebarView */ = {
 			isa = PBXGroup;
 			children = (
+				4B2833E226493C27003BFC40 /* deneme3.swift */,
 			);
 			path = SidebarView;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8AFD84262CC859006DA14E /* HideKeyboardExtension.swift in Sources */,
+				4B2833E326493C27003BFC40 /* deneme3.swift in Sources */,
 				4B049FAE26346787004DAA27 /* ChangingThemeColor.swift in Sources */,
 				4B83503E263AF05C00AAD479 /* FirstTimeShoppingList.swift in Sources */,
 				4B8AFD7B262CC7FF006DA14E /* CheckBoxStyle.swift in Sources */,
