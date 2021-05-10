@@ -230,7 +230,7 @@ struct SettingsMainView: View {
                             deleteAll()
                             NotificationManager.istance.cancelAllNotification()
                             try! context.save()
-                            selectedTab = "home"
+                            selectedTab = "today"
                         }
                     }
                 }

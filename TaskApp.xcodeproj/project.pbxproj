@@ -20,6 +20,8 @@
 		4B2833ED26494817003BFC40 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */; };
 		4B2833EF26495BE6003BFC40 /* SearchViewForMainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */; };
 		4B2833F12649611A003BFC40 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */; };
+		4B2833F32649E393003BFC40 /* TomorrowTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */; };
+		4B2833F52649E7AB003BFC40 /* NextWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F42649E7AB003BFC40 /* NextWeekView.swift */; };
 		4B28999E263D430C00A0E270 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28999D263D430C00A0E270 /* UITextField+Extension.swift */; };
 		4B42229C26359D89000AEA36 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42229B26359D89000AEA36 /* MailView.swift */; };
 		4B46AF042638385500232F64 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46AF032638385500232F64 /* NotificationPermissionView.swift */; };
@@ -111,6 +113,8 @@
 		4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewForMainPage.swift; sourceTree = "<group>"; };
 		4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
+		4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowTaskView.swift; sourceTree = "<group>"; };
+		4B2833F42649E7AB003BFC40 /* NextWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeekView.swift; sourceTree = "<group>"; };
 		4B28999D263D430C00A0E270 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		4B42229B26359D89000AEA36 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4B46AF032638385500232F64 /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				4B8345C926321AF7004A08DF /* MainTaskView.swift */,
+				4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */,
+				4B2833F42649E7AB003BFC40 /* NextWeekView.swift */,
 				4B2C45C32649384A00A13F06 /* SidebarView */,
 				4BA1AE3D26473F1700A73ED5 /* CalenderView */,
 				4BF5E8FA262F723F004084F1 /* OnboardingViewSources */,
@@ -360,6 +366,7 @@
 				4BC570692632B7150018910F /* EmptyViews */,
 				4B4A6FE32639F5C200F9D01C /* ShoppingList */,
 				4B8345D9263223C5004A08DF /* NavigationBarView.swift */,
+				4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */,
 				4BC57088263358AF0018910F /* CustomTabBarView.swift */,
 				4B8345E1263228AF004A08DF /* TitleView.swift */,
 				4B569C73262E0CE700280ED6 /* addTaskButton.swift */,
@@ -368,7 +375,6 @@
 				4B8C9298263C43F4005FFF97 /* StatsView.swift */,
 				4B8AFDBB262D5439006DA14E /* CustomPopup.swift */,
 				4BA8B61B263F4B2300225B9A /* WelcomeMessageView.swift */,
-				4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 				4B83503E263AF05C00AAD479 /* FirstTimeShoppingList.swift in Sources */,
 				4B8AFD7B262CC7FF006DA14E /* CheckBoxStyle.swift in Sources */,
 				4BC5706B2632B7330018910F /* EmptyTodayTaskView.swift in Sources */,
+				4B2833F32649E393003BFC40 /* TomorrowTaskView.swift in Sources */,
 				4B2833E7264947F4003BFC40 /* SideMenuHeaderView.swift in Sources */,
 				4BF5E904262F728A004084F1 /* OnboardingData.swift in Sources */,
 				4B75A548262C69D900B2214E /* TaskApp.xcdatamodeld in Sources */,
@@ -625,6 +632,7 @@
 				4B798B6E2633700B00BFBEDA /* SettingsMainView.swift in Sources */,
 				4B5229CE262F8B430044052A /* Yapılacaklar.swift in Sources */,
 				4B2833EB2649480C003BFC40 /* SideMenuOptionView.swift in Sources */,
+				4B2833F52649E7AB003BFC40 /* NextWeekView.swift in Sources */,
 				4B569C74262E0CE700280ED6 /* addTaskButton.swift in Sources */,
 				4B5229D9263011660044052A /* ProgressBarView.swift in Sources */,
 				4B8345DA263223C5004A08DF /* NavigationBarView.swift in Sources */,

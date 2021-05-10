@@ -25,6 +25,9 @@ struct CustomNavigationBarView: View {
     
     @Binding var isShowingSideMenu: Bool
     
+    var showingDate = Date()
+    var description: String = ""
+    
     
     // MARK: BODY
     var body: some View {
@@ -43,11 +46,19 @@ struct CustomNavigationBarView: View {
                 }
                 
                 if showDate {
-                Text(Date(), formatter: LongDateFormat)
+                Text(showingDate, formatter: LongDateFormat)
                     .font(.system(.footnote, design: .rounded))
                     .fontWeight(.light)
                     .foregroundColor(Color.secondary)
                 }
+                
+                if description != "" {
+                    Text(description)
+                        .font(.system(.footnote, design: .rounded))
+                        .fontWeight(.light)
+                        .foregroundColor(Color.secondary)
+                }
+                
             }
             
             

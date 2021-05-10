@@ -21,7 +21,7 @@ struct MainTaskView: View {
 
     
     // TABBAR DEĞİŞİMİ İÇİN STATE
-    @State var selectedTab: String = "home"
+    @State var selectedTab: String = "today"
     
     
     // FETCHING DETAILS
@@ -249,7 +249,7 @@ struct MainTaskView: View {
                 
                 .onAppear(){ UITableView.appearance().backgroundColor = UIColor.clear }
                 .background(EmptyView().sheet(isPresented : $homeData.isNewData) {NewDataView(homeData: homeData)})
-                .opacity(selectedTab == "home" ? 1 : 0)
+                .opacity(selectedTab == "today" ? 1 : 0)
                 .padding(.bottom)
                 .padding(.bottom)
                 .blur(radius: $isFirstTimeUsingApp.wrappedValue ? 5 : 0, opaque: false)
@@ -277,6 +277,12 @@ struct MainTaskView: View {
             // SETTINGS VIEW
             SettingsMainView(selectedTab: $selectedTab)
                 .opacity(selectedTab == "settings" ? 1 : 0)
+            
+            TomorrowTaskView(selectedTab: $selectedTab)
+                .opacity(selectedTab == "tomorrow" ? 1 : 0)
+            
+            NextWeekView(selectedTab: $selectedTab)
+                .opacity(selectedTab == "next7days" ? 1 : 0)
         
         
         }
