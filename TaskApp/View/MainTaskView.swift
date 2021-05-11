@@ -55,12 +55,21 @@ struct MainTaskView: View {
     @State private var isShowingSideMenu = false
     
     
+    
+    
+    
+    
+    
+    
+    // ------------------------------------------ BODY ------------------------------------------ //
+    
+    
     // MARK: BODY
     var body: some View {
         
         
         
-        ZStack{
+        ZStack(alignment: .bottomTrailing){
         
             if isShowingSideMenu {
                 SideMenuView(isShowingSideMenu: $isShowingSideMenu, selectedTab: $selectedTab)
@@ -77,8 +86,6 @@ struct MainTaskView: View {
                     CustomNavigationBarView(shoppingItem: openShoppingListItem.count, isShowingSideMenu: $isShowingSideMenu)
                         .background(Utils.isDarkMode ? Color.black : Color.white)
 
-                        
-                    
                     Spacer()
                     
                     if allOpenTasks.count == 0 && justTodayClosed.count == 0 {
@@ -96,9 +103,7 @@ struct MainTaskView: View {
                                 SearchViewForMainPage()
                                 
                                 // MARK: BASIC STATS
-                                
                                 //HomePageDateFilterView()
-                                
                                 if Utils.isBasicStatView {
                                     if allOpenTasks.count > 0 || justTodayClosed.count > 0 {
                                         StatsView(numberOfPreviousTask: beforeTodayOpen.count, numberOfFutureTasks: futureOpen.count, todayClosedTask: justTodayClosed.count, todayAllTask: justTodayAll.count)
@@ -215,39 +220,14 @@ struct MainTaskView: View {
                                         
                                     }
                                 }
-                                
-                                // MARK: GELECEK
-                                Group {
-                                    if futureOpen.count > 0 {
-                                        
-                                        
-                                        TitleView(title: "Gelecek", number1: futureOpen.count, number2: 0, barShown: false, isTwoNumber: false)
-                                            .padding(.top, 20)
-                                        
-                                        // GELECEK YAPILACAKLAR
-                                        ForEach(futureOpen) { task in
-                                            ListRowItemView(homeData: task) {
-                                                homeData.editItem(item: task)
-                                            } editAction: {
-                                                homeData.editItem(item: task)
-                                            } deleteAction: {
-                                                context.delete(task)
-                                                NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
-                                                
-                                            }
-                                        }
-                                    }
-                                }
-                                
+      
                             }
-                            
+                            .padding(.bottom, 50)
                         })
-                        
                     }
                     
                 } // END OF MAIN VSTACK
                 
-                .onAppear(){ UITableView.appearance().backgroundColor = UIColor.clear }
                 .background(EmptyView().sheet(isPresented : $homeData.isNewData) {NewDataView(homeData: homeData)})
                 .opacity(selectedTab == "today" ? 1 : 0)
                 .padding(.bottom)
@@ -263,15 +243,27 @@ struct MainTaskView: View {
             .edgesIgnoringSafeArea(.bottom)
             .onAppear { UIApplication.shared.applicationIconBadgeNumber = 0 }
             .background(Utils.isDarkMode ? Color.black : Color.white)
-
             
             // SIDE MENU ACTIONS
             .cornerRadius(isShowingSideMenu ? 20 : 0)
             .scaleEffect(isShowingSideMenu ? 0.8 : 1)
-            .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 20) : 0)
+            .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 17) : 0)
             .shadow(color: Color.black.opacity(isShowingSideMenu ? 0.2 : 0), radius: 8, x: -5, y: 5 )
             .disabled(isShowingSideMenu)
 
+            
+            
+            if !isShowingSideMenu  {
+                MiniAddTaskButtonView {
+                    homeData.isNewData.toggle()
+                    homeData.content = ""
+                    homeData.updateItem = nil
+                    homeData.completion = false
+                    homeData.date = Date(timeIntervalSinceNow: 3600)
+                    homeData.isRemindMe = false
+                }
+                .opacity(isFirstTimeUsingApp ? 0 : 1)
+            }
             
             
             // SETTINGS VIEW
@@ -283,8 +275,11 @@ struct MainTaskView: View {
             
             NextWeekView(selectedTab: $selectedTab)
                 .opacity(selectedTab == "next7days" ? 1 : 0)
+            
+            AllTaskView(selectedTab: $selectedTab)
+                .opacity(selectedTab == "allTasks" ? 1 : 0)
         
-        
+            
         }
         
     }
@@ -326,7 +321,28 @@ struct MainTaskView: View {
 /*
  
  
- 
+ // MARK: GELECEK
+ Group {
+     if futureOpen.count > 0 {
+         
+         
+         TitleView(title: "Gelecek", number1: futureOpen.count, number2: 0, barShown: false, isTwoNumber: false)
+             .padding(.top, 20)
+         
+         // GELECEK YAPILACAKLAR
+         ForEach(futureOpen) { task in
+             ListRowItemView(homeData: task) {
+                 homeData.editItem(item: task)
+             } editAction: {
+                 homeData.editItem(item: task)
+             } deleteAction: {
+                 context.delete(task)
+                 NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+                 
+             }
+         }
+     }
+ }
  
  
  
@@ -354,6 +370,9 @@ struct MainTaskView: View {
  )
  
  }
+ 
+ 
+ 
  
  
  

@@ -12,6 +12,10 @@ struct SearchViewForMainPage: View {
     
     @State private var searchOpen = false
     @EnvironmentObject var obj: observed
+    @AppStorage("appColor1") private var AppColor1: String = "Color1A"
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+
+    
     
     // MARK: BODY
     var body: some View {
@@ -19,7 +23,7 @@ struct SearchViewForMainPage: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
-                    .foregroundColor(Color(Utils.AppColor1))
+                    .foregroundColor(Color(AppColor1))
                     .padding(.leading, 4)
                 
                 Text("Görevler içinde ara...")
@@ -30,7 +34,7 @@ struct SearchViewForMainPage: View {
             }
             .padding(.horizontal,5)
             .padding(.vertical, 8)
-            .background(Utils.isDarkMode ? Color.gray.opacity(0.5) : Color(Utils.AppColor1).opacity(0.1))
+            .background(isDarkMode ? Color.gray.opacity(0.5) : Color(AppColor1).opacity(0.1))
             .cornerRadius(8)
             .onTapGesture {
                 searchOpen.toggle()

@@ -71,7 +71,7 @@ struct TomorrowTaskView: View {
     
     // MARK: BODY
     var body: some View {
-        ZStack{
+        ZStack(alignment: .bottomTrailing){
             
             if isShowingSideMenu {
                 SideMenuView(isShowingSideMenu: $isShowingSideMenu, selectedTab: $selectedTab)
@@ -150,8 +150,10 @@ struct TomorrowTaskView: View {
                                 }
         
                             }
+                            .padding(.bottom, 80)
                             
                         }
+                        
                         
                     }
                     
@@ -166,9 +168,23 @@ struct TomorrowTaskView: View {
             // SIDE MENU ACTIONS
             .cornerRadius(isShowingSideMenu ? 20 : 0)
             .scaleEffect(isShowingSideMenu ? 0.8 : 1)
-            .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 20) : 0)
+            .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 17) : 0)
             .shadow(color: Color.black.opacity(isShowingSideMenu ? 0.2 : 0), radius: 8, x: -5, y: 5 )
             .disabled(isShowingSideMenu)
+            
+            
+            
+            if !isShowingSideMenu  {
+                MiniAddTaskButtonView {
+                    homeData.isNewData.toggle()
+                    homeData.content = ""
+                    homeData.updateItem = nil
+                    homeData.completion = false
+                    homeData.date = Date(timeIntervalSinceNow: 3600*24)
+                    homeData.isRemindMe = false
+                }
+                
+            }
             
         }
         

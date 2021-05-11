@@ -22,6 +22,8 @@
 		4B2833F12649611A003BFC40 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */; };
 		4B2833F32649E393003BFC40 /* TomorrowTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */; };
 		4B2833F52649E7AB003BFC40 /* NextWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F42649E7AB003BFC40 /* NextWeekView.swift */; };
+		4B2833F7264A8EB9003BFC40 /* MiniAddTaskButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F6264A8EB9003BFC40 /* MiniAddTaskButtonView.swift */; };
+		4B2833F9264A9C9A003BFC40 /* AllTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F8264A9C9A003BFC40 /* AllTaskView.swift */; };
 		4B28999E263D430C00A0E270 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28999D263D430C00A0E270 /* UITextField+Extension.swift */; };
 		4B42229C26359D89000AEA36 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42229B26359D89000AEA36 /* MailView.swift */; };
 		4B46AF042638385500232F64 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46AF032638385500232F64 /* NotificationPermissionView.swift */; };
@@ -115,6 +117,8 @@
 		4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowTaskView.swift; sourceTree = "<group>"; };
 		4B2833F42649E7AB003BFC40 /* NextWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeekView.swift; sourceTree = "<group>"; };
+		4B2833F6264A8EB9003BFC40 /* MiniAddTaskButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAddTaskButtonView.swift; sourceTree = "<group>"; };
+		4B2833F8264A9C9A003BFC40 /* AllTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTaskView.swift; sourceTree = "<group>"; };
 		4B28999D263D430C00A0E270 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		4B42229B26359D89000AEA36 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4B46AF032638385500232F64 /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 				4B8345C926321AF7004A08DF /* MainTaskView.swift */,
 				4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */,
 				4B2833F42649E7AB003BFC40 /* NextWeekView.swift */,
+				4B2833F8264A9C9A003BFC40 /* AllTaskView.swift */,
 				4B2C45C32649384A00A13F06 /* SidebarView */,
 				4BA1AE3D26473F1700A73ED5 /* CalenderView */,
 				4BF5E8FA262F723F004084F1 /* OnboardingViewSources */,
@@ -375,6 +380,7 @@
 				4B8C9298263C43F4005FFF97 /* StatsView.swift */,
 				4B8AFDBB262D5439006DA14E /* CustomPopup.swift */,
 				4BA8B61B263F4B2300225B9A /* WelcomeMessageView.swift */,
+				4B2833F6264A8EB9003BFC40 /* MiniAddTaskButtonView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -614,6 +620,7 @@
 				4BD7C79926370A0D002E94AA /* RemindMeView.swift in Sources */,
 				4B95C5C22634268500EC24A0 /* InternalAdsView.swift in Sources */,
 				4B75A579262C6B7000B2214E /* HomeViewModel.swift in Sources */,
+				4B2833F9264A9C9A003BFC40 /* AllTaskView.swift in Sources */,
 				4BD6557F263CAC0100E18C06 /* SearchManager.swift in Sources */,
 				4B049FC32634B1E6004DAA27 /* ClosedTasks.swift in Sources */,
 				4B0E1066263FF2340000170B /* DarkModeUtils.swift in Sources */,
@@ -625,6 +632,7 @@
 				4B8813D0263719A200AD20AB /* CustomDateSelectionView.swift in Sources */,
 				4B42229C26359D89000AEA36 /* MailView.swift in Sources */,
 				4BD159C9263EC9170014EF37 /* AutoResizableTextFieldExtension.swift in Sources */,
+				4B2833F7264A8EB9003BFC40 /* MiniAddTaskButtonView.swift in Sources */,
 				4B5229C5262F79570044052A /* ButtonView.swift in Sources */,
 				4B1EA947263A85350092DD9D /* ShoppingListRowView.swift in Sources */,
 				4B75A545262C69D900B2214E /* Persistence.swift in Sources */,

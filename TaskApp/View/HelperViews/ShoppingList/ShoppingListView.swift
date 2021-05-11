@@ -19,7 +19,9 @@ struct ShoppingListView: View {
     
     @AppStorage("showClosed") private var showClosed: Bool = true
     @AppStorage("isFirstTimeShoppingList") private var isFirstTimeShoppingList: Bool = true
-    
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    @AppStorage("appColor1") private var AppColor1: String = "Color1A"
+
     
     // Fetching Data from CoreData
     @Environment(\.managedObjectContext) var context
@@ -38,7 +40,7 @@ struct ShoppingListView: View {
             ZStack(alignment: .bottom) {
                 
                 
-                Utils.isDarkMode ? Color.black.edgesIgnoringSafeArea(.all) : Color.white.edgesIgnoringSafeArea(.all)
+                isDarkMode ? Color.black.edgesIgnoringSafeArea(.all) : Color.white.edgesIgnoringSafeArea(.all)
 
                 
                 
@@ -64,7 +66,7 @@ struct ShoppingListView: View {
                                         .fontWeight(.semibold)
                                 }
                             })
-                            .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                            .foregroundColor(isDarkMode ? Color.white : Color.black)
                             
                             Spacer()
                             
@@ -96,7 +98,7 @@ struct ShoppingListView: View {
                     NavigationBarView(title: "Alışveriş Listem", showDate: false)
 
                         .padding(.horizontal, 15)
-                        .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                        .foregroundColor(isDarkMode ? Color.white : Color.black)
 
                     
                     
@@ -127,9 +129,9 @@ struct ShoppingListView: View {
                                     .animation(.easeIn)
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 12)
-                                    .background(Color.gray.opacity(0.1))
+                                    .background(isDarkMode ? Color.gray.opacity(0.7) : Color.gray.opacity(0.1))
                                     .cornerRadius(8)
-                                    .foregroundColor(.accentColor)
+                                    .foregroundColor(isDarkMode ? Color.white : Color.black)
                                     .shadow(color: Color(.black).opacity(0.3), radius: 8, x: 0.0, y: 6.0)
                                     
                                 })

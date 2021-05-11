@@ -1,5 +1,5 @@
 //
-//  NextWeekView.swift
+//  AllTaskView.swift
 //  TaskApp
 //
 //  Created by Togay Aytemiz on 11.05.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NextWeekView: View {
+struct AllTaskView: View {
     // MARK: PROPERTIES
     
     @StateObject var homeData = HomeViewModel()
@@ -32,17 +32,17 @@ struct NextWeekView: View {
     
     
     
-    var next7DaysOpenTasks: [Task] {
+    var filteredallOpenTasks: [Task] {
         let filteredTasks = allOpenTasks.filter { task in
-            return homeData.checkTaskInsideNextWeek(task: task) && !task.completion
+            return !task.completion
         }
         return filteredTasks
       }
     
     
-    var next7DaysClosedTasks: [Task] {
+    var allClosedTasks: [Task] {
         let filteredTasks = allOpenTasks.filter { task in
-            return homeData.checkTaskInsideNextWeek(task: task) && task.completion
+            return task.completion
         }
         return filteredTasks
       }
@@ -50,10 +50,7 @@ struct NextWeekView: View {
     
     
     @State private var isShowingSideMenu = false
-    @AppStorage("isJustNext7DaysOpenShown") var isJustNext7DaysOpenShown: Bool = false
-
-    
-
+    @AppStorage("isJAllOpenShown") var isJAllOpenShown: Bool = false
     
     
     
@@ -68,7 +65,7 @@ struct NextWeekView: View {
             ZStack {
                 VStack{
                     // MARK: HEADER
-                    CustomNavigationBarView(showDate: false, shoppingItem: openShoppingListItem.count, customNavigationHeader: "Sonraki 7 Gün", isShowingSideMenu: $isShowingSideMenu, description: homeData.findNextWeekDates())
+                    CustomNavigationBarView(showDate: false, shoppingItem: openShoppingListItem.count, customNavigationHeader: "Tüm Görevler", isShowingSideMenu: $isShowingSideMenu)
                         .background(Utils.isDarkMode ? Color.black : Color.white)
                     
                     
@@ -76,8 +73,8 @@ struct NextWeekView: View {
                     Spacer()
                     
                     
-                    if next7DaysOpenTasks.count == 0 {
-                        EmptyViewIllustrations(image: "noTodo", text: "\(homeData.findNextWeekDates())\ntarih aralığı için yapılacak görev yok.\nHadi hemen ekleyelim... 💪🏻", header: "YAPILACAK GÖREV YOK")
+                    if filteredallOpenTasks.count == 0 {
+                        EmptyViewIllustrations(image: "noTodo", text: "Yapılacaklar listen boş.\nHadi hemen ekleyelim... 💪🏻", header: "HİÇ GÖREV YOK")
                         Spacer()
                     }
                     else {
@@ -93,7 +90,7 @@ struct NextWeekView: View {
                                 
                                 
                                 
-                                ForEach(next7DaysOpenTasks) { task in
+                                ForEach(filteredallOpenTasks) { task in
                                     ListRowItemView(homeData: task) {
                                         homeData.editItem(item: task)
                                     } editAction: {
@@ -104,12 +101,12 @@ struct NextWeekView: View {
                                     }
                                 }
                                 
-                                if next7DaysClosedTasks.count > 0 {
+                                if allClosedTasks.count > 0 {
                                     
-                                    if isJustNext7DaysOpenShown {
+                                    if isJAllOpenShown {
                                         
                                         // BUGÜN KAPANANLAR
-                                        ForEach(next7DaysClosedTasks) { task in
+                                        ForEach(allClosedTasks) { task in
                                             ListRowItemView(homeData: task) {
                                                 homeData.editItem(item: task)
                                             } editAction: {
@@ -123,13 +120,13 @@ struct NextWeekView: View {
                                     }
                                     
                                     Button(action: {
-                                        isJustNext7DaysOpenShown.toggle()
+                                        isJAllOpenShown.toggle()
                                         haptics.impactOccurred()
                                     }, label: {
                                         HStack {
-                                            Text(!isJustNext7DaysOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
+                                            Text(!isJAllOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
                                                 .font(.system(.subheadline, design: .rounded))
-                                            Image(systemName: !isJustNext7DaysOpenShown ? "chevron.down" : "chevron.up")
+                                            Image(systemName: !isJAllOpenShown ? "chevron.down" : "chevron.up")
                                         }
                                         .animation(.easeIn)
                                         .foregroundColor(.secondary)
@@ -162,21 +159,18 @@ struct NextWeekView: View {
                     homeData.content = ""
                     homeData.updateItem = nil
                     homeData.completion = false
-                    homeData.date = Date(timeIntervalSinceNow: 3600*24*2)
+                    homeData.date = Date(timeIntervalSinceNow: 3600)
                     homeData.isRemindMe = false
                 }
                 
             }
             
-        } 
+        }
     }
 }
 
-
-
-// MARK: PREVIEW
-struct NextWeekView_Previews: PreviewProvider {
+struct AllTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        NextWeekView(selectedTab: .constant("next7days"))
+        AllTaskView(selectedTab: .constant("allTasks"))
     }
 }

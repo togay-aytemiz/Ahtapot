@@ -70,6 +70,13 @@ struct SideMenuView: View {
       }
     
     
+    var allOpenTasks: [Task] {
+        let filteredTasks = tasks.filter { task in
+            return !task.completion
+        }
+        return filteredTasks
+      }
+    
     
     
     
@@ -90,8 +97,9 @@ struct SideMenuView: View {
                 
                 Spacer()
                 
-                //OPTIONS
                 
+                
+                //OPTIONS
                 
                 VStack(alignment: .leading, spacing: 0, content: {
                     
@@ -107,22 +115,39 @@ struct SideMenuView: View {
                         selectedTab = "next7days"
                     }
                     
+                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "allTasks" ? true : false, image: Image(systemName: "list.bullet"), text: "Tüm Görevler", taskNumber: allOpenTasks.count, isTaskNumberShow: true) {
+                        selectedTab = "allTasks"
+                    }
+                    
                     Rectangle()
                         .fill(Color.white)
                         .frame(width: 150, height: 1.5)
                         .cornerRadius(12)
                         .padding()
+                        .padding(.leading)
                 })
                 
                 
                 
                 
+                
+                Spacer()
                 Spacer()
                 
-                
-                SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "settings" ? true : false, image: Image("settings"), text: "Ayarlar") {
-                    selectedTab = "settings"
+                VStack(alignment: .leading, spacing: 0) {
+                    
+//                    Rectangle()
+//                        .fill(Color.white)
+//                        .frame(width: 150, height: 1.5)
+//                        .cornerRadius(12)
+//                        .padding()
+                    
+                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "settings" ? true : false, image: Image("settings"), text: "Ayarlar") {
+                        selectedTab = "settings"
+                    }
                 }
+                .padding(.bottom, 40)
+                
                 
                 
                 
@@ -139,8 +164,8 @@ struct SideMenuView: View {
 //
 //                }
                 
-                Spacer()
-                Spacer()
+                
+                
             }
             
             

@@ -79,6 +79,7 @@ struct SideMenuOptionView: View {
                     
                 }
                 .padding()
+                .padding(.leading)
                 .foregroundColor(.white)
                 
                 Spacer()
