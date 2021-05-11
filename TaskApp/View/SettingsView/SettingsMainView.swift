@@ -214,6 +214,14 @@ struct SettingsMainView: View {
                     
                 }
                 .background(EmptyView().sheet(isPresented : $closedTaskView) {ClosedTasks()})
+                Rectangle()
+                    .fill(Color.black).edgesIgnoringSafeArea(.all)
+                    .opacity(isShowingSideMenu ? 0.1 : 0)
+                    .onTapGesture {
+                        withAnimation(.spring()){
+                            isShowingSideMenu.toggle()
+                        }
+                    }
 
                 
                 
@@ -249,7 +257,7 @@ struct SettingsMainView: View {
         .scaleEffect(isShowingSideMenu ? 0.8 : 1)
         .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 20) : 0)
         .shadow(color: Color.black.opacity(isShowingSideMenu ? 0.2 : 0), radius: 8, x: -5, y: 5 )
-        .disabled(isShowingSideMenu)
+        //.disabled(isShowingSideMenu)
         
         
 

@@ -10,7 +10,8 @@ import SwiftUI
 struct SideMenuHeaderView: View {
     // MARK: PROPERTIES
     
-    
+    @StateObject var homeData = HomeViewModel()
+
     @Binding var isShowingSideMenu: Bool
     
     // MARK: BODY
@@ -21,23 +22,31 @@ struct SideMenuHeaderView: View {
             
             // MARK: ICONS & APP NAME
             HStack(spacing: 15) {
-                Image("iconSmall")
-                    .resizable()
-                    .scaledToFill()
-                    .clipped()
-                    .frame(width: 64, height: 64)
                 
-                VStack(alignment: .leading){
-                    Text("Ahtapot")
-                        .font(.system(.title2, design: .rounded))
-                        .fontWeight(.heavy)
-                        .foregroundColor(.white)
-                    
-                    Text("Kişisel asistanın")
-                        .font(.system(.headline, design: .rounded))
-                            .fontWeight(.light)
-                            .foregroundColor(.white)
-                }
+                Text(homeData.getTimeOfTheDay())
+                    .font(.system(.title, design: .rounded))
+                    .fontWeight(.heavy)
+                    .foregroundColor(Color.white)
+                    .padding(.leading)
+                
+                
+//                Image("iconSmall")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .clipped()
+//                    .frame(width: 64, height: 64)
+//                
+//                VStack(alignment: .leading){
+//                    Text("Ahtapot")
+//                        .font(.system(.title2, design: .rounded))
+//                        .fontWeight(.heavy)
+//                        .foregroundColor(.white)
+//                    
+//                    Text("Kişisel asistanın")
+//                        .font(.system(.headline, design: .rounded))
+//                            .fontWeight(.light)
+//                            .foregroundColor(.white)
+//                }
                 
                 Spacer()
                 

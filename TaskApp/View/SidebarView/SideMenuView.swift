@@ -95,7 +95,10 @@ struct SideMenuView: View {
                 //HEADER
                 SideMenuHeaderView(isShowingSideMenu: $isShowingSideMenu)
                 
+                
+                
                 Spacer()
+                
                 
                 
                 
@@ -136,18 +139,43 @@ struct SideMenuView: View {
                 
                 VStack(alignment: .leading, spacing: 0) {
                     
-//                    Rectangle()
-//                        .fill(Color.white)
-//                        .frame(width: 150, height: 1.5)
-//                        .cornerRadius(12)
-//                        .padding()
+
                     
                     SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "settings" ? true : false, image: Image("settings"), text: "Ayarlar") {
                         selectedTab = "settings"
+                    } 
+                }
+                
+                
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(width: 150, height: 1.5)
+                    .cornerRadius(12)
+                    .padding()
+                    .padding(.leading)
+                
+                
+                HStack{
+                    Image("iconSmall")
+                        .resizable()
+                        .scaledToFill()
+                        .clipped()
+                        .frame(width: 64, height: 64)
+                    
+                    VStack(alignment: .leading){
+                        Text("Ahtapot")
+                            .font(.system(.title2, design: .rounded))
+                            .fontWeight(.heavy)
+                            .foregroundColor(.white)
+                        
+                        Text("Kişisel asistanın")
+                            .font(.system(.headline, design: .rounded))
+                                .fontWeight(.light)
+                                .foregroundColor(.white)
                     }
                 }
-                .padding(.bottom, 40)
-                
+                .padding()
+                .padding(.leading)
                 
                 
                 
