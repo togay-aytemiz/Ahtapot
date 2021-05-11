@@ -142,6 +142,14 @@ struct AllTaskView: View {
                         
                     }
                 }
+                Rectangle()
+                    .fill(Color.black).edgesIgnoringSafeArea(.all)
+                    .opacity(isShowingSideMenu ? 0.1 : 0)
+                    .onTapGesture {
+                        withAnimation(.spring()){
+                            isShowingSideMenu.toggle()
+                        }
+                    }
             }
             .background(EmptyView().sheet(isPresented : $homeData.isNewData) {NewDataView(homeData: homeData)})
             .edgesIgnoringSafeArea(.bottom)
@@ -153,7 +161,7 @@ struct AllTaskView: View {
             .scaleEffect(isShowingSideMenu ? 0.8 : 1)
             .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 17) : 0)
             .shadow(color: Color.black.opacity(isShowingSideMenu ? 0.2 : 0), radius: 8, x: -5, y: 5 )
-            .disabled(isShowingSideMenu)
+            //.disabled(isShowingSideMenu)
             
             
             if !isShowingSideMenu  {
