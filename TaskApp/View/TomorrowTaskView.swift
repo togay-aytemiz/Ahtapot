@@ -22,7 +22,6 @@ struct TomorrowTaskView: View {
     @Environment(\.managedObjectContext) var context
     
     
-    // FETCH REQUESTLER BURAYA EKLENECEK
     
     // Shopping View
     @FetchRequest(entity: Shopping.entity(),sortDescriptors: [NSSortDescriptor(key: "date",ascending: false)],predicate: .OpenTasks(), animation: .spring()) var openShoppingListItem : FetchedResults<Shopping>

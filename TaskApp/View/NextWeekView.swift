@@ -13,6 +13,8 @@ struct NextWeekView: View {
     @StateObject var homeData = HomeViewModel()
     @EnvironmentObject var obj: observed
     
+    // OTHER DETAILS
+    let haptics = UIImpactFeedbackGenerator()
     
     // TABBAR DEĞİŞİMİ İÇİN STATE
     @Binding var selectedTab: String
@@ -22,20 +24,34 @@ struct NextWeekView: View {
     @Environment(\.managedObjectContext) var context
     
     
-    // FETCH REQUESTLER BURAYA EKLENECEK
-    
-    
     // Shopping View
     @FetchRequest(entity: Shopping.entity(),sortDescriptors: [NSSortDescriptor(key: "date",ascending: false)],predicate: .OpenTasks(), animation: .spring()) var openShoppingListItem : FetchedResults<Shopping>
     
+    // Fetch Open Tasks
+    @FetchRequest(entity: Task.entity(),sortDescriptors: [NSSortDescriptor(key: "date",ascending: true)],predicate: nil, animation: .spring()) var allOpenTasks : FetchedResults<Task>
     
     
     
-    // OTHER DETAILS
-    let haptics = UIImpactFeedbackGenerator()
+    var next7DaysOpenTasks: [Task] {
+        let filteredTasks = allOpenTasks.filter { task in
+            return homeData.checkTaskInsideNextWeek(task: task) && !task.completion
+        }
+        return filteredTasks
+      }
+    
+    
+    var next7DaysClosedTasks: [Task] {
+        let filteredTasks = allOpenTasks.filter { task in
+            return homeData.checkTaskInsideNextWeek(task: task) && task.completion
+        }
+        return filteredTasks
+      }
+    
     
     
     @State private var isShowingSideMenu = false
+    @AppStorage("isJustNext7DaysOpenShown") var isJustNext7DaysOpenShown: Bool = false
+
     
     
     var showingDate : Date {
@@ -68,13 +84,72 @@ struct NextWeekView: View {
                     Spacer()
                     
                     
-                    
+                    if next7DaysOpenTasks.count == 0 {
+                        EmptyViewIllustrations(image: "noTodo", text: "\(homeData.findNextWeekDates()) tarih aralığı için yapılacak görev yok .\nHadi hemen ekleyelim... 💪🏻", header: "YAPILACAK GÖREV YOK")
+                        Spacer()
+                    }
+                    else {
+                        
+                        ScrollView(.vertical, showsIndicators: false){
+                            
+                            VStack(spacing: 0){
+                                
+                                SearchViewForMainPage()
+                                
+                                
+                                // SOME STATS ABOUT TODAY
+                                
+                                
+                                
+                                ForEach(next7DaysOpenTasks) { task in
+                                    ListRowItemView(homeData: task) {
+                                        homeData.editItem(item: task)
+                                    } editAction: {
+                                        homeData.editItem(item: task)
+                                    } deleteAction: {
+                                        context.delete(task)
+                                        NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+                                    }
+                                }
+                                
+                                if next7DaysClosedTasks.count > 0 {
+                                    
+                                    if isJustNext7DaysOpenShown {
+                                        
+                                        // BUGÜN KAPANANLAR
+                                        ForEach(next7DaysClosedTasks) { task in
+                                            ListRowItemView(homeData: task) {
+                                                homeData.editItem(item: task)
+                                            } editAction: {
+                                                homeData.editItem(item: task)
+                                            } deleteAction: {
+                                                context.delete(task)
+                                                NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+                                                
+                                            }
+                                        }
+                                    }
+                                    
+                                    Button(action: {
+                                        isJustNext7DaysOpenShown.toggle()
+                                        haptics.impactOccurred()
+                                    }, label: {
+                                        HStack {
+                                            Text(!isJustNext7DaysOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
+                                                .font(.system(.subheadline, design: .rounded))
+                                            Image(systemName: !isJustNext7DaysOpenShown ? "chevron.down" : "chevron.up")
+                                        }
+                                        .animation(.easeIn)
+                                        .foregroundColor(.secondary)
+                                        .padding()
+                                    })
+                                }
+                            }
+                        }
+                    }
                 }
-                
-                
-                
-                
             }
+            .background(EmptyView().sheet(isPresented : $homeData.isNewData) {NewDataView(homeData: homeData)})
             .edgesIgnoringSafeArea(.bottom)
             .onAppear { UIApplication.shared.applicationIconBadgeNumber = 0 }
             .background(Utils.isDarkMode ? Color.black : Color.white)
@@ -86,10 +161,7 @@ struct NextWeekView: View {
             .shadow(color: Color.black.opacity(isShowingSideMenu ? 0.2 : 0), radius: 8, x: -5, y: 5 )
             .disabled(isShowingSideMenu)
             
-        }
-        
-        
-        
+        } 
     }
 }
 
