@@ -49,7 +49,7 @@ struct SideMenuView: View {
     
     var filteredTasksToday: [Task] {
         let filteredTasks = tasks.filter { task in
-            return homeData.checkTaskInsideToday(task: task)
+            return homeData.checkTaskInsideToday(task: task) && !task.completion
         }
         return filteredTasks
       }
@@ -57,14 +57,14 @@ struct SideMenuView: View {
     
     var filteredTasksTomorrow: [Task] {
         let filteredTasks = tasks.filter { task in
-            return homeData.checkTaskInsideTomorrow(task: task)
+            return homeData.checkTomorrowAll(task: task) && !task.completion
         }
         return filteredTasks
       }
     
     var filteredTasksNextWeek: [Task] {
         let filteredTasks = tasks.filter { task in
-            return homeData.checkTaskInsideNextWeek(task: task)
+            return homeData.checkTaskInsideNextWeek(task: task) && !task.completion
         }
         return filteredTasks
       }

@@ -31,7 +31,32 @@ struct TomorrowTaskView: View {
     let haptics = UIImpactFeedbackGenerator()
     
     
+    // Fetch Open Tasks
+    @FetchRequest(entity: Task.entity(),sortDescriptors: [NSSortDescriptor(key: "date",ascending: true)],predicate: nil, animation: .spring()) var allOpenTasks : FetchedResults<Task>
+    
+    
+    
+    var tomorrowOpenTasks: [Task] {
+        let filteredTasks = allOpenTasks.filter { task in
+            return homeData.checkTomorrowAll(task: task) && !task.completion
+        }
+        return filteredTasks
+      }
+    
+    
+    var tomorrowClosedTasks: [Task] {
+        let filteredTasks = allOpenTasks.filter { task in
+            return homeData.checkTomorrowAll(task: task) && task.completion
+        }
+        return filteredTasks
+      }
+    
+    
+    
+    
+    
     @State private var isShowingSideMenu = false
+    @AppStorage("isJustTomorrowOpenShown") var isJustTomorrowOpenShown: Bool = false
     
     
     var showingDate : Date {
@@ -61,12 +86,80 @@ struct TomorrowTaskView: View {
                     
                     
                     Spacer()
+                    
+                    
+                    if tomorrowOpenTasks.count == 0 {
+                        EmptyViewIllustrations(image: "noTodo", text: "Yarın için yapılacak listen boş.\nHadi hemen ekleyelim... 💪🏻", header: "YARIN YAPILACAK YOK")
+                        Spacer()
+                    }
+                    else {
+                        
+                        ScrollView(.vertical, showsIndicators: false){
+                            
+                            VStack(spacing: 0){
+                                
+                                SearchViewForMainPage()
+                                
+                                
+                                // SOME STATS ABOUT TODAY
+                                
+                                
+                                
+                                ForEach(tomorrowOpenTasks) { task in
+                                    ListRowItemView(homeData: task) {
+                                        homeData.editItem(item: task)
+                                    } editAction: {
+                                        homeData.editItem(item: task)
+                                    } deleteAction: {
+                                        context.delete(task)
+                                        NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+                                    }
+                                }
+                                
+                                if tomorrowClosedTasks.count > 0 {
+                                    
+                                    if isJustTomorrowOpenShown {
+                                        
+                                        // BUGÜN KAPANANLAR
+                                        ForEach(tomorrowClosedTasks) { task in
+                                            ListRowItemView(homeData: task) {
+                                                homeData.editItem(item: task)
+                                            } editAction: {
+                                                homeData.editItem(item: task)
+                                            } deleteAction: {
+                                                context.delete(task)
+                                                NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+                                                
+                                            }
+                                        }
+                                    }
+                                    
+                                    Button(action: {
+                                        isJustTomorrowOpenShown.toggle()
+                                        haptics.impactOccurred()
+                                    }, label: {
+                                        HStack {
+                                            Text(!isJustTomorrowOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
+                                                .font(.system(.subheadline, design: .rounded))
+                                            Image(systemName: !isJustTomorrowOpenShown ? "chevron.down" : "chevron.up")
+                                        }
+                                        .animation(.easeIn)
+                                        .foregroundColor(.secondary)
+                                        .padding()
+                                    })
+                                    
+                                }
+        
+                            }
+                            
+                        }
+                        
+                    }
+                    
                 }
                 
-                
-                
-                
             }
+            .background(EmptyView().sheet(isPresented : $homeData.isNewData) {NewDataView(homeData: homeData)})
             .edgesIgnoringSafeArea(.bottom)
             .onAppear { UIApplication.shared.applicationIconBadgeNumber = 0 }
             .background(Utils.isDarkMode ? Color.black : Color.white)
@@ -93,3 +186,37 @@ struct TomorrowTaskView_Previews: PreviewProvider {
         TomorrowTaskView(selectedTab: .constant("tomorrow"))
     }
 }
+
+
+
+/*
+ 
+ ForEach(tomorrowOpenTasks) { task in
+     ListRowItemView(homeData: task) {
+         homeData.editItem(item: task)
+     } editAction: {
+         homeData.editItem(item: task)
+     } deleteAction: {
+         context.delete(task)
+         NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+     }
+     
+ }
+ 
+ 
+ Text("kapanlar")
+
+ 
+ ForEach(tomorrowClosedTasks) { task in
+     ListRowItemView(homeData: task) {
+         homeData.editItem(item: task)
+     } editAction: {
+         homeData.editItem(item: task)
+     } deleteAction: {
+         context.delete(task)
+         NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+     }
+     
+ }
+ 
+ */

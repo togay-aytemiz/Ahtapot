@@ -30,7 +30,7 @@ struct SearchViewForMainPage: View {
             }
             .padding(.horizontal,5)
             .padding(.vertical, 8)
-            .background(Color.secondary.opacity(0.1))
+            .background(Utils.isDarkMode ? Color.gray.opacity(0.5) : Color(Utils.AppColor1).opacity(0.1))
             .cornerRadius(8)
             .onTapGesture {
                 searchOpen.toggle()
