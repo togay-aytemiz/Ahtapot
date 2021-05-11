@@ -52,6 +52,10 @@ struct AllTaskView: View {
     @State private var isShowingSideMenu = false
     @AppStorage("isJAllOpenShown") var isJAllOpenShown: Bool = false
     
+  
+    
+    
+    
     
     
     // MARK: BODY
@@ -87,8 +91,7 @@ struct AllTaskView: View {
                                 
                                 
                                 // SOME STATS ABOUT TODAY
-                                
-                                
+    
                                 
                                 ForEach(filteredallOpenTasks) { task in
                                     ListRowItemView(homeData: task) {
