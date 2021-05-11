@@ -21,7 +21,7 @@ struct MainTaskView: View {
 
     
     // TABBAR DEĞİŞİMİ İÇİN STATE
-    @State var selectedTab: String = "home"
+    @State var selectedTab: String = "today"
     
     
     // FETCHING DETAILS
@@ -52,7 +52,16 @@ struct MainTaskView: View {
     let haptics = UIImpactFeedbackGenerator()
     
     
+    @State private var isShowingSideMenu = false
     
+    
+    
+    
+    
+    
+    
+    
+    // ------------------------------------------ BODY ------------------------------------------ //
     
     
     // MARK: BODY
@@ -60,131 +69,61 @@ struct MainTaskView: View {
         
         
         
-        ZStack {
+        ZStack(alignment: .bottomTrailing){
+        
+            if isShowingSideMenu {
+                SideMenuView(isShowingSideMenu: $isShowingSideMenu, selectedTab: $selectedTab)
+            }
             
             
             
-            // MAIN VIEW
-            VStack(spacing: 0){
-                
-                // MARK: HEADER
-                NavigationBarView(title: homeData.getTimeOfTheDay(), showDate: true, shoppingIcon: true, searchIcon: true, shoppingItem: openShoppingListItem.count)
-                    .padding(.top)
-                    .padding(.horizontal, 15)
-                    .padding(.bottom)
-                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                    //.background(isDarkMode ? Color.black : Color.white)
-                    .animation(.easeIn)
-                
-                Spacer()
-                
-                if allOpenTasks.count == 0 && justTodayClosed.count == 0 {
-                    EmptyViewIllustrations(image: "noTodo", text: "Yapılacaklar listen boş.\nHadi hemen ekleyelim... 💪🏻", header: "HİÇ GÖREV YOK")
+            ZStack {
+                // MAIN VIEW
+                VStack(spacing: 0){
+                    
+
+                    // MARK: HEADER
+                    CustomNavigationBarView(shoppingItem: openShoppingListItem.count, isShowingSideMenu: $isShowingSideMenu)
+                        .background(Utils.isDarkMode ? Color.black : Color.white)
+
                     Spacer()
-                }
-                else {
                     
-                    
-                    // MARK: CONTENT
-                    ScrollView(.vertical, showsIndicators: false, content: {
+                    if allOpenTasks.count == 0 && justTodayClosed.count == 0 {
+                        EmptyViewIllustrations(image: "noTodo", text: "Yapılacaklar listen boş.\nHadi hemen ekleyelim... 💪🏻", header: "HİÇ GÖREV YOK")
+                        Spacer()
+                    }
+                    else {
                         
-                        VStack(spacing: 0){
+                        
+                        // MARK: CONTENT
+                        ScrollView(.vertical, showsIndicators: false, content: {
                             
-
-                            
-                            // MARK: BASIC STATS
-                            
-                            //HomePageDateFilterView()
-                            
-                            if Utils.isBasicStatView {
-                                if allOpenTasks.count > 0 || justTodayClosed.count > 0 {
-                                    StatsView(numberOfPreviousTask: beforeTodayOpen.count, numberOfFutureTasks: futureOpen.count, todayClosedTask: justTodayClosed.count, todayAllTask: justTodayAll.count)
-                                        .padding(.bottom)
-                                        .padding(.bottom)
-                                    
-                                    
-                                }
-                            }
-                            
-
-                            // MARK: GEÇMİŞ
-                            Group {
-                                if beforeTodayOpen.count > 0 {
-                                    
-                                    
-                                    TitleView(title: "Geçmiş", number1: beforeTodayOpen.count, number2: 0, barShown: false, isTwoNumber: false)
-                                    
-                                    // BUGÜN YAPILACAKLAR
-                                    ForEach(beforeTodayOpen) { task in
-                                        ListRowItemView(homeData: task) {
-                                            homeData.editItem(item: task)
-                                        } editAction: {
-                                            homeData.editItem(item: task)
-                                        } deleteAction: {
-                                            context.delete(task)
-                                            NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
-                                        }
-                                        
-                                    }
-                                    
-                                    Spacer(minLength: 15)
-                                    
-                                }
-                            }
-                            
-                            
-                            // MARK: BUGÜN
-                            Group {
+                            VStack(spacing: 0){
                                 
-                                TitleView(title: "Bugün", number1: justTodayClosed.count, number2: justTodayAll.count, barShown: true, isTwoNumber: true)
-//                                    .padding(.top, 20)
+                                SearchViewForMainPage()
                                 
-                                if justTodayClosed.count > 0 && justTodayOpen.count == 0 {
-                                    
-                                    
-                                    // TEBRİKLER TÜM GÖREVLERİ TAMAMLADIN
-                                    EmptyTodayTaskView(isCongratz: true) {
-                                        homeData.isNewData.toggle()
-                                        homeData.content = ""
-                                        homeData.updateItem = nil
-                                        homeData.completion = false
-                                        homeData.date = Date(timeIntervalSinceNow: 3600)
-                                        homeData.isRemindMe = false
+                                // MARK: BASIC STATS
+                                //HomePageDateFilterView()
+                                if Utils.isBasicStatView {
+                                    if allOpenTasks.count > 0 || justTodayClosed.count > 0 {
+                                        StatsView(numberOfPreviousTask: beforeTodayOpen.count, numberOfFutureTasks: futureOpen.count, todayClosedTask: justTodayClosed.count, todayAllTask: justTodayAll.count)
+                                            .padding(.bottom)
+                                            .padding(.bottom)
                                         
-                                    }
-                                    .animation(.spring())
-                                    .padding(.horizontal)
-                                }
-                                else if justTodayClosed.count == 0 && justTodayOpen.count == 0 {
-                                    // BUGÜN HİÇ TASK EKLEMEDİN
-                                    EmptyTodayTaskView(isCongratz: false) {
-                                        homeData.isNewData.toggle()
-                                    }
-                                    .animation(.spring())
-                                    .padding(.horizontal)
-                                }
-                                else if justTodayOpen.count > 0 {
-                                    
-                                    
-                                    // BUGÜN YAPILACAKLAR
-                                    ForEach(justTodayOpen) { task in
-                                        ListRowItemView(homeData: task) {
-                                            homeData.editItem(item: task)
-                                        } editAction: {
-                                            homeData.editItem(item: task)
-                                        } deleteAction: {
-                                            context.delete(task)
-                                            NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
-                                        }
+                                        
                                     }
                                 }
                                 
-                                if justTodayClosed.count > 0 {
-                                    
-                                    if isJustTodayOpenShown {
+                                
+                                // MARK: GEÇMİŞ
+                                Group {
+                                    if beforeTodayOpen.count > 0 {
                                         
-                                        // BUGÜN KAPANANLAR
-                                        ForEach(justTodayClosed) { task in
+                                        
+                                        TitleView(title: "Geçmiş", number1: beforeTodayOpen.count, number2: 0, barShown: false, isTwoNumber: false)
+                                        
+                                        // BUGÜN YAPILACAKLAR
+                                        ForEach(beforeTodayOpen) { task in
                                             ListRowItemView(homeData: task) {
                                                 homeData.editItem(item: task)
                                             } editAction: {
@@ -192,102 +131,165 @@ struct MainTaskView: View {
                                             } deleteAction: {
                                                 context.delete(task)
                                                 NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
-                                                
+                                            }
+                                            
+                                        }
+                                        
+                                        Spacer(minLength: 15)
+                                        
+                                    }
+                                }
+                                
+                                // MARK: BUGÜN
+                                Group {
+                                    
+                                    TitleView(title: "Bugün", number1: justTodayClosed.count, number2: justTodayAll.count, barShown: true, isTwoNumber: true)
+                                    //                                    .padding(.top, 20)
+                                    
+                                    if justTodayClosed.count > 0 && justTodayOpen.count == 0 {
+                                        
+                                        
+                                        // TEBRİKLER TÜM GÖREVLERİ TAMAMLADIN
+                                        EmptyTodayTaskView(isCongratz: true) {
+                                            homeData.isNewData.toggle()
+                                            homeData.content = ""
+                                            homeData.updateItem = nil
+                                            homeData.completion = false
+                                            homeData.date = Date(timeIntervalSinceNow: 3600)
+                                            homeData.isRemindMe = false
+                                            
+                                        }
+                                        .animation(.spring())
+                                        .padding(.horizontal)
+                                    }
+                                    else if justTodayClosed.count == 0 && justTodayOpen.count == 0 {
+                                        // BUGÜN HİÇ TASK EKLEMEDİN
+                                        EmptyTodayTaskView(isCongratz: false) {
+                                            homeData.isNewData.toggle()
+                                        }
+                                        .animation(.spring())
+                                        .padding(.horizontal)
+                                    }
+                                    else if justTodayOpen.count > 0 {
+                                        
+                                        
+                                        // BUGÜN YAPILACAKLAR
+                                        ForEach(justTodayOpen) { task in
+                                            ListRowItemView(homeData: task) {
+                                                homeData.editItem(item: task)
+                                            } editAction: {
+                                                homeData.editItem(item: task)
+                                            } deleteAction: {
+                                                context.delete(task)
+                                                NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
                                             }
                                         }
                                     }
                                     
-                                    Button(action: {
-                                        isJustTodayOpenShown.toggle()
-                                        haptics.impactOccurred()
-                                    }, label: {
-                                        HStack {
-                                            Text(!isJustTodayOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
-                                                .font(.system(.subheadline, design: .rounded))
-                                            Image(systemName: !isJustTodayOpenShown ? "chevron.down" : "chevron.up")
-                                        }
-                                        .animation(.easeIn)
-                                        .foregroundColor(.secondary)
-                                        .padding()
-                                    })
-                                    
-                                }
-                            }
-                            
-                            // MARK: GELECEK
-                            Group {
-                                if futureOpen.count > 0 {
-                                    
-                                    
-                                    TitleView(title: "Gelecek", number1: futureOpen.count, number2: 0, barShown: false, isTwoNumber: false)
-                                        .padding(.top, 20)
-                                    
-                                    // GELECEK YAPILACAKLAR
-                                    ForEach(futureOpen) { task in
-                                        ListRowItemView(homeData: task) {
-                                            homeData.editItem(item: task)
-                                        } editAction: {
-                                            homeData.editItem(item: task)
-                                        } deleteAction: {
-                                            context.delete(task)
-                                            NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+                                    if justTodayClosed.count > 0 {
+                                        
+                                        if isJustTodayOpenShown {
                                             
+                                            // BUGÜN KAPANANLAR
+                                            ForEach(justTodayClosed) { task in
+                                                ListRowItemView(homeData: task) {
+                                                    homeData.editItem(item: task)
+                                                } editAction: {
+                                                    homeData.editItem(item: task)
+                                                } deleteAction: {
+                                                    context.delete(task)
+                                                    NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+                                                    
+                                                }
+                                            }
                                         }
+                                        
+                                        Button(action: {
+                                            isJustTodayOpenShown.toggle()
+                                            haptics.impactOccurred()
+                                        }, label: {
+                                            HStack {
+                                                Text(!isJustTodayOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
+                                                    .font(.system(.subheadline, design: .rounded))
+                                                Image(systemName: !isJustTodayOpenShown ? "chevron.down" : "chevron.up")
+                                            }
+                                            .animation(.easeIn)
+                                            .foregroundColor(.secondary)
+                                            .padding()
+                                        })
+                                        
                                     }
                                 }
+      
                             }
-                            
-                        }
-                        
-                    })
+                            .padding(.bottom, 50)
+                        })
+                    }
                     
+                } // END OF MAIN VSTACK
+                
+                .background(EmptyView().sheet(isPresented : $homeData.isNewData) {NewDataView(homeData: homeData)})
+                .opacity(selectedTab == "today" ? 1 : 0)
+                .padding(.bottom)
+                .padding(.bottom)
+                .blur(radius: $isFirstTimeUsingApp.wrappedValue ? 5 : 0, opaque: false)
+                Rectangle()
+                    .fill(Color.black).edgesIgnoringSafeArea(.all)
+                    .opacity(isShowingSideMenu ? 0.1 : 0)
+                    .onTapGesture {
+                        withAnimation(.spring()){
+                            isShowingSideMenu.toggle()
+                        }
+                    }
+                
+                // MARK: POPUP
+                if $isFirstTimeUsingApp.wrappedValue {
+                    WelcomeMessageView(isFirstTimeUsingApp: $isFirstTimeUsingApp)
                 }
                 
-            } // END OF MAIN VSTACK
+            }
+            .edgesIgnoringSafeArea(.bottom)
+            .onAppear { UIApplication.shared.applicationIconBadgeNumber = 0 }
+            .background(Utils.isDarkMode ? Color.black : Color.white)
             
-            .onAppear(){ UITableView.appearance().backgroundColor = UIColor.clear }
-            .background(EmptyView().sheet(isPresented : $homeData.isNewData) {NewDataView(homeData: homeData)})
-            .opacity(selectedTab == "home" ? 1 : 0)
-            .padding(.bottom)
-            .padding(.bottom)
-            .blur(radius: $isFirstTimeUsingApp.wrappedValue ? 5 : 0, opaque: false)
+            // SIDE MENU ACTIONS
+            .cornerRadius(isShowingSideMenu ? 20 : 0)
+            .scaleEffect(isShowingSideMenu ? 0.8 : 1)
+            .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 17) : 0)
+            .shadow(color: Color.black.opacity(isShowingSideMenu ? 0.2 : 0), radius: 8, x: -5, y: 5 )
+            //.disabled(isShowingSideMenu)
+
+            
+            
+            if !isShowingSideMenu  {
+                MiniAddTaskButtonView {
+                    homeData.isNewData.toggle()
+                    homeData.content = ""
+                    homeData.updateItem = nil
+                    homeData.completion = false
+                    homeData.date = Date(timeIntervalSinceNow: 3600)
+                    homeData.isRemindMe = false
+                }
+                .opacity(isFirstTimeUsingApp ? 0 : 1)
+            }
             
             
             // SETTINGS VIEW
             SettingsMainView(selectedTab: $selectedTab)
                 .opacity(selectedTab == "settings" ? 1 : 0)
             
+            TomorrowTaskView(selectedTab: $selectedTab)
+                .opacity(selectedTab == "tomorrow" ? 1 : 0)
             
+            NextWeekView(selectedTab: $selectedTab)
+                .opacity(selectedTab == "next7days" ? 1 : 0)
             
-            // MARK: POPUP
-            if $isFirstTimeUsingApp.wrappedValue {
-                WelcomeMessageView(isFirstTimeUsingApp: $isFirstTimeUsingApp)
-            }
+            AllTaskView(selectedTab: $selectedTab)
+                .opacity(selectedTab == "allTasks" ? 1 : 0)
+        
             
         }
-        .ignoresSafeArea()
-        .onAppear { UIApplication.shared.applicationIconBadgeNumber = 0 }
         
-
-        
-        
-        
-        // MARK: CUSTOM TAB BAR
-        if isFirstTimeUsingApp == false {
-        CustomTabBarView(
-            action: {
-                homeData.isNewData.toggle()
-                homeData.content = ""
-                homeData.updateItem = nil
-                homeData.completion = false
-                homeData.date = Date(timeIntervalSinceNow: 3600)
-                homeData.isRemindMe = false
-                
-            },
-            selectedTab: $selectedTab
-        )
-        
-        }
     }
     
     
@@ -322,3 +324,65 @@ struct MainTaskView: View {
     }
 }
 
+
+
+/*
+ 
+ 
+ // MARK: GELECEK
+ Group {
+     if futureOpen.count > 0 {
+         
+         
+         TitleView(title: "Gelecek", number1: futureOpen.count, number2: 0, barShown: false, isTwoNumber: false)
+             .padding(.top, 20)
+         
+         // GELECEK YAPILACAKLAR
+         ForEach(futureOpen) { task in
+             ListRowItemView(homeData: task) {
+                 homeData.editItem(item: task)
+             } editAction: {
+                 homeData.editItem(item: task)
+             } deleteAction: {
+                 context.delete(task)
+                 NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
+                 
+             }
+         }
+     }
+ }
+ 
+ 
+ 
+ 
+ 
+ // SETTINGS VIEW
+ SettingsMainView(selectedTab: $selectedTab)
+     .opacity(selectedTab == "settings" ? 1 : 0)
+ 
+ 
+ 
+ // MARK: CUSTOM TAB BAR
+ if isFirstTimeUsingApp == false {
+ CustomTabBarView(
+     action: {
+         homeData.isNewData.toggle()
+         homeData.content = ""
+         homeData.updateItem = nil
+         homeData.completion = false
+         homeData.date = Date(timeIntervalSinceNow: 3600)
+         homeData.isRemindMe = false
+         
+     },
+     selectedTab: $selectedTab
+ )
+ 
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ */

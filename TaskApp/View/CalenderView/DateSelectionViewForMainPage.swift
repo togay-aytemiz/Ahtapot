@@ -53,7 +53,7 @@ struct DateSelectionViewForMainPage: View {
 
     var filteredTasks: [Task] {
         let filteredTasks = tasks.filter { task in
-            return homeData.checkTaskToSelectedDate(task: task)
+            return homeData.checkTaskInsideToday(task: task)
         }
         return filteredTasks
       }

@@ -50,7 +50,8 @@ struct SettingsMainView: View {
     let haptics = UIImpactFeedbackGenerator()
     @State private var closedTaskView : Bool = false
     
-    
+    @State private var isShowingSideMenu = false
+
     
     
     
@@ -58,40 +59,32 @@ struct SettingsMainView: View {
     // MARK: BODY
     var body: some View {
         
+        ZStack{
+         
+            if isShowingSideMenu {
+                SideMenuView(isShowingSideMenu: $isShowingSideMenu, selectedTab: $selectedTab)
+            }
+        
         NavigationView {
             ZStack {
                 VStack(spacing : 0) {
-                    
-                    
+
                     
                     // MARK: HEADER
-                    NavigationBarView(title: "Ayarlar")
-                        .padding(.top)
-                        .padding(.horizontal, 15)
-    //                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                        //.background(isDarkMode ? Color.black : Color.white)
+                    CustomNavigationBarView(showDate: false, shoppingIcon: false, customNavigationHeader: "Ayarlar", isShowingSideMenu: $isShowingSideMenu)
+                        .background(isDarkMode ? Color.black : Color.white)
                     
                     
                     // MARK: CONTENT
                     ScrollView(.vertical, showsIndicators: false){
                         
-                         
-                        
                         // MARK: SECTION 1 - INTERNAL ADS
                         if isInternalAdsShow {
                             InternalAdsView()
                                 .padding(.bottom, 15)
-                            
                         }
-                        
-                        // MARK: SECTION 2 - HOW TO USE APP
-    //                    if isTutorialShow {
-    //                        ImportantRowView()
-    //                            .padding(.bottom)
-    //                    }
-                    
 
-                        // MARK: SECTION 3 - TAMAMLANAN GÖREVLER
+                        // MARK: SECTION 2 - TAMAMLANAN GÖREVLER
                         if closedTasks.count > 0 {
                             
                             Button(action: {
@@ -103,39 +96,36 @@ struct SettingsMainView: View {
                                
                             }) 
                         }
-                        
-                        
-                       
-                        // MARK: SECTION 4 - SOME CUSTOMIZATIONS
+                    
+                        // MARK: SECTION 3 - SOME CUSTOMIZATIONS
                         Group {
-                        VStack{
-                            SettingsLabelView(labelText: "Görsel Ayarlar", labelImage: "paintbrush.fill", color: Color(AppColor1), gradientImage: true)
-                            
-                            
-
-                            SettingsRowWithToggleView(color: Color(AppColor1), image: "moon.fill", text1: "Karanlık Mod", text2: "", toggleStatus: $isDarkMode)
-                            
-                            
-
-                            SettingsRowWithToggleView(color: Color(AppColor1), image: "chart.pie.fill", text1: "Mini İstatistik", text2: "Kapatman Önerilmez", toggleStatus: $isBasicStatView)
-
-                            
-                            Divider()
-                            
-                            ChangingThemeColor()
-                                .padding(.leading, 5)
-                            
-                            
-                        }
-                        .padding()
-                        .background(Color(AppColor1).opacity(0.1))
-                        .cornerRadius(8)
-                        .padding(.bottom, 15)
+                            VStack{
+                                SettingsLabelView(labelText: "Görsel Ayarlar", labelImage: "paintbrush.fill", color: Color(AppColor1), gradientImage: true)
+                                
+                                
+                                
+                                SettingsRowWithToggleView(color: Color(AppColor1), image: "moon.fill", text1: "Karanlık Mod", text2: "", toggleStatus: $isDarkMode)
+                                
+                                
+                                
+                                SettingsRowWithToggleView(color: Color(AppColor1), image: "chart.pie.fill", text1: "Mini İstatistik", text2: "Kapatman Önerilmez", toggleStatus: $isBasicStatView)
+                                
+                                
+                                Divider()
+                                
+                                ChangingThemeColor()
+                                    .padding(.leading, 5)
+                                
+                                
+                            }
+                            .padding()
+                            .background(Color(AppColor1).opacity(0.1))
+                            .cornerRadius(8)
+                            .padding(.bottom, 15)
                             
                         }
                         
- 
-                        // MARK: SECTION 5 - OTHER LINKS & BUTTONS
+                        // MARK: SECTION 4 - OTHER LINKS & BUTTONS
                         Group {
                             VStack{
                                 
@@ -169,9 +159,7 @@ struct SettingsMainView: View {
                             .padding(.bottom, 15)
                         }
  
-                        
-                        
-                        // MARK: SECTION 6 - DELETE ALL TASKS (OPEN & CLOSED) BUTTON
+                        // MARK: SECTION 5 - DELETE ALL TASKS (OPEN & CLOSED) BUTTON
                         Group{
                             Button(action: {
                                 showModal.toggle()
@@ -181,9 +169,8 @@ struct SettingsMainView: View {
                                     .padding(.bottom)
                             })
                         }
-                        
              
-                        // MARK: LOGO & FOOTER
+                        // MARK: SECTION 6 - LOGO & FOOTER
                         Group{
                             VStack{
                                 
@@ -215,7 +202,7 @@ struct SettingsMainView: View {
                     .padding()
                     .navigationBarTitle("Ayarlar")
                     .navigationBarHidden(true)
-                    .ignoresSafeArea(.all, edges: .top)
+                    .ignoresSafeArea(.all, edges: .bottom)
 
                     
                     
@@ -227,18 +214,32 @@ struct SettingsMainView: View {
                     
                 }
                 .background(EmptyView().sheet(isPresented : $closedTaskView) {ClosedTasks()})
+                Rectangle()
+                    .fill(Color.black).edgesIgnoringSafeArea(.all)
+                    .opacity(isShowingSideMenu ? 0.1 : 0)
+                    .onTapGesture {
+                        withAnimation(.spring()){
+                            isShowingSideMenu.toggle()
+                        }
+                    }
 
                 
                 
                 // MARK: POPUP
                 if $showModal.wrappedValue {
                     
-                    CustomPopup(showingModal: $showModal, popupText: "Uygulamadaki her şey silinecek. Bu işlem geri alınamaz!") {
-                        haptics.impactOccurred()
-                        deleteAll()
-                        NotificationManager.istance.cancelAllNotification()
-                        try! context.save()
-                        selectedTab = "home"
+                    
+                    
+                    ZStack {
+                        
+                        
+                        CustomPopup(showingModal: $showModal, popupText: "Uygulamadaki her şey silinecek. Bu işlem geri alınamaz!") {
+                            haptics.impactOccurred()
+                            deleteAll()
+                            NotificationManager.istance.cancelAllNotification()
+                            try! context.save()
+                            selectedTab = "today"
+                        }
                     }
                 }
                 
@@ -249,9 +250,20 @@ struct SettingsMainView: View {
         }
         .onAppear(){UITableView.appearance().backgroundColor = UIColor.clear}
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear {
-            UIApplication.shared.applicationIconBadgeNumber = 0
+        .onAppear {UIApplication.shared.applicationIconBadgeNumber = 0}
+        
+        // SIDE MENU ACTIONS
+        .cornerRadius(isShowingSideMenu ? 20 : 0)
+        .scaleEffect(isShowingSideMenu ? 0.8 : 1)
+        .offset(x: isShowingSideMenu ? (UIScreen.screenWidth / 5 * 3) : 0, y: isShowingSideMenu ? (UIScreen.screenHeight / 20) : 0)
+        .shadow(color: Color.black.opacity(isShowingSideMenu ? 0.2 : 0), radius: 8, x: -5, y: 5 )
+        //.disabled(isShowingSideMenu)
+        
+        
+
         }
+        
+        
 
     }
     

@@ -25,7 +25,7 @@ struct NavigationBarView: View {
     var appIconShow: Bool = false
     
     @State private var shoppingListOpen = false
-    @State private var searchOpen = false
+    
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
 
     
@@ -46,6 +46,11 @@ struct NavigationBarView: View {
     
     
     
+    
+    
+    
+    
+    
     // MARK: BODY
     var body: some View {
         HStack(spacing: 0){
@@ -58,6 +63,10 @@ struct NavigationBarView: View {
                         .scaledToFit()
                         .frame(width: 40, height: 40)
                 }
+                
+                
+                    
+                
                 VStack(alignment: .leading, spacing: 8) {
                     Text(title)
                         .font(.system(.title, design: .rounded))
@@ -77,7 +86,7 @@ struct NavigationBarView: View {
             
             if searchIcon {
                 Button(action: {
-                    searchOpen.toggle()
+                    //searchOpen.toggle()
                     //actionSearch()
                     activeSheet = .first
                     haptics.impactOccurred()
@@ -92,59 +101,11 @@ struct NavigationBarView: View {
             }
             
             
-            if shoppingIcon {
-                
-                ZStack(alignment: .topTrailing) {
-                    
-                    Button(action: {
-                        shoppingListOpen.toggle()
-                        //actionShoppingList()
-                        activeSheet = .second
-                        haptics.impactOccurred()
-                    }, label: {
-                        Image(systemName: "cart")
-                            .font(.system(size: 24, weight: .light, design: .rounded))
-                        
-                    })
-                    .padding()
-                    .foregroundColor(Color.primary.opacity(0.8))
-                    
-                    
-                    
-                    if shoppingItem > 0 {
-                        Text("\(shoppingItem)")
-                            .font(.footnote)
-                            .padding(6)
-                            .background(Color.red)
-                            .clipShape(Circle())
-                            .foregroundColor(.white)
-                            
-                            .offset(x: -5, y: 5)
-                        
-                    }
-                }
-                .animation(.spring())
-                
-            }
+            
             
             
         }
-//        .fullScreenCover(isPresented: $shoppingListOpen, content: {
-//            ShoppingListView()
-//        })
-//        .sheet(isPresented: $searchOpen, content: {
-//            SearchView().environmentObject(obj)
-//        })
-//        .background(EmptyView().sheet(isPresented: $shoppingListOpen) {
-//            ShoppingList()
-//        }.background(EmptyView().sheet(isPresented: $searchOpen) {
-//            SearchView
-//        }))
-        
-        .background(EmptyView().sheet(isPresented : $shoppingListOpen) {ShoppingListView()}.background(EmptyView().sheet(isPresented : $searchOpen) {SearchView().environmentObject(obj)}))
-        
-
-        
+        .background(EmptyView().sheet(isPresented : $shoppingListOpen) {ShoppingListView()})
         .background(isDarkMode ? Color.black : Color.white).edgesIgnoringSafeArea(.all)
     }
 }

@@ -274,16 +274,59 @@ class HomeViewModel: ObservableObject {
     }
     
     
-    // Ckeck task to selected date
-    func checkTaskToSelectedDate(task: Task) -> Bool {
+  
+     // Ckeck task inside spesific date
+     func checkTaskInsideSelectedDate(task: Task) -> Bool {
+         
+         // Başlangıç tarihi işlemleri
+         let dateFrom = Calendar.current.startOfDay(for: filterDate)
+         
+         // Bitiş tarihi işlemleri - başlangıç tarihine +1 gün eklenir.
+         var dateComponents = DateComponents()
+         dateComponents.setValue(1, for: .day)
+         let dateTo = Calendar.current.date(byAdding: dateComponents, to: Calendar.current.startOfDay(for: filterDate))!
+         
+         // kontrol işlemi
+         if task.date! >= dateFrom && task.date! <= dateTo {
+             return true
+         }
+         return false
+     }
+     
+ 
+    
+    // Ckeck task inside today
+    func checkTaskInsideToday(task: Task) -> Bool {
         
         // Başlangıç tarihi işlemleri
-        let dateFrom = Calendar.current.startOfDay(for: filterDate)
+        let dateFrom = Calendar.current.startOfDay(for: Date())
         
         // Bitiş tarihi işlemleri - başlangıç tarihine +1 gün eklenir.
         var dateComponents = DateComponents()
         dateComponents.setValue(1, for: .day)
-        let dateTo = Calendar.current.date(byAdding: dateComponents, to: Calendar.current.startOfDay(for: filterDate))!
+        let dateTo = Calendar.current.date(byAdding: dateComponents, to: Calendar.current.startOfDay(for:  Date()))!
+        
+        // kontrol işlemi
+        if task.date! >= dateFrom && task.date! <= dateTo  {
+            return true
+        }
+        return false
+    }
+    
+    
+    
+    // Ckeck task inside nextweek
+    func checkTaskInsideNextWeek(task: Task) -> Bool {
+        
+        // Başlangıç tarihi işlemleri - tomorrow
+        var dateComponents1 = DateComponents()
+        dateComponents1.setValue(2, for: .day)
+        let dateFrom = Calendar.current.date(byAdding: dateComponents1, to: Calendar.current.startOfDay(for: Date()))!
+        
+        // Bitiş tarihi işlemleri - başlangıç tarihine +1 gün eklenir.
+        var dateComponents = DateComponents()
+        dateComponents.setValue(9, for: .day)
+        let dateTo = Calendar.current.date(byAdding: dateComponents, to: Calendar.current.startOfDay(for: Date()))!
         
         // kontrol işlemi
         if task.date! >= dateFrom && task.date! <= dateTo {
@@ -293,8 +336,48 @@ class HomeViewModel: ObservableObject {
     }
     
     
+    func findNextWeekDates() -> String {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM"
+        
+        // Başlangıç Tarihi
+        var dateComponents1 = DateComponents()
+        dateComponents1.setValue(2, for: .day)
+        let dateFrom = Calendar.current.date(byAdding: dateComponents1, to: Calendar.current.startOfDay(for: Date()))!
+        
+        // Bitiş tarihi işlemleri - başlangıç tarihine +1 gün eklenir.
+        var dateComponents = DateComponents()
+        dateComponents.setValue(8, for: .day)
+        let dateTo = Calendar.current.date(byAdding: dateComponents, to: Calendar.current.startOfDay(for: Date()))!
+        
+        return "\(formatter.string(from: dateFrom)) - \(formatter.string(from: dateTo))"
+        
+    }
     
     
+    // Ckeck task inside tomorrow
+    func checkTomorrowAll(task: Task) -> Bool {
+        
+        // Başlangıç tarihi işlemleri - tomorrow
+        var dateComponents1 = DateComponents()
+        dateComponents1.setValue(1, for: .day)
+        let dateFrom = Calendar.current.date(byAdding: dateComponents1, to: Calendar.current.startOfDay(for: Date()))!
+        
+        // Bitiş tarihi işlemleri - başlangıç tarihine +1 gün eklenir.
+        var dateComponents = DateComponents()
+        dateComponents.setValue(2, for: .day)
+        let dateTo = Calendar.current.date(byAdding: dateComponents, to: Calendar.current.startOfDay(for: Date()))!
+        
+        // kontrol işlemi
+        if task.date! >= dateFrom && task.date! <= dateTo {
+            return true
+        }
+        return false
+    }
+    
+    
+  
     
 }
 

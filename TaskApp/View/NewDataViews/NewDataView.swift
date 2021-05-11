@@ -14,7 +14,7 @@ struct NewDataView: View {
     @ObservedObject var homeData : HomeViewModel
     @Environment(\.managedObjectContext) var context
     @AppStorage("isNotificationPermissionReceived") private var isNotificationPermissionReceived: Bool = false
-    
+    @Environment(\.presentationMode) var presentationMode
     
     @State private var isCustomDatePickerIsOn : Bool = false
     @State private var isHideKeyboard: Bool = false
@@ -197,7 +197,6 @@ struct NewDataView: View {
                         homeData.isRemindMe = false
                         NotificationManager.istance.cancelNotification(idArray: [homeData.content])
                     }
-                    
                     homeData.writeData(context: context)
                     haptics.impactOccurred()
                     
