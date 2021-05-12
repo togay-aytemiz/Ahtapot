@@ -63,7 +63,8 @@ struct TabDetailsView: View {
 struct TabDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            TabDetailsView(index: 1)
+            TabDetailsView(index: 0)
+                .environment(\.locale, .init(identifier: "en"))
         }
     }
 }

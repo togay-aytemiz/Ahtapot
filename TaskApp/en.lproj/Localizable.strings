@@ -1,0 +1,83 @@
+/* 
+  Localizable.strings
+  TaskApp
+
+  Created by Togay Aytemiz on 13.05.2021.
+  
+*/
+
+
+// ONBOARDING
+
+
+"octopus" = "Ahtapot";
+
+"onboardingTitle1" = "Sonsuza Kadar Ücretsiz";
+"onboardingDescription1" = "Evet yanlış okumadın.\nÜcretsiz, reklamsız, şartsız. Tamamen koşulsuz yeni nesil görev yönetim uygulaması 🥳";
+
+
+"onboardingTitle2" = "Unutmaya Son!";
+"onboardingDescription2" = "'Yaa aklımda bi şey vardı ama neydi' kelimeleri tanıdık geldi mi. Bunları unutabilirsin 🙈";
+
+
+"onboardingTitle3" = "İster yapılacaklar,\nister alışveriş listesi";
+"onboardingDescription3" = "İhtiyaçların neyse buna cevap veren bir uygulama. Esnek, hızlı, göz alıcı ve kullanımı kolay 🤩";
+
+"onboardingTitle4" = "Hayatına Daha Fazla Zaman Ayır";
+"onboardingDescription4" = "İşlerini planla, uygulamaya giriş yap ve gerisini unut. Artık daha planlı olacaksın 😎";
+
+"back" = "Geri";
+"next" = "İleri";
+"letsGo" = "Hadi Başlayalım";
+
+
+// first user message
+"beforeStart" = "Başlamadan\nÖnce";
+"firstUserMessageDescription1" = "Seni aramızda görmek çok güzel. Senin için çok küçük bir kaç görevimiz var. Bu sayede uygulamayı hızlıca kullanmaya başlayabilirsin.";
+"firstUserMessageDescription2" = "Uygulama ile ilgili görüş ve önerilerini ayarlar kısmından bizimle paylaşabilirsin";
+"firstUserLetsGo" = "Hadi Başlayalım 😎";
+
+
+// ------------------------------------------------------------------------------------
+
+
+// NEW DATA VIEW
+
+"addTask" = "Görev Ekle";
+"editTask" = "Görev Düzenle";
+"completedTask" = "Tamamlanmış Görev";
+"cancel" = "Vazgeç";
+"tapTextToEdit" = "👇🏻 Düzenlemek için metne dokun";
+"update" = "Güncelle";
+"remindMeOpen" = "Hatırlatma Açık";
+"remindMeClosed" = "Hatırlatma Kapalı";
+"howToOpenReminder" = "Sağdaki düğme ile aç 👉🏻";
+"firstTimeOpenReminder" = "AÇ";
+
+// yeni task eklerken çıkan random textler eklenecek ***************************************************************************
+
+
+// custom date selection
+"when" = "Ne zaman?";
+"1HourLater" = "1 saat sonra";
+"tomorrow" = "Yarın";
+"nextDay" = "Öbür Gün";
+"1WeekLater" = "1 Hafta Sonra";
+"15DaysLater" = "15 Gün Sonra";
+
+// notification permission
+"notNow" = "Şimdilik Geç";
+"openNotifsHeader" = "Bildirimleri Aç\nHiç Bir Şeyi Kaçırma";
+"openNotifsBody" = "Bildirimlere izin vererek, planlamasını yaptığın etkinliklerin sana hatırlatılmasını sağlayabilirsin.";
+"openNotifsLittlePromise" = "Planladığın görevler dışında hiç bir bildirim göndermeyeğimize söz veriyoruz 😇";
+"openNotifsButton" = "Bildirimlere İzin Ver";
+
+
+// ------------------------------------------------------------------------------------
+
+
+// SEARCH
+
+
+// search view
+"searchTasks" = "Görevler içinde ara..."

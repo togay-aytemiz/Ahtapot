@@ -49,13 +49,13 @@ struct NewDataView: View {
             Group{
                 HStack{
                     VStack(alignment: .leading) {
-                        Text(homeData.updateItem == nil ? "Görev Ekle" : "Görev Düzenle")
+                        Text(homeData.updateItem == nil ? "addTask".localized() : "editTask".localized())
                             .font(.system(.largeTitle, design: .rounded))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
 
                         if homeData.completion {
-                            Text("Tamamlanmış Görev")
+                            Text("completedTask".localized())
                                 .font(.system(.subheadline, design: .rounded))
                                 .fontWeight(.regular)
                                 .foregroundColor(.white)
@@ -76,7 +76,7 @@ struct NewDataView: View {
                     }, label: {
                         HStack(spacing: 4) {
                             Image(systemName: "xmark.circle.fill")
-                            Text("Vazgeç")
+                            Text("cancel".localized())
                         }
                     })
                     .accentColor(Color.white)
@@ -122,7 +122,7 @@ struct NewDataView: View {
                                 .font(.system(size: 24, weight: .semibold, design: .rounded))
                                 .opacity(0)
                             
-                            Text("👇🏻 Düzenlemek için metne dokun")
+                            Text("tapTextToEdit".localized())
                                 .font(.system(.footnote, design: .rounded))
                                 .foregroundColor(!Utils.isDarkMode ? .black.opacity(0.8) : .white.opacity(0.8))
                         }
@@ -202,7 +202,7 @@ struct NewDataView: View {
                     
                 }, label: {
                     Label(
-                        title: { Text(homeData.updateItem == nil ? "Görev Ekle" : "Güncelle")
+                        title: { Text(homeData.updateItem == nil ? "addTask".localized() : "update".localized())
                             .font(.title3)
                             .foregroundColor(.white)
                             .fontWeight(.bold)

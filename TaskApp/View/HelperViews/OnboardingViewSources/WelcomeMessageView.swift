@@ -40,12 +40,12 @@ struct WelcomeMessageView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 60, height: 60)
-                        Text("Başlamadan\nÖnce")
+                        Text("beforeStart".localized())
                             .font(.system(.title, design: .rounded))
                             .fontWeight(.heavy)
                             .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
                             .multilineTextAlignment(.center)
-                            .lineLimit(3)
+                            .lineLimit(2)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     Spacer()
@@ -56,7 +56,7 @@ struct WelcomeMessageView: View {
                 
                 
                 
-                Text("Seni aramızda görmek çok güzel. Senin için çok küçük bir kaç görevimiz var. Bu sayede uygulamayı hızlıca kullanmaya başlayabilirsin.")
+                Text("firstUserMessageDescription1".localized())
                     .font(.system(.body, design: .rounded))
                     .fontWeight(.regular)
                     .foregroundColor(.black)
@@ -66,7 +66,7 @@ struct WelcomeMessageView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding()
                 
-                Text("Uygulama ile ilgili görüş ve önerilerini ayarlar kısmından bizimle paylaşabilirsin")
+                Text("firstUserMessageDescription1".localized())
                     .font(.system(.footnote, design: .rounded))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -89,10 +89,12 @@ struct WelcomeMessageView: View {
                     
                 }, label: {
                     Label(
-                        title: { Text("Hadi Başlayalım 😎")
+                        title: { Text("firstUserLetsGo".localized())
                             .font(.system(.headline, design: .rounded))
                             .foregroundColor(.white)
                             .fontWeight(.bold)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
                         },
                         icon: { Image(systemName: "aarrow.right.circle.fill")
                             .font(.system(.headline, design: .rounded))

@@ -35,6 +35,7 @@
 		4B5229D9263011660044052A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5229D8263011660044052A /* ProgressBarView.swift */; };
 		4B569C74262E0CE700280ED6 /* addTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B569C73262E0CE700280ED6 /* addTaskButton.swift */; };
 		4B605EB1262D97B1001ACEA5 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B605EB0262D97B1001ACEA5 /* LottieView.swift */; };
+		4B698E3A264C7B88006F4275 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B698E3C264C7B88006F4275 /* Localizable.strings */; };
 		4B75A53C262C69D900B2214E /* TaskAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75A53B262C69D900B2214E /* TaskAppApp.swift */; };
 		4B75A53E262C69D900B2214E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75A53D262C69D900B2214E /* ContentView.swift */; };
 		4B75A540262C69D900B2214E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B75A53F262C69D900B2214E /* Assets.xcassets */; };
@@ -130,6 +131,8 @@
 		4B5229D8263011660044052A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		4B569C73262E0CE700280ED6 /* addTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskButton.swift; sourceTree = "<group>"; };
 		4B605EB0262D97B1001ACEA5 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		4B698E3D264C7C36006F4275 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B698E3E264C7CDA006F4275 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4B75A538262C69D900B2214E /* TaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B75A53B262C69D900B2214E /* TaskAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAppApp.swift; sourceTree = "<group>"; };
 		4B75A53D262C69D900B2214E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -278,6 +281,7 @@
 				4B75A541262C69D900B2214E /* Preview Content */,
 				4B605EA1262D974E001ACEA5 /* Lottie */,
 				4BF0E621262EA53B00C90DC3 /* LaunchScreen.storyboard */,
+				4B698E3C264C7B88006F4275 /* Localizable.strings */,
 			);
 			path = TaskApp;
 			sourceTree = "<group>";
@@ -315,12 +319,7 @@
 				4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */,
 				4B2833F42649E7AB003BFC40 /* NextWeekView.swift */,
 				4B2833F8264A9C9A003BFC40 /* AllTaskView.swift */,
-				4B2C45C32649384A00A13F06 /* SidebarView */,
-				4BA1AE3D26473F1700A73ED5 /* CalenderView */,
-				4BF5E8FA262F723F004084F1 /* OnboardingViewSources */,
-				4B798B6C26336FFE00BFBEDA /* SettingsView */,
 				4B8345C52632198A004A08DF /* HelperViews */,
-				4B8345C12632195A004A08DF /* NewDataViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,7 +366,12 @@
 		4B8345C52632198A004A08DF /* HelperViews */ = {
 			isa = PBXGroup;
 			children = (
+				4BF5E8FA262F723F004084F1 /* OnboardingViewSources */,
+				4B8345C12632195A004A08DF /* NewDataViews */,
 				4BD6557D263CABEB00E18C06 /* Search */,
+				4B2C45C32649384A00A13F06 /* SidebarView */,
+				4B798B6C26336FFE00BFBEDA /* SettingsView */,
+				4BA1AE3D26473F1700A73ED5 /* CalenderView */,
 				4BC570692632B7150018910F /* EmptyViews */,
 				4B4A6FE32639F5C200F9D01C /* ShoppingList */,
 				4B8345D9263223C5004A08DF /* NavigationBarView.swift */,
@@ -379,7 +383,6 @@
 				4BC570722632D2F20018910F /* BasicStatsView.swift */,
 				4B8C9298263C43F4005FFF97 /* StatsView.swift */,
 				4B8AFDBB262D5439006DA14E /* CustomPopup.swift */,
-				4BA8B61B263F4B2300225B9A /* WelcomeMessageView.swift */,
 				4B2833F6264A8EB9003BFC40 /* MiniAddTaskButtonView.swift */,
 			);
 			path = HelperViews;
@@ -455,6 +458,7 @@
 		4BF5E8FA262F723F004084F1 /* OnboardingViewSources */ = {
 			isa = PBXGroup;
 			children = (
+				4BA8B61B263F4B2300225B9A /* WelcomeMessageView.swift */,
 				4BF5E8FE262F7271004084F1 /* OnboardingView.swift */,
 				4BF5E908262F7462004084F1 /* PageTabView.swift */,
 				4B5229BF262F75750044052A /* TabDetailsView.swift */,
@@ -552,6 +556,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 4B75A52F262C69D900B2214E;
 			packageReferences = (
@@ -573,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF0E622262EA53B00C90DC3 /* LaunchScreen.storyboard in Resources */,
+				4B698E3A264C7B88006F4275 /* Localizable.strings in Resources */,
 				4B75A543262C69D900B2214E /* Preview Assets.xcassets in Resources */,
 				4B75A540262C69D900B2214E /* Assets.xcassets in Resources */,
 			);
@@ -703,11 +709,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		4B698E3C264C7B88006F4275 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B698E3D264C7C36006F4275 /* en */,
+				4B698E3E264C7CDA006F4275 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		4B75A560262C69D900B2214E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -769,6 +788,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

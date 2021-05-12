@@ -73,7 +73,7 @@ struct SearchView: View {
                             
                             ZStack(alignment: .leading){
                                 if searchTerm == "" {
-                                    Text("Görevler içinde ara...")
+                                    Text("searchTasks".localized())
                                         .font(.system(.headline, design: .rounded))
                                         .foregroundColor(!Utils.isDarkMode ? Color.gray : .white.opacity(0.6))
                                         .padding(.leading, 5)
@@ -121,7 +121,7 @@ struct SearchView: View {
                         haptics.impactOccurred()
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Text("Vazgeç")
+                        Text("cancel".localized())
                             .foregroundColor(Color(Utils.AppColor1))
                             .fontWeight(.semibold)
                     })

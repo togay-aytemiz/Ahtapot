@@ -46,21 +46,24 @@ class HomeViewModel: ObservableObject {
     func checkDate() -> String {
         
         if calender.isDateInToday(date) {
-            return "1 saat sonra"
+            return "1HourLater".localized()
         }else if calender.isDateInTomorrow(date) {
-            return "Yarın"
+            return "tomorrow".localized()
         } else if calender.isDate(date, inSameDayAs: calender.date(byAdding: .day, value: 2, to: Date())!) {
-            return "Öbür Gün"
+            return "nextDay".localized()
         } else if calender.isDate(date, inSameDayAs: calender.date(byAdding: .day, value: 7, to: Date())!) {
-            return "1 Hafta Sonra"
+            return "1WeekLater".localized()
         } else if calender.isDate(date, inSameDayAs: calender.date(byAdding: .day, value: 15, to: Date())!) {
-            return "15 Gün Sonra"
+            return "15DaysLater".localized()
         }
         
         else {
             return "Other day"
         }
     }
+    
+    
+
     
     
     func checkFilterDate() -> String {
@@ -73,27 +76,26 @@ class HomeViewModel: ObservableObject {
         else if calender.isDateInYesterday(filterDate) {
             return "Dün"
         }
-        
         else {
             return "Other day"
         }
         
     }
     
-    
+   
     
     // Update tasks
     func updateDate(value: String){
         
-        if value == "1 saat sonra" {
+        if value == "1HourLater".localized() {
             date = calender.date(byAdding: .hour, value: 1, to: Date())!
-        } else if value == "Yarın" {
+        } else if value == "tomorrow".localized() {
             date = calender.date(byAdding: .day, value: 1, to: Date())!
-        } else if value == "Öbür Gün" {
+        } else if value == "nextDay".localized() {
             date = calender.date(byAdding: .day, value: 2, to: Date())!
-        } else if value == "1 Hafta Sonra" {
+        } else if value == "1WeekLater".localized() {
             date = calender.date(byAdding: .day, value: 7, to: Date())!
-        } else if value == "15 Gün Sonra" {
+        } else if value == "15DaysLater".localized() {
             date = calender.date(byAdding: .day, value: 15, to: Date())!
         }
         
@@ -236,6 +238,8 @@ class HomeViewModel: ObservableObject {
     }
     
     
+    
+    
     // Random placeholder for newData
     func randomTextGenerator() -> String {
         let pht = [
@@ -376,7 +380,13 @@ class HomeViewModel: ObservableObject {
         return false
     }
     
-    
+    func getTimeDiff(startingTime : Date) -> DateComponents {
+        let date1 = startingTime
+        let date2 = Date()
+        
+        let diff = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date1, to: date2)
+        return diff
+    }
   
     
 }

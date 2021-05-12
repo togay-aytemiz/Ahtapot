@@ -33,7 +33,7 @@ struct NotificationPermissionView: View {
                 HStack{
                     
                     Spacer()
-                    Text("Şimdilik Geç")
+                    Text("notNow".localized())
                         .font(.subheadline)
                         .foregroundColor(Utils.isDarkMode ? .white : .secondary)
                 }
@@ -75,7 +75,7 @@ struct NotificationPermissionView: View {
                     
                     
                     VStack(alignment: .center, spacing: 10){
-                        Text("Bildirimleri Aç\nHiç Bir Şeyi Kaçırma")
+                        Text("openNotifsHeader".localized())
                             .font(.system(.title2, design: .rounded))
                             .fontWeight(.heavy)
                             .multilineTextAlignment(.center)
@@ -86,7 +86,7 @@ struct NotificationPermissionView: View {
                             
                         
                         
-                        Text("Bildirimlere izin vererek, planlamasını yaptığın etkinliklerin sana hatırlatılmasını sağlayabilirsin.")
+                        Text("openNotifsBody".localized())
                             .font(.system(.headline, design: .rounded))
                             .foregroundColor(Utils.isDarkMode ? .white.opacity(0.7) : .secondary)
 
@@ -101,7 +101,7 @@ struct NotificationPermissionView: View {
                     }
                     
                     
-                    Text("Planladığın görevler dışında hiç bir bildirim göndermeyeğimize söz veriyoruz 😇")
+                    Text("openNotifsLittlePromise".localized())
                         .font(.system(.subheadline, design: .rounded))
                         .foregroundColor(Color("Color2B"))
                         .fontWeight(.medium)
@@ -129,7 +129,7 @@ struct NotificationPermissionView: View {
                         isRemindMeActive = true
                     }, label: {
                         Label(
-                            title: { Text("Bildirimlere İzin Ver")
+                            title: { Text("openNotifsButton".localized())
                                 .font(.system(.headline, design: .rounded))
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)

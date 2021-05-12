@@ -28,6 +28,9 @@ struct ContentView: View {
         // ----------- deneme view'lar -----------
         
         //DateSelectionViewForMainPage()
+        //countDownDeneme()
+        //QuitHabbitDeneme()
+        //TimerDeneme()
         
 
         

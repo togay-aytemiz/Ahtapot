@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TaskApp
+
+  Created by Togay Aytemiz on 13.05.2021.
+  
+*/
+
+
+// ONBOARDING
+
+
+"octopus" = "Ahtapot";
+
+"onboardingTitle1" = "Sonsuza Kadar Ücretsiz";
+"onboardingDescription1" = "Evet yanlış okumadın.\nÜcretsiz, reklamsız, şartsız. Tamamen koşulsuz yeni nesil görev yönetim uygulaması 🥳";
+
+
+"onboardingTitle2" = "Unutmaya Son!";
+"onboardingDescription2" = "'Yaa aklımda bi şey vardı ama neydi' kelimeleri tanıdık geldi mi. Bunları unutabilirsin 🙈";
+
+
+"onboardingTitle3" = "İster yapılacaklar,\nister alışveriş listesi";
+"onboardingDescription3" = "İhtiyaçların neyse buna cevap veren bir uygulama. Esnek, hızlı, göz alıcı ve kullanımı kolay 🤩";
+
+"onboardingTitle4" = "Hayatına Daha Fazla Zaman Ayır";
+"onboardingDescription4" = "İşlerini planla, uygulamaya giriş yap ve gerisini unut. Artık daha planlı olacaksın 😎";
+
+
