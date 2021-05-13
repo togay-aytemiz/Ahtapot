@@ -140,8 +140,10 @@ struct AllTaskView: View {
                             .padding(.bottom, 80)
                         }
                         
+                        
                     }
                 }
+                
                 Rectangle()
                     .fill(Color.black).edgesIgnoringSafeArea(.all)
                     .opacity(isShowingSideMenu ? 0.1 : 0)
