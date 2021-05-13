@@ -148,7 +148,7 @@ struct ListRowItemView: View {
                 editAction()
             }, label: {
                 Label(
-                    title: { Text("Görev Düzenle") },
+                    title: { Text("editTask".localized()) },
                     icon: { Image(systemName: "rectangle.and.pencil.and.ellipsis") }
                 )
             })
@@ -158,7 +158,7 @@ struct ListRowItemView: View {
                 deleteAction()
             }, label: {
                 Label(
-                    title: { Text("Sil") },
+                    title: { Text("delete".localized()) },
                     icon: { Image(systemName: "trash") }
                 )
             })

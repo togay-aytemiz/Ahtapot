@@ -128,7 +128,7 @@
 "findBugOrSuggestFeature_MailTitle" = "Özellik / Hata";
 "findBugOrSuggestFeature_MailBody" = "Uygulamayı keyifle kullanıyorum ancak şu özellik olsaydı çok iyi olurdu, ya da şu hata olmasa daha güzel olurdu :";
 "deleteAllPopupText" = "Uygulamadaki her şey silinecek. Bu işlem geri alınamaz!";
-"deleteAllClosedTasksPopupText" = "Tamamlanan tüm görevler silinecek? Bu işlem geri alınamaz";
+"deleteAllClosedTasksPopupText" = "Tamamlanan tüm görevler silinecek. Bu işlem geri alınamaz";
 
 
 // internal ads view
@@ -178,3 +178,31 @@
 "shoppingListClaimHeader3" = "Takibi ve kullanımı kolay";
 "shoppingListClaimDescription3" = "Alacağın her şeyi ekleyebilir, aldıklarını işaretleyebilir ve listeyi kolayca takip edebilirsin";
 
+
+// ------------------------------------------------------------------------------------
+
+// STAT VIEWS
+"numberOfTaskCompleted" = "görev tamamlandı";
+"pastTaskNumber" = "Zamanı Geçen";
+"futureTaskNumber" = "Gelecek Zaman";
+
+"motivationalMessageFor_0" = "görev bugün yapılmak üzere seni bekliyor 🤞🏻";
+"motivationalMessageFor_1-20" = "Başlamak bitirmenin yarısıdır, iyi gidiyorsun 💪🏻";
+"motivationalMessageFor_21-49" = "Bugünü yarılamaya az kaldı, durmak yok 😇";
+"motivationalMessageFor_50-65" = "Bugünü yarıladın bile, aynen devam 👍🏻";
+"motivationalMessageFor_66-80" = "Çok iyi gidiyorsun, neredeyse bitmek üzere 🔥";
+"motivationalMessageFor_81-99" = "Son düzlüktesin, sık dişini 🚀";
+"motivationalMessageFor_100" = "Harikasın, bugünlük tüm görevlerini tamamladın 🥳";
+"motivationalMessageWhen_NoToday-YesPast" = "Bugün yapılacak görev yok ama zamanı geçenlerin tamamlanması lazım 😅";
+"motivationalMessageWhen_NoToday-NoPast" = "Bugün yapılacak görev yok, güzelce dinlenebilirsin 😴";
+
+
+
+// ------------------------------------------------------------------------------------
+
+// OTHERS
+"addNewTask" = "Yeni Görev Ekle";
+"editTask" = "Görev Düzenle";
+"delete" = "Sil";
+"deleting" = "Siliniyor";
+"yesDelete" = "Eminim, Sil"
