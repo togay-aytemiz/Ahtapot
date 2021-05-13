@@ -13,7 +13,6 @@
 		4B0E1066263FF2340000170B /* DarkModeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E1065263FF2340000170B /* DarkModeUtils.swift */; };
 		4B1EA947263A85350092DD9D /* ShoppingListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA946263A85350092DD9D /* ShoppingListRowView.swift */; };
 		4B1EA949263A8FBE0092DD9D /* AddShoppingTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA948263A8FBE0092DD9D /* AddShoppingTextFieldView.swift */; };
-		4B1EA94B263A9DCD0092DD9D /* ShoppingBagEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EA94A263A9DCD0092DD9D /* ShoppingBagEmptyView.swift */; };
 		4B2833E5264947EA003BFC40 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833E4264947EA003BFC40 /* SideMenuView.swift */; };
 		4B2833E7264947F4003BFC40 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833E6264947F4003BFC40 /* SideMenuHeaderView.swift */; };
 		4B2833EB2649480C003BFC40 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */; };
@@ -107,7 +106,6 @@
 		4B0E1065263FF2340000170B /* DarkModeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeUtils.swift; sourceTree = "<group>"; };
 		4B1EA946263A85350092DD9D /* ShoppingListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRowView.swift; sourceTree = "<group>"; };
 		4B1EA948263A8FBE0092DD9D /* AddShoppingTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShoppingTextFieldView.swift; sourceTree = "<group>"; };
-		4B1EA94A263A9DCD0092DD9D /* ShoppingBagEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBagEmptyView.swift; sourceTree = "<group>"; };
 		4B2833E4264947EA003BFC40 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		4B2833E6264947F4003BFC40 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 				4B4A6FE42639F5DC00F9D01C /* ShoppingListView.swift */,
 				4B1EA946263A85350092DD9D /* ShoppingListRowView.swift */,
 				4B1EA948263A8FBE0092DD9D /* AddShoppingTextFieldView.swift */,
-				4B1EA94A263A9DCD0092DD9D /* ShoppingBagEmptyView.swift */,
 				4B83503D263AF05C00AAD479 /* FirstTimeShoppingList.swift */,
 			);
 			path = ShoppingList;
@@ -614,7 +611,6 @@
 				4B2833F12649611A003BFC40 /* CustomNavigationBarView.swift in Sources */,
 				4B8345E2263228AF004A08DF /* TitleView.swift in Sources */,
 				4B8C9299263C43F4005FFF97 /* StatsView.swift in Sources */,
-				4B1EA94B263A9DCD0092DD9D /* ShoppingBagEmptyView.swift in Sources */,
 				4BD7C78E2636AD8F002E94AA /* NotificationManager.swift in Sources */,
 				4B28999E263D430C00A0E270 /* UITextField+Extension.swift in Sources */,
 				4BD7C79926370A0D002E94AA /* RemindMeView.swift in Sources */,

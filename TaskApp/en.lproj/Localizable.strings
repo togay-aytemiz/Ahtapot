@@ -144,3 +144,37 @@
 "deleteAllDataRowBody" = "Bu işlem geri alınamaz";
 "changeAppThemeColor" = "Uygulama Temasını Değiştir";
 
+
+// ------------------------------------------------------------------------------------
+
+// EMPTY VIEW
+"addNewTasksEmptyView" = "Yeni Görev Ekle";
+
+
+
+// ------------------------------------------------------------------------------------
+
+// SHOPPING LIST VIEW
+
+"close" = "Kapat";
+"deleteList" = "Listeyi Temizle";
+"shoppingList" = "Alışveriş Listem";
+"hideCompleted" = "Aldıklarımı Gizle";
+"showCompleted" = "Aldıklarımı Göster";
+"shoppingListEmptyHeader" = "LİSTEN BOŞ";
+"shoppingListEmptyDescription" = "Alışveriş listen boş.\nAşağıdan ekleyebilirsin 👇🏻";
+"deleteShoppingListMessage" = "Listendeki her şey silinecek. Bu işlem geri alınamaz";
+"whatDoYouWantToAdd" = "Ne eklemek istersin?";
+
+// first time shopping List
+"welcomeShoppingListHeader" = "🤗🛍\nAlışveriş Listem'e\nHoşgeldin";
+
+"shoppingListClaimHeader1" = "Alacaklarını unutmak yok";
+"shoppingListClaimDescription1" = "Artık eve gittiğinde, 'aaa elma almayı unuttum yaa!' demek yok.";
+
+"shoppingListClaimHeader2" = "Elinin altında hazır";
+"shoppingListClaimDescription2" = "Uygulamayı açtığında alacağın şeylerin listesine hızlıca ulaşabilirsin";
+
+"shoppingListClaimHeader3" = "Takibi ve kullanımı kolay";
+"shoppingListClaimDescription3" = "Alacağın her şeyi ekleyebilir, aldıklarını işaretleyebilir ve listeyi kolayca takip edebilirsin";
+

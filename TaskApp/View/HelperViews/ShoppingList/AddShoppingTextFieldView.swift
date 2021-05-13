@@ -18,7 +18,7 @@ struct AddShoppingTextFieldView: View {
     let haptics = UIImpactFeedbackGenerator()
 
     @Binding var content: String
-    @State private var textfieldPlaceholder: String = "Ne alacaksın?"
+    @State private var textfieldPlaceholder: String = "whatDoYouWantToAdd".localized()
 
     
     var action: () -> Void
