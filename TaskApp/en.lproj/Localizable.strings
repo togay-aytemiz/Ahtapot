@@ -106,3 +106,41 @@
 "goodAfternoon" = "İyi günler 👋🏻";
 "goodEvening" = "İyi akşamlar 👋🏻";
 "goodNight" = "İyi geceler 🌒";
+
+
+
+// ------------------------------------------------------------------------------------
+
+// SEARCH
+
+"closedTasksHeader" = "Tamamlanan Görevler";
+"deleteAllClosedTasksRowBody" = "Tüm tamamlanan görevleri sil";
+"numberOfClosedTaskBodyDescription" = "Tamamlanan görev sayısı:";
+"settingsHeader_Visual" = "Görsel Ayarlar";
+"settingsHeader_Other" = "Diğer";
+"darkMode" = "Karanlık Mod";
+"miniStats" = "Mini İstatistik";
+"miniStats_disclaimer" = "Kapatman Önerilmez";
+"shareWithFriends" = "Arkadaşlarınla Paylaş";
+"shareWithFriends_ShareText" = "Çok güzel bir görev yönetim uygulaması buldum. Bi baksana sen de! : https://apps.apple.com/us/app/id1565858619";
+"rateTheApp" = "Uygulamayı Değerlendir";
+"findBugOrSuggestFeature" = "Özellik Öner & Hata Paylaş";
+"findBugOrSuggestFeature_MailTitle" = "Özellik / Hata";
+"findBugOrSuggestFeature_MailBody" = "Uygulamayı keyifle kullanıyorum ancak şu özellik olsaydı çok iyi olurdu, ya da şu hata olmasa daha güzel olurdu :";
+"deleteAllPopupText" = "Uygulamadaki her şey silinecek. Bu işlem geri alınamaz!";
+"deleteAllClosedTasksPopupText" = "Tamamlanan tüm görevler silinecek? Bu işlem geri alınamaz";
+
+
+// internal ads view
+"whyShouldYouUseAhtapot" = "Neden Ahtapot Kullanmalısın?";
+"whyShouldYouUseAhtapot_Claim1" = "Sınırsız ve Reklamsız";
+"whyShouldYouUseAhtapot_Claim2" = "Sonsuza kadar ücretsiz";
+"whyShouldYouUseAhtapot_Claim3" = "Hiç bir veri almaz, güvenli";
+"whyShouldYouUseAhtapot_Claim4" = "Basit ve kullanışlı arayüz";
+"dontShow_WSYUA" = "Bir daha gösterme";
+
+// other
+"deleteAllDataRowHeader" = "Tüm verileri sil" ;
+"deleteAllDataRowBody" = "Bu işlem geri alınamaz";
+"changeAppThemeColor" = "Uygulama Temasını Değiştir";
+

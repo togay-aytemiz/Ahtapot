@@ -52,9 +52,6 @@ struct ClosedTasks: View {
                     
                     // MARK: HEADER BUTTONS
                     Group{
-                        
-                        
-                        
                         HStack {
                             // LEFT
                             Button(action: {
@@ -72,15 +69,12 @@ struct ClosedTasks: View {
                             .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
                             
                             Spacer()
-                            
-    
                         }
                         .padding()
-                        
                     }
                     
                     // MARK: HEADER
-                    NavigationBarView(title: "Tamamlananlar", showDate: false)
+                    NavigationBarView(title: "closedTasksHeader".localized(), showDate: false)
 
                         .padding(.horizontal, 15)
                         //.foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
@@ -92,7 +86,7 @@ struct ClosedTasks: View {
                         showModal.toggle()
                         haptics.impactOccurred()
                     }, label: {
-                        ImportantRowView(color: .red, text1: "Tüm tamamlanan görevleri sil", text2: "\(closedTasks.count) adet görev silinecek", image: "trash.fill", rightIconShow: false)
+                        ImportantRowView(color: .red, text1: "deleteAllClosedTasksRowBody".localized(), text2: "\("numberOfClosedTaskBodyDescription".localized()) \(closedTasks.count)", image: "trash.fill", rightIconShow: false)
                             .padding(.horizontal)
                         
                     })
@@ -124,7 +118,7 @@ struct ClosedTasks: View {
                 // MARK: POPUP
                 if $showModal.wrappedValue {
                     
-                    CustomPopup(showingModal: $showModal, popupText: "Tamamlanan tüm görevleri silinecek? Bu işlem geri alınamaz") {
+                    CustomPopup(showingModal: $showModal, popupText: "deleteAllClosedTasksPopupText".localized()) {
                         haptics.impactOccurred()
                         deleteAll()
                         try! context.save()
@@ -133,12 +127,8 @@ struct ClosedTasks: View {
                     
                 }
             }
-            //.navigationViewStyle(StackNavigationViewStyle())
-            //.ignoresSafeArea(.all, edges: .top)
             .onAppear(){UITableView.appearance().backgroundColor = UIColor.clear}
             .sheet(isPresented: $homeData.isNewData, content: {NewDataView(homeData: homeData)})
-        
-        
     }
     
     

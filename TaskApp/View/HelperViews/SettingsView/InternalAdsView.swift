@@ -54,14 +54,14 @@ struct InternalAdsView: View {
             .frame(width: 100)
             
             VStack(alignment: .leading){
-                SettingsLabelView(labelText: "Neden Ahtapot Kullanmalısın?", labelImage: "info.circle.fill", color: .white, gradientImage: false).padding(.bottom, 12)
+                SettingsLabelView(labelText: "whyShouldYouUseAhtapot".localized(), labelImage: "info.circle.fill", color: .white, gradientImage: false).padding(.bottom, 12)
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 6){
-                        AppFeatures(text: "Sınırsız ve Reklamsız")
-                        AppFeatures(text: "Sonsuza kadar ücretsiz")
-                        AppFeatures(text: "Hiç bir veri almaz, güvenli")
-                        AppFeatures(text: "Basit ve kullanışlı arayüz")
+                        AppFeatures(text: "whyShouldYouUseAhtapot_Claim1".localized())
+                        AppFeatures(text: "whyShouldYouUseAhtapot_Claim2".localized())
+                        AppFeatures(text: "whyShouldYouUseAhtapot_Claim3".localized())
+                        AppFeatures(text: "whyShouldYouUseAhtapot_Claim4".localized())
                     }
                     
                 }
@@ -84,7 +84,7 @@ struct InternalAdsView: View {
                     HStack {
                         Image(systemName: "eye.slash.fill")
                             .font(.caption)
-                        Text("Bir daha gösterme")
+                        Text("dontShow_WSYUA".localized())
                             .font(.system(.footnote, design: .rounded))
                             .multilineTextAlignment(.trailing)
                             
@@ -110,20 +110,6 @@ struct InternalAdsView: View {
 // MARK: PREVIEW
 struct InternalAdsView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        
-        InternalAdsView()
-            .previewDevice(PreviewDevice(rawValue: "iPod touch"))
-            .previewDisplayName("iPod touch")
-            .previewLayout(.sizeThatFits)
-            .padding()
-        
-        InternalAdsView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
-            .previewDisplayName("iPhone SE")
-            .previewLayout(.sizeThatFits)
-            .padding()
-        
         InternalAdsView()
             .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
             .previewDisplayName("iPhone 12 Pro Max")

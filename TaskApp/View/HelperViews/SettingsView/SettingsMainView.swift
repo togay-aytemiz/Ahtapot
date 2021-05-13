@@ -71,7 +71,7 @@ struct SettingsMainView: View {
 
                     
                     // MARK: HEADER
-                    CustomNavigationBarView(showDate: false, shoppingIcon: false, customNavigationHeader: "Ayarlar", isShowingSideMenu: $isShowingSideMenu)
+                    CustomNavigationBarView(showDate: false, shoppingIcon: false, customNavigationHeader: "settings".localized(), isShowingSideMenu: $isShowingSideMenu)
                         .background(isDarkMode ? Color.black : Color.white)
                     
                     
@@ -91,7 +91,7 @@ struct SettingsMainView: View {
                                 closedTaskView.toggle()
                                 haptics.impactOccurred()
                             }, label: {
-                                ImportantRowView(text1: "Tamamlanan Görevler", text2: "\(closedTasks.count) adet tamamlanmış görevin var.")
+                                ImportantRowView(text1: "closedTasksHeader".localized(), text2: "\("numberOfClosedTaskBodyDescription".localized()) \(closedTasks.count)")
                                     .padding(.bottom)
                                
                             }) 
@@ -100,15 +100,15 @@ struct SettingsMainView: View {
                         // MARK: SECTION 3 - SOME CUSTOMIZATIONS
                         Group {
                             VStack{
-                                SettingsLabelView(labelText: "Görsel Ayarlar", labelImage: "paintbrush.fill", color: Color(AppColor1), gradientImage: true)
+                                SettingsLabelView(labelText: "settingsHeader_Visual".localized(), labelImage: "paintbrush.fill", color: Color(AppColor1), gradientImage: true)
                                 
                                 
                                 
-                                SettingsRowWithToggleView(color: Color(AppColor1), image: "moon.fill", text1: "Karanlık Mod", text2: "", toggleStatus: $isDarkMode)
+                                SettingsRowWithToggleView(color: Color(AppColor1), image: "moon.fill", text1: "darkMode".localized(), text2: "", toggleStatus: $isDarkMode)
                                 
                                 
                                 
-                                SettingsRowWithToggleView(color: Color(AppColor1), image: "chart.pie.fill", text1: "Mini İstatistik", text2: "Kapatman Önerilmez", toggleStatus: $isBasicStatView)
+                                SettingsRowWithToggleView(color: Color(AppColor1), image: "chart.pie.fill", text1: "miniStats".localized(), text2: "miniStats_disclaimer".localized(), toggleStatus: $isBasicStatView)
                                 
                                 
                                 Divider()
@@ -129,18 +129,18 @@ struct SettingsMainView: View {
                         Group {
                             VStack{
                                 
-                                SettingsLabelView(labelText: "Diğer", labelImage: "mail.stack.fill", color: Color(AppColor1), gradientImage: true)
+                                SettingsLabelView(labelText: "settingsHeader_Other".localized(), labelImage: "mail.stack.fill", color: Color(AppColor1), gradientImage: true)
                                 
                                 
                                 // ARKADAŞINLA PAYLAŞ BUTTON
-                                FormLinkRowView(icon: "square.and.arrow.up.fill", color: Color(AppColor1), text: "Arkadaşlarınla Paylaş") {
-                                    homeData.sharePost(message: "Çok güzel bir görev yönetim uygulaması buldum. Bi baksana sen de! : https://apps.apple.com/us/app/id1565858619")
+                                FormLinkRowView(icon: "square.and.arrow.up.fill", color: Color(AppColor1), text: "shareWithFriends".localized()) {
+                                    homeData.sharePost(message: "shareWithFriends_ShareText".localized())
                                     haptics.impactOccurred()
                                 }
                                 
 
                                 // UYGULAMAYI DEĞERLENDİR BUTTON
-                                FormLinkRowView(icon: "star.fill", color: Color(AppColor1), text: "Uygulamayı Değerlendir") {
+                                FormLinkRowView(icon: "star.fill", color: Color(AppColor1), text: "rateTheApp".localized()) {
                                     haptics.impactOccurred()
                                     //writeReview()
                                     rateApp()
@@ -148,7 +148,7 @@ struct SettingsMainView: View {
                                                             
                                 
                                 // ÖZELLİK ÖNER & HATA PAYLAŞ BUTON
-                                FormLinkRowView(icon: "sparkles.rectangle.stack.fill", color: Color(AppColor1), text: "Özellik Öner & Hata Paylaş") {
+                                FormLinkRowView(icon: "sparkles.rectangle.stack.fill", color: Color(AppColor1), text: "findBugOrSuggestFeature".localized()) {
                                     suggestFeatures()
                                     haptics.impactOccurred()
                                 }
@@ -184,7 +184,7 @@ struct SettingsMainView: View {
                                     .fontWeight(.heavy)
                                     .foregroundColor(.primary)
                                 
-                                Text("Kişisel asistanın")
+                                Text("brandSubheadline".localized())
                                     .font(.system(.headline, design: .rounded))
                                         .fontWeight(.light)
                                         .foregroundColor(.secondary)
@@ -200,7 +200,7 @@ struct SettingsMainView: View {
                         
                     }
                     .padding()
-                    .navigationBarTitle("Ayarlar")
+                    .navigationBarTitle("settings".localized())
                     .navigationBarHidden(true)
                     .ignoresSafeArea(.all, edges: .bottom)
 
@@ -208,7 +208,7 @@ struct SettingsMainView: View {
                     
                     // EMAIL SHEETI
                     .sheet(isPresented: $showSheet, content: {
-                        MailView(result: self.$result, newSubject: "Özellik / Hata", newMsgBody: "Uygulamayı keyifle kullanıyorum ancak şu özellik olsaydı çok iyi olurdu, ya da şu hata olmasa daha güzel olurdu :")
+                        MailView(result: self.$result, newSubject: "findBugOrSuggestFeature_MailTitle".localized(), newMsgBody: "findBugOrSuggestFeature_MailBody".localized())
                     })
                     
                     
@@ -233,7 +233,7 @@ struct SettingsMainView: View {
                     ZStack {
                         
                         
-                        CustomPopup(showingModal: $showModal, popupText: "Uygulamadaki her şey silinecek. Bu işlem geri alınamaz!") {
+                        CustomPopup(showingModal: $showModal, popupText: "deleteAllPopupText".localized()) {
                             haptics.impactOccurred()
                             deleteAll()
                             NotificationManager.istance.cancelAllNotification()

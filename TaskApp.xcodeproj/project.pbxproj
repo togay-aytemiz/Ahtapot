@@ -60,7 +60,6 @@
 		4B8AFDBC262D5439006DA14E /* CustomPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AFDBB262D5439006DA14E /* CustomPopup.swift */; };
 		4B8C9299263C43F4005FFF97 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8C9298263C43F4005FFF97 /* StatsView.swift */; };
 		4B95C5B22634047C00EC24A0 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C5B12634047C00EC24A0 /* SettingsLabelView.swift */; };
-		4B95C5BD263410A300EC24A0 /* TutorialLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C5BC263410A300EC24A0 /* TutorialLinkView.swift */; };
 		4B95C5C22634268500EC24A0 /* InternalAdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C5C12634268500EC24A0 /* InternalAdsView.swift */; };
 		4B95C5C72634438E00EC24A0 /* FormLinkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C5C62634438E00EC24A0 /* FormLinkRowView.swift */; };
 		4B95C5CC263458FA00EC24A0 /* DeleteAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95C5CB263458FA00EC24A0 /* DeleteAllView.swift */; };
@@ -162,7 +161,6 @@
 		4B8AFDBB262D5439006DA14E /* CustomPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopup.swift; sourceTree = "<group>"; };
 		4B8C9298263C43F4005FFF97 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		4B95C5B12634047C00EC24A0 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
-		4B95C5BC263410A300EC24A0 /* TutorialLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialLinkView.swift; sourceTree = "<group>"; };
 		4B95C5C12634268500EC24A0 /* InternalAdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalAdsView.swift; sourceTree = "<group>"; };
 		4B95C5C62634438E00EC24A0 /* FormLinkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLinkRowView.swift; sourceTree = "<group>"; };
 		4B95C5CB263458FA00EC24A0 /* DeleteAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllView.swift; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 			children = (
 				4B798B6D2633700B00BFBEDA /* SettingsMainView.swift */,
 				4B95C5B12634047C00EC24A0 /* SettingsLabelView.swift */,
-				4B95C5BC263410A300EC24A0 /* TutorialLinkView.swift */,
 				4B95C5C12634268500EC24A0 /* InternalAdsView.swift */,
 				4B95C5C62634438E00EC24A0 /* FormLinkRowView.swift */,
 				4B95C5CB263458FA00EC24A0 /* DeleteAllView.swift */,
@@ -648,7 +645,6 @@
 				4B8345DA263223C5004A08DF /* NavigationBarView.swift in Sources */,
 				4B8AFD92262CC913006DA14E /* ListRowItemView.swift in Sources */,
 				4B75A53E262C69D900B2214E /* ContentView.swift in Sources */,
-				4B95C5BD263410A300EC24A0 /* TutorialLinkView.swift in Sources */,
 				4BD6557C263CAAD300E18C06 /* SearchView.swift in Sources */,
 				4B75A58C262C823D00B2214E /* DateButton.swift in Sources */,
 				4B4A6FE52639F5DC00F9D01C /* ShoppingListView.swift in Sources */,
