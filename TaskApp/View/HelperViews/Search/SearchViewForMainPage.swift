@@ -26,7 +26,7 @@ struct SearchViewForMainPage: View {
                     .foregroundColor(Color(AppColor1))
                     .padding(.leading, 4)
                 
-                Text("Görevler içinde ara...")
+                Text("searchTasks".localized())
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundColor(Color.secondary)
                 

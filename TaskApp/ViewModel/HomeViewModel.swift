@@ -264,13 +264,13 @@ class HomeViewModel: ObservableObject {
         let calculatedCalender = calender.component(.hour, from:Date())
         
         if calculatedCalender > 5 && calculatedCalender <= 11 {
-            return "Günaydın ☀️"
+            return "goodMorning".localized()
         } else if calculatedCalender > 11 && calculatedCalender <= 16 {
-            return "İyi günler 👋🏻"
+            return "goodAfternoon".localized()
         } else if calculatedCalender > 16 && calculatedCalender <= 20 {
-            return "İyi akşamlar 👋🏻"
+            return "goodEvening".localized()
         } else {
-            return "İyi geceler 🌒"
+            return "goodNight".localized()
         }
         
         

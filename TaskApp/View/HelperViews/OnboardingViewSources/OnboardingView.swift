@@ -44,7 +44,7 @@ struct OnboardingView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50)
 
-                Text("octopus".localized())
+                Text("Ahtapot")
                     .font(.system(.title3, design: .rounded))
                     .fontWeight(.heavy)
                     .foregroundColor(Color("Color1"))

@@ -17,7 +17,6 @@
 		4B2833E5264947EA003BFC40 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833E4264947EA003BFC40 /* SideMenuView.swift */; };
 		4B2833E7264947F4003BFC40 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833E6264947F4003BFC40 /* SideMenuHeaderView.swift */; };
 		4B2833EB2649480C003BFC40 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */; };
-		4B2833ED26494817003BFC40 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */; };
 		4B2833EF26495BE6003BFC40 /* SearchViewForMainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */; };
 		4B2833F12649611A003BFC40 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */; };
 		4B2833F32649E393003BFC40 /* TomorrowTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */; };
@@ -113,7 +112,6 @@
 		4B2833E4264947EA003BFC40 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		4B2833E6264947F4003BFC40 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
-		4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		4B2833EE26495BE6003BFC40 /* SearchViewForMainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewForMainPage.swift; sourceTree = "<group>"; };
 		4B2833F02649611A003BFC40 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		4B2833F22649E393003BFC40 /* TomorrowTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowTaskView.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 				4B2833E4264947EA003BFC40 /* SideMenuView.swift */,
 				4B2833E6264947F4003BFC40 /* SideMenuHeaderView.swift */,
 				4B2833EA2649480C003BFC40 /* SideMenuOptionView.swift */,
-				4B2833EC26494817003BFC40 /* SideMenuViewModel.swift */,
 			);
 			path = SidebarView;
 			sourceTree = "<group>";
@@ -632,7 +629,6 @@
 				4B0E1066263FF2340000170B /* DarkModeUtils.swift in Sources */,
 				4B2833E5264947EA003BFC40 /* SideMenuView.swift in Sources */,
 				4B8345CA26321AF7004A08DF /* MainTaskView.swift in Sources */,
-				4B2833ED26494817003BFC40 /* SideMenuViewModel.swift in Sources */,
 				4B46AF042638385500232F64 /* NotificationPermissionView.swift in Sources */,
 				4BA1AE3A26471E8100A73ED5 /* HomePageDateFilterView.swift in Sources */,
 				4B8813D0263719A200AD20AB /* CustomDateSelectionView.swift in Sources */,

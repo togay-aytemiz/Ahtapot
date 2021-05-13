@@ -7,10 +7,15 @@
 */
 
 
+// GENERAL
+
+"brandSubheadline" = "Kişisel asistanın";
+
+
+
 // ONBOARDING
 
 
-"octopus" = "Ahtapot";
 
 "onboardingTitle1" = "Sonsuza Kadar Ücretsiz";
 "onboardingDescription1" = "Evet yanlış okumadın.\nÜcretsiz, reklamsız, şartsız. Tamamen koşulsuz yeni nesil görev yönetim uygulaması 🥳";
@@ -79,5 +84,25 @@
 // SEARCH
 
 
-// search view
-"searchTasks" = "Görevler içinde ara..."
+"searchTasks" = "Görevler içinde ara...";
+"noSearchResultHeader" = "SONUÇ BULUNAMADI";
+"noSearchResultBody" ="Arama terimine ait sonuç bulamadık 😢\nLütfen başka bir arama terimi ile dene";
+"waitingTasks" = "Bekleyenler";
+"allTasks" = "Tümü";
+"noWaitingTasks" = "Bekleyen hiç görevin yok 💪🏻";
+
+
+// ------------------------------------------------------------------------------------
+
+// SIDEBAR
+
+"today" = "Bugün";
+"tomorrow" = "Yarın";
+"next7Days" = "Sonraki 7 gün";
+"allTasksSideBar" = "Tüm Görevler";
+"settings" = "Ayarlar";
+
+"goodMorning" = "Günaydın ☀️";
+"goodAfternoon" = "İyi günler 👋🏻";
+"goodEvening" = "İyi akşamlar 👋🏻";
+"goodNight" = "İyi geceler 🌒";

@@ -106,19 +106,19 @@ struct SideMenuView: View {
                 
                 VStack(alignment: .leading, spacing: 0, content: {
                     
-                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "today" ? true : false, image: Image(systemName: "\(dateForIcon).square"), text: "Bugün", taskNumber: filteredTasksToday.count, isTaskNumberShow: true) {
+                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "today" ? true : false, image: Image(systemName: "\(dateForIcon).square"), text: "today".localized(), taskNumber: filteredTasksToday.count, isTaskNumberShow: true) {
                         selectedTab = "today"
                     }
                     
-                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "tomorrow" ? true : false, image: Image(systemName: "\(findTomorrowForIcon).square"), text: "Yarın", taskNumber: filteredTasksTomorrow.count, isTaskNumberShow: true) {
+                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "tomorrow" ? true : false, image: Image(systemName: "\(findTomorrowForIcon).square"), text: "tomorrow".localized(), taskNumber: filteredTasksTomorrow.count, isTaskNumberShow: true) {
                         selectedTab = "tomorrow"
                     }
                     
-                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "next7days" ? true : false, image: Image(systemName: "calendar.badge.clock"), text: "Sonraki 7 gün", taskNumber: filteredTasksNextWeek.count, isTaskNumberShow: true, descriptionText: homeData.findNextWeekDates()) {
+                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "next7days" ? true : false, image: Image(systemName: "calendar.badge.clock"), text: "next7Days".localized(), taskNumber: filteredTasksNextWeek.count, isTaskNumberShow: true, descriptionText: homeData.findNextWeekDates()) {
                         selectedTab = "next7days"
                     }
                     
-                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "allTasks" ? true : false, image: Image(systemName: "list.bullet"), text: "Tüm Görevler", taskNumber: allOpenTasks.count, isTaskNumberShow: true) {
+                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "allTasks" ? true : false, image: Image(systemName: "list.bullet"), text: "allTasksSideBar".localized(), taskNumber: allOpenTasks.count, isTaskNumberShow: true) {
                         selectedTab = "allTasks"
                     }
                     
@@ -141,7 +141,7 @@ struct SideMenuView: View {
                     
 
                     
-                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "settings" ? true : false, image: Image("settings"), text: "Ayarlar") {
+                    SideMenuOptionView(isShowingSideMenu: $isShowingSideMenu, isSelectedTab: selectedTab == "settings" ? true : false, image: Image("settings"), text: "settings".localized()) {
                         selectedTab = "settings"
                     } 
                 }
@@ -168,7 +168,7 @@ struct SideMenuView: View {
                             .fontWeight(.heavy)
                             .foregroundColor(.white)
                         
-                        Text("Kişisel asistanın")
+                        Text("brandSubheadline".localized())
                             .font(.system(.headline, design: .rounded))
                                 .fontWeight(.light)
                                 .foregroundColor(.white)
@@ -177,26 +177,7 @@ struct SideMenuView: View {
                 .padding()
                 .padding(.leading)
                 
-                
-                
-//                ForEach(SideMenuViewModel.allCases, id:\.self) { options in
-//                    Button(action: {
-//                        withAnimation(.spring()) {
-//                            selectedTab = options.title
-//                            isShowingSideMenu = false
-//                        }
-//                    }, label: {
-//                        //SideMenuOptionView(viewmodel: options, isSelectedTab: selectedTab == options.title ? true : false)
-//                    })
-//
-//
-//                }
-                
-                
-                
             }
-            
-            
         }
     }
 }
