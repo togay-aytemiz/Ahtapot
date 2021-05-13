@@ -30,7 +30,7 @@ struct addTaskButton: View {
             }, label: {
                 Image(systemName: "plus.circle.fill")
                     .font(.system(.title2, design: .rounded))
-                Text("Yeni Görev Ekle")
+                Text("addNewTask".localized())
                     .font(.system(.headline, design: .rounded))
             })
             .foregroundColor(.white)

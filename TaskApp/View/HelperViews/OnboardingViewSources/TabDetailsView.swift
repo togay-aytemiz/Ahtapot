@@ -51,6 +51,7 @@ struct TabDetailsView: View {
                 .padding(.horizontal)
                         
         } //VSTACK
+        .frame(width: UIScreen.main.bounds.width - 30)
         .animation(.default)
         .foregroundColor(Color("Color1"))
 //        .minimumScaleFactor(0.5)
@@ -63,7 +64,8 @@ struct TabDetailsView: View {
 struct TabDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            TabDetailsView(index: 1)
+            TabDetailsView(index: 0)
+                .environment(\.locale, .init(identifier: "en"))
         }
     }
 }

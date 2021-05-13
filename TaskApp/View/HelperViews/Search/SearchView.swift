@@ -44,7 +44,7 @@ struct SearchView: View {
     
     // PICKER
     @State private var selectedPickerOption = 0
-    let pickerOptions = ["Bekleyenler", "Tümü"]
+    let pickerOptions = ["\("waitingTasks".localized())", "\("allTasks".localized())"]
     
     
     
@@ -73,7 +73,7 @@ struct SearchView: View {
                             
                             ZStack(alignment: .leading){
                                 if searchTerm == "" {
-                                    Text("Görevler içinde ara...")
+                                    Text("searchTasks".localized())
                                         .font(.system(.headline, design: .rounded))
                                         .foregroundColor(!Utils.isDarkMode ? Color.gray : .white.opacity(0.6))
                                         .padding(.leading, 5)
@@ -121,7 +121,7 @@ struct SearchView: View {
                         haptics.impactOccurred()
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Text("Vazgeç")
+                        Text("cancel".localized())
                             .foregroundColor(Color(Utils.AppColor1))
                             .fontWeight(.semibold)
                     })
@@ -136,7 +136,7 @@ struct SearchView: View {
                     VStack {
                         
                         Spacer()
-                        EmptyViewIllustrations(image: "NoSearchView", text: "'\(searchTerm)' için arama sonucu bulamadık 😢\nLütfen başka bir arama terimi ile dene", header: "SONUÇ BULUNAMADI")
+                        EmptyViewIllustrations(image: "NoSearchView", text: "noSearchResultBody".localized(), header: "noSearchResultHeader".localized().uppercased())
                         Spacer()
                         Spacer()
                     }
@@ -150,8 +150,8 @@ struct SearchView: View {
                         // PICKER
                         Group {
                             Picker(selection: $selectedPickerOption, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/, content: {
-                                Text("Bekleyenler (\(allOpenTasks.filter({searchTerm.isEmpty ? true : $0.content!.localizedCaseInsensitiveContains(self.searchTerm)}).count))").tag(0)
-                                Text("Tümü (\(results.filter({searchTerm.isEmpty ? true : $0.content!.localizedCaseInsensitiveContains(self.searchTerm)}).count))").tag(1)
+                                Text("\("waitingTasks".localized()) (\(allOpenTasks.filter({searchTerm.isEmpty ? true : $0.content!.localizedCaseInsensitiveContains(self.searchTerm)}).count))").tag(0)
+                                Text("\("allTasks".localized()) (\(results.filter({searchTerm.isEmpty ? true : $0.content!.localizedCaseInsensitiveContains(self.searchTerm)}).count))").tag(1)
                             })
                             .pickerStyle(SegmentedPickerStyle())
                             .labelsHidden()
@@ -190,7 +190,7 @@ struct SearchView: View {
                             } else {
                                 VStack {
                                     Spacer()
-                                    Text("Bekleyen hiç görevin yok 💪🏻")
+                                    Text("noWaitingTasks".localized())
                                         .font(.system(.headline, design: .rounded))
                                         .fontWeight(.light)
                                         .multilineTextAlignment(.center)

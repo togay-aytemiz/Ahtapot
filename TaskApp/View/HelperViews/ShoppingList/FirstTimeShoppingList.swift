@@ -34,7 +34,7 @@ struct FirstTimeShoppingList: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Text("🤗🛍\nAlışveriş Listem'e\nHoşgeldin")
+                    Text("🤗🛍\n \("welcomeShoppingListHeader".localized())")
                         .font(.system(.title, design: .rounded))
                         .fontWeight(.heavy)
                         .foregroundColor(isDarkMode ? Color.white : Color.primary)
@@ -49,11 +49,23 @@ struct FirstTimeShoppingList: View {
                 VStack(alignment: .leading, spacing: 40) {
                     
                     
-                    ListItem(image: "gift.fill", title: "Alacaklarını unutmak yok", subText: "Artık eve gittiğinde, 'aaa elma almayı unuttum yaa!' demek yok.", color: Color.blue)
+                    ListItem(
+                        image: "gift.fill",
+                        title: "shoppingListClaimHeader1".localized(),
+                        subText: "shoppingListClaimDescription1".localized(),
+                        color: Color.blue)
                     
-                    ListItem(image: "hands.sparkles.fill", title: "Elinin altında hazır", subText: "Uygulamayı açtığında alacağın şeylerin listesine hızlıca ulaşabilirsin", color: Color.orange)
+                    ListItem(
+                        image: "hands.sparkles.fill",
+                        title: "shoppingListClaimHeader2".localized(),
+                        subText: "shoppingListClaimDescription2".localized(),
+                        color: Color.orange)
                     
-                    ListItem(image: "arrow.left.arrow.right.circle.fill", title: "Takibi ve kullanımı kolay", subText: "Alacağın her şeyi ekleyebilir, aldıklarını işaretleyebilir ve listeyi kolayca takip edebilirsin", color: Color.green)
+                    ListItem(
+                        image: "arrow.left.arrow.right.circle.fill",
+                        title: "shoppingListClaimHeader3".localized(),
+                        subText: "shoppingListClaimDescription3".localized(),
+                        color: Color.green)
          
                     
                 }
@@ -67,7 +79,7 @@ struct FirstTimeShoppingList: View {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Label(
-                        title: { Text("Hadi Başlayalım")
+                        title: { Text("letsGo".localized())
                             .font(.system(.headline, design: .rounded))
                             .foregroundColor(.white)
                             .fontWeight(.bold)

@@ -64,7 +64,7 @@ struct ButtonView: View {
                             Image(systemName: "arrow.left")
                                 .font(.title3)
 
-                            Text("Geri")
+                            Text("back".localized())
                                 .font(.system(.headline, design: .rounded))
                                 .fontWeight(.semibold)
                         }
@@ -84,7 +84,7 @@ struct ButtonView: View {
 
                     }, label: {
                         HStack {
-                            Text("Hadi Başlayalım")
+                            Text("letsGo".localized())
                                 .font(.headline)
                                 .fontWeight(.semibold)
                                 
@@ -112,7 +112,7 @@ struct ButtonView: View {
 
                     }, label: {
                         HStack {
-                            Text("İleri")
+                            Text("next".localized())
                                 .font(.system(.headline, design: .rounded))
                                 .fontWeight(.semibold)
                             Image(systemName: "arrow.right")

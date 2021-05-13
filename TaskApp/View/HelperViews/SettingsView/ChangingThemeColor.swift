@@ -47,7 +47,7 @@ struct ChangingThemeColor: View {
         
         VStack(alignment: .leading) {
             
-            Text("Uygulama Temasını Değiştir")
+            Text("changeAppThemeColor".localized())
                 
          
             

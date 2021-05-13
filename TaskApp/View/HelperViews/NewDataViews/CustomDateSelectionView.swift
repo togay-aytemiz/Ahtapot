@@ -38,16 +38,18 @@ struct CustomDateSelectionView: View {
                         ScrollView(.horizontal, showsIndicators: false, content: {
                             
                             HStack(spacing:10){
-                                Text("Ne zaman?")
+                                Text("when".localized())
                                     .font(.system(.headline, design: .rounded))
                                     .fontWeight(.semibold)
                                     .foregroundColor(!Utils.isDarkMode ? .black : .white)
                                 
-                                DateButton(title: "1 saat sonra", homeData: homeData)
-                                DateButton(title: "Yarın", homeData: homeData)
-                                DateButton(title: "Öbür Gün", homeData: homeData)
-                                DateButton(title: "1 Hafta Sonra", homeData: homeData)
-                                DateButton(title: "15 Gün Sonra", homeData: homeData)
+                                
+                                
+                                DateButton(title: "1HourLater".localized(), homeData: homeData)
+                                DateButton(title: "tomorrow".localized(), homeData: homeData)
+                                DateButton(title: "nextDay".localized(), homeData: homeData)
+                                DateButton(title: "1WeekLater".localized(), homeData: homeData)
+                                DateButton(title: "15DaysLater".localized(), homeData: homeData)
                                 Spacer()
                             }
                             
@@ -71,7 +73,7 @@ struct CustomDateSelectionView: View {
                         
                         DatePicker("", selection: $homeData.date,  in: Date()..., displayedComponents: [.date, .hourAndMinute])
                             .labelsHidden()
-                            .environment(\.locale, Locale.init(identifier: "tr"))
+                            //.environment(\.locale, Locale.init(identifier: "tr"))
                             .animation(.easeInOut)
                             .colorScheme(Utils.isDarkMode ? .dark : .light)
                             .accentColor(Color(Utils.AppColor1))

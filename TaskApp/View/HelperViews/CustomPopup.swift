@@ -16,7 +16,7 @@ struct CustomPopup: View {
     @State private var animatingModal: Bool = false
     @Binding var showingModal: Bool
     
-    var popupText: String = "Tamamlanan tüm görevleri silmek istediğinden emin misin? Bu işlem geri alınamaz"
+    var popupText: String = "deleteAllClosedTasksPopupText".localized()
     
     var action: () -> Void
 
@@ -33,7 +33,7 @@ struct CustomPopup: View {
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0, content: {
                 
                 //başlık
-                Text("Siliniyor")
+                Text("deleting".localized())
                     .font(.system(.title, design: .rounded))
                     .fontWeight(.heavy)
                     .padding()
@@ -72,7 +72,7 @@ struct CustomPopup: View {
                             //action()
                            
                         }, label: {
-                            Text("VAZGEÇTİM")
+                            Text("cancel".localized().uppercased())
                                 .font(.system(.body, design: .rounded))
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color.red)
@@ -91,7 +91,7 @@ struct CustomPopup: View {
                             action()
                            
                         }, label: {
-                            Text("EMİNİM, SİL")
+                            Text("yesDelete".localized().uppercased())
                                 .font(.system(.body, design: .rounded))
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color.white)

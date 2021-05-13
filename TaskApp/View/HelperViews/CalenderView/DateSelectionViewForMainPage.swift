@@ -72,7 +72,7 @@ struct DateSelectionViewForMainPage: View {
                 
                     // DATEPICKER
                     DatePicker("", selection: $homeData.filterDate,   displayedComponents: [.date])
-                        .environment(\.locale, Locale.init(identifier: "tr"))
+                        //.environment(\.locale, Locale.init(identifier: "tr"))
                         .datePickerStyle(GraphicalDatePickerStyle())
                         .frame(width: UIScreen.main.bounds.width - 30)
                     

@@ -24,14 +24,14 @@ struct TaskAppApp: App {
                 OnboardingView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .environment(\.locale, Locale(identifier: "tr"))
+                    //.environment(\.locale, Locale(identifier: "tr"))
                     
                     
             } else {
                 ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .environment(\.locale, Locale(identifier: "tr"))
+                    //.environment(\.locale, Locale(identifier: "tr"))
                     .environmentObject(obj)
                     
             }

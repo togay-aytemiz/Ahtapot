@@ -69,7 +69,7 @@ struct AllTaskView: View {
             ZStack {
                 VStack{
                     // MARK: HEADER
-                    CustomNavigationBarView(showDate: false, shoppingItem: openShoppingListItem.count, customNavigationHeader: "Tüm Görevler", isShowingSideMenu: $isShowingSideMenu)
+                    CustomNavigationBarView(showDate: false, shoppingItem: openShoppingListItem.count, customNavigationHeader: "allTasksSideBar".localized(), isShowingSideMenu: $isShowingSideMenu)
                         .background(Utils.isDarkMode ? Color.black : Color.white)
                     
                     
@@ -78,7 +78,7 @@ struct AllTaskView: View {
                     
                     
                     if filteredallOpenTasks.count == 0 {
-                        EmptyViewIllustrations(image: "noTodo", text: "Yapılacaklar listen boş.\nHadi hemen ekleyelim... 💪🏻", header: "HİÇ GÖREV YOK")
+                        EmptyViewIllustrations(image: "noTodo", text: "mainViewEmptyDescription".localized(), header: "mainViewEmptyHeader".localized().uppercased())
                         Spacer()
                     }
                     else {
@@ -127,7 +127,7 @@ struct AllTaskView: View {
                                         haptics.impactOccurred()
                                     }, label: {
                                         HStack {
-                                            Text(!isJAllOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
+                                            Text(!isJAllOpenShown ? "showCompletedTasks".localized() : "hideCompletedTasks".localized())
                                                 .font(.system(.subheadline, design: .rounded))
                                             Image(systemName: !isJAllOpenShown ? "chevron.down" : "chevron.up")
                                         }
@@ -140,8 +140,10 @@ struct AllTaskView: View {
                             .padding(.bottom, 80)
                         }
                         
+                        
                     }
                 }
+                
                 Rectangle()
                     .fill(Color.black).edgesIgnoringSafeArea(.all)
                     .opacity(isShowingSideMenu ? 0.1 : 0)

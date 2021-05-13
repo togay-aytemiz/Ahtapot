@@ -30,12 +30,12 @@ struct DeleteAllView: View {
             .frame(width: 36, height: 36, alignment: .center)
 
             VStack(alignment: .leading){
-                Text("Tüm verileri sil")
+                Text("deleteAllDataRowHeader".localized())
                     .font(.system(.headline, design: .rounded))
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundColor(color)
                 
-                Text("Bu işlem geri alınamaz")
+                Text("deleteAllDataRowBody".localized())
                     .font(.system(.subheadline, design: .rounded))
                     .fontWeight(.light)
                     .foregroundColor(color)

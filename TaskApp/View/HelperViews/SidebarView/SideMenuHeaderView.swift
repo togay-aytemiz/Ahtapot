@@ -30,24 +30,6 @@ struct SideMenuHeaderView: View {
                     .padding(.leading)
                 
                 
-//                Image("iconSmall")
-//                    .resizable()
-//                    .scaledToFill()
-//                    .clipped()
-//                    .frame(width: 64, height: 64)
-//                
-//                VStack(alignment: .leading){
-//                    Text("Ahtapot")
-//                        .font(.system(.title2, design: .rounded))
-//                        .fontWeight(.heavy)
-//                        .foregroundColor(.white)
-//                    
-//                    Text("Kişisel asistanın")
-//                        .font(.system(.headline, design: .rounded))
-//                            .fontWeight(.light)
-//                            .foregroundColor(.white)
-//                }
-                
                 Spacer()
                 
                 Button(action: {
@@ -60,12 +42,8 @@ struct SideMenuHeaderView: View {
                         .foregroundColor(.white)
                         .padding()
                 })
-                
-                    
             }
-            
-            
-            // maybe some basic stats here
+
         }
         .padding()
     }

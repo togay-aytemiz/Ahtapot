@@ -46,16 +46,23 @@ struct RemindMeView: View {
 
             HStack {
                 VStack(alignment: .leading){
-                    Text(someStatus ? "Hatırlatma Açık" : "Hatırlatma Kapalı")
+                    Text(someStatus ? "remindMeOpen".localized() : "remindMeClosed".localized())
                         .font(.system(.headline, design: .rounded))
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
                     
+                    if someStatus {
+                        Text("\(homeData.date, formatter: miniDateAndTimeFormat)")
+                            .font(.system(.subheadline, design: .rounded))
+                            .fontWeight(.light)
+                            .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                    } else {
+                        Text("howToOpenReminder".localized())
+                            .font(.system(.subheadline, design: .rounded))
+                            .fontWeight(.light)
+                            .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                    }
                     
-                    Text(someStatus ? "\(homeData.date, formatter: miniDateAndTimeFormat)" : "Sağdaki düğme ile aç 👉🏻")
-                        .font(.system(.subheadline, design: .rounded))
-                        .fontWeight(.light)
-                        .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
                     
                     
                 }
@@ -72,7 +79,7 @@ struct RemindMeView: View {
                         homeData.isNotifResponseShow = true
                         haptics.impactOccurred()
                     }, label: {
-                        Text("AÇ")
+                        Text("firstTimeOpenReminder".localized().uppercased())
                             .font(.system(.headline, design: .rounded))
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .padding(.vertical, 6)

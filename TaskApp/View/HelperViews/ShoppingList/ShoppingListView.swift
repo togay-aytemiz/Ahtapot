@@ -61,7 +61,7 @@ struct ShoppingListView: View {
                                 HStack(spacing: 2) {
                                     Image(systemName: "chevron.down")
                                         .font(.system(size: 18, weight: .semibold, design: .rounded))
-                                    Text("Kapat")
+                                    Text("close".localized())
                                         .font(.system(.headline, design: .rounded))
                                         .fontWeight(.semibold)
                                 }
@@ -80,7 +80,7 @@ struct ShoppingListView: View {
                                     Image(systemName: "trash.fill")
                                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                                     
-                                    Text("Listeyi Temizle")
+                                    Text("deleteList".localized())
                                         .font(.system(.headline, design: .rounded))
                                         .fontWeight(.semibold)
                                     
@@ -95,7 +95,7 @@ struct ShoppingListView: View {
                     }
                     
 
-                    NavigationBarView(title: "Alışveriş Listem", showDate: false)
+                    NavigationBarView(title: "shoppingList".localized(), showDate: false)
 
                         .padding(.horizontal, 15)
                         .foregroundColor(isDarkMode ? Color.white : Color.black)
@@ -119,7 +119,7 @@ struct ShoppingListView: View {
                                     HStack {
                                         Image(systemName: showClosed ? "eye.slash.fill" : "eye.fill")
                                             .font(.caption)
-                                        Text(showClosed ? "Aldıklarımı Gizle" : "Aldıklarımı Göster")
+                                        Text(showClosed ? "hideCompleted".localized() : "showCompleted".localized())
                                             .font(.system(.footnote, design: .rounded))
                                             .multilineTextAlignment(.trailing)
                                         
@@ -148,9 +148,9 @@ struct ShoppingListView: View {
                     
                     
                     if list.count == 0 {
-                        //ShoppingBagEmptyView()
+                        
                         Spacer()
-                        EmptyViewIllustrations(image: "cart", text: "Alışveriş listen boş.\nAşağıdan ekleyebilirsin 👇🏻", header: "LİSTEN BOŞ")
+                        EmptyViewIllustrations(image: "cart", text: "shoppingListEmptyDescription".localized(), header: "shoppingListEmptyHeader".localized().uppercased())
                         Spacer()
                         Spacer()
                         Spacer()
@@ -189,14 +189,14 @@ struct ShoppingListView: View {
                 })
                 
               
-                .navigationBarTitle("Alışveriş Listem", displayMode: .automatic)
+                .navigationBarTitle("shoppingList".localized(), displayMode: .automatic)
                 .navigationBarHidden(true)
                 
                 
                 // MARK: POPUP
                 if $showModal.wrappedValue {
                     
-                    CustomPopup(showingModal: $showModal, popupText: "Listendeki her şey silinecek. Bu işlem geri alınamaz") {
+                    CustomPopup(showingModal: $showModal, popupText: "deleteShoppingListMessage".localized()) {
                         haptics.impactOccurred()
                         deleteAll()
                         try! context.save()

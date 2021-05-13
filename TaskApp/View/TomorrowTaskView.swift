@@ -80,7 +80,7 @@ struct TomorrowTaskView: View {
             ZStack {
                 VStack{
                     // MARK: HEADER
-                    CustomNavigationBarView(shoppingItem: openShoppingListItem.count, customNavigationHeader: "Yarın", isShowingSideMenu: $isShowingSideMenu, showingDate: showingDate)
+                    CustomNavigationBarView(shoppingItem: openShoppingListItem.count, customNavigationHeader: "tomorrow".localized(), isShowingSideMenu: $isShowingSideMenu, showingDate: showingDate)
                         .background(Utils.isDarkMode ? Color.black : Color.white)
                     
                     
@@ -88,7 +88,7 @@ struct TomorrowTaskView: View {
                     
                     
                     if tomorrowOpenTasks.count == 0 {
-                        EmptyViewIllustrations(image: "noTodo", text: "Yarın için yapılacak listen boş.\nHadi hemen ekleyelim... 💪🏻", header: "YARIN YAPILACAK YOK")
+                        EmptyViewIllustrations(image: "noTodo", text: "tomorrowViewEmptyDescription".localized(), header: "tomorrowViewEmptyHeader".localized().uppercased())
                         Spacer()
                     }
                     else {
@@ -138,7 +138,7 @@ struct TomorrowTaskView: View {
                                         haptics.impactOccurred()
                                     }, label: {
                                         HStack {
-                                            Text(!isJustTomorrowOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
+                                            Text(!isJustTomorrowOpenShown ? "showCompletedTasks".localized() : "hideCompletedTasks".localized())
                                                 .font(.system(.subheadline, design: .rounded))
                                             Image(systemName: !isJustTomorrowOpenShown ? "chevron.down" : "chevron.up")
                                         }
