@@ -21,7 +21,7 @@ struct CustomNavigationBarView: View {
     @State private var shoppingListOpen = false
     
     var CustomNavigationHeaderIsShow = true
-    var customNavigationHeader = "Bugün"
+    var customNavigationHeader = "today".localized()
     
     @Binding var isShowingSideMenu: Bool
     

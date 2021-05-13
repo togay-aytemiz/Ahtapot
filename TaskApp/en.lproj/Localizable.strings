@@ -205,4 +205,23 @@
 "editTask" = "Görev Düzenle";
 "delete" = "Sil";
 "deleting" = "Siliniyor";
-"yesDelete" = "Eminim, Sil"
+"yesDelete" = "Eminim, Sil";
+
+
+// ------------------------------------------------------------------------------------
+
+// MAIN VIEWS
+
+"mainViewEmptyHeader" = "Hiç Görev Yok";
+"mainViewEmptyDescription" = "Yapılacaklar listen boş.\nHadi hemen ekleyelim... 💪🏻";
+
+"tomorrowViewEmptyHeader" = "Yarın Yapılacak Yok";
+"tomorrowViewEmptyDescription" = "Yarın için yapılacak listen boş.\nHadi hemen ekleyelim... 💪🏻";
+
+"7daysViewEmptyHeader" = "Yapılacak Görev Yok";
+"7daysViewEmptyDescription" = "Bu tarih aralığı için yapılacak listen boş.\nHadi hemen ekleyelim... 💪🏻";
+
+
+"pastTask" = "Geçmiş";
+"showCompletedTasks" = "Tamamlananları Göster";
+"hideCompletedTasks" = "Tamamlananları Gizle";

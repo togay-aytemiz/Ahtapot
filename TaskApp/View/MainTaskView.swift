@@ -89,7 +89,7 @@ struct MainTaskView: View {
                     Spacer()
                     
                     if allOpenTasks.count == 0 && justTodayClosed.count == 0 {
-                        EmptyViewIllustrations(image: "noTodo", text: "Yapılacaklar listen boş.\nHadi hemen ekleyelim... 💪🏻", header: "HİÇ GÖREV YOK")
+                        EmptyViewIllustrations(image: "noTodo", text: "mainViewEmptyDescription".localized(), header: "mainViewEmptyHeader".localized().uppercased())
                         Spacer()
                     }
                     else {
@@ -120,7 +120,7 @@ struct MainTaskView: View {
                                     if beforeTodayOpen.count > 0 {
                                         
                                         
-                                        TitleView(title: "Geçmiş", number1: beforeTodayOpen.count, number2: 0, barShown: false, isTwoNumber: false)
+                                        TitleView(title: "pastTask".localized(), number1: beforeTodayOpen.count, number2: 0, barShown: false, isTwoNumber: false)
                                         
                                         // BUGÜN YAPILACAKLAR
                                         ForEach(beforeTodayOpen) { task in
@@ -143,7 +143,7 @@ struct MainTaskView: View {
                                 // MARK: BUGÜN
                                 Group {
                                     
-                                    TitleView(title: "Bugün", number1: justTodayClosed.count, number2: justTodayAll.count, barShown: true, isTwoNumber: true)
+                                    TitleView(title: "today".localized(), number1: justTodayClosed.count, number2: justTodayAll.count, barShown: true, isTwoNumber: true)
                                     //                                    .padding(.top, 20)
                                     
                                     if justTodayClosed.count > 0 && justTodayOpen.count == 0 {
@@ -209,7 +209,7 @@ struct MainTaskView: View {
                                             haptics.impactOccurred()
                                         }, label: {
                                             HStack {
-                                                Text(!isJustTodayOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
+                                                Text(!isJustTodayOpenShown ? "showCompletedTasks".localized() : "hideCompletedTasks".localized())
                                                     .font(.system(.subheadline, design: .rounded))
                                                 Image(systemName: !isJustTodayOpenShown ? "chevron.down" : "chevron.up")
                                             }
@@ -325,64 +325,3 @@ struct MainTaskView: View {
 }
 
 
-
-/*
- 
- 
- // MARK: GELECEK
- Group {
-     if futureOpen.count > 0 {
-         
-         
-         TitleView(title: "Gelecek", number1: futureOpen.count, number2: 0, barShown: false, isTwoNumber: false)
-             .padding(.top, 20)
-         
-         // GELECEK YAPILACAKLAR
-         ForEach(futureOpen) { task in
-             ListRowItemView(homeData: task) {
-                 homeData.editItem(item: task)
-             } editAction: {
-                 homeData.editItem(item: task)
-             } deleteAction: {
-                 context.delete(task)
-                 NotificationManager.istance.cancelNotification(idArray: ["\(task.content!)"])
-                 
-             }
-         }
-     }
- }
- 
- 
- 
- 
- 
- // SETTINGS VIEW
- SettingsMainView(selectedTab: $selectedTab)
-     .opacity(selectedTab == "settings" ? 1 : 0)
- 
- 
- 
- // MARK: CUSTOM TAB BAR
- if isFirstTimeUsingApp == false {
- CustomTabBarView(
-     action: {
-         homeData.isNewData.toggle()
-         homeData.content = ""
-         homeData.updateItem = nil
-         homeData.completion = false
-         homeData.date = Date(timeIntervalSinceNow: 3600)
-         homeData.isRemindMe = false
-         
-     },
-     selectedTab: $selectedTab
- )
- 
- }
- 
- 
- 
- 
- 
- 
- 
- */

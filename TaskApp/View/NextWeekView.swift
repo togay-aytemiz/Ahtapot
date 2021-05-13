@@ -68,7 +68,7 @@ struct NextWeekView: View {
             ZStack {
                 VStack{
                     // MARK: HEADER
-                    CustomNavigationBarView(showDate: false, shoppingItem: openShoppingListItem.count, customNavigationHeader: "Sonraki 7 Gün", isShowingSideMenu: $isShowingSideMenu, description: homeData.findNextWeekDates())
+                    CustomNavigationBarView(showDate: false, shoppingItem: openShoppingListItem.count, customNavigationHeader: "next7Days".localized(), isShowingSideMenu: $isShowingSideMenu, description: homeData.findNextWeekDates())
                         .background(Utils.isDarkMode ? Color.black : Color.white)
                     
                     
@@ -77,7 +77,7 @@ struct NextWeekView: View {
                     
                     
                     if next7DaysOpenTasks.count == 0 {
-                        EmptyViewIllustrations(image: "noTodo", text: "\(homeData.findNextWeekDates())\ntarih aralığı için yapılacak görev yok.\nHadi hemen ekleyelim... 💪🏻", header: "YAPILACAK GÖREV YOK")
+                        EmptyViewIllustrations(image: "noTodo", text: "7daysViewEmptyDescription".localized(), header: "7daysViewEmptyHeader".localized().uppercased())
                         Spacer()
                     }
                     else {
@@ -127,7 +127,7 @@ struct NextWeekView: View {
                                         haptics.impactOccurred()
                                     }, label: {
                                         HStack {
-                                            Text(!isJustNext7DaysOpenShown ? "Tamamlananları Göster" : "Tamamlananları Gizle")
+                                            Text(!isJustNext7DaysOpenShown ? "showCompletedTasks".localized() : "hideCompletedTasks".localized())
                                                 .font(.system(.subheadline, design: .rounded))
                                             Image(systemName: !isJustNext7DaysOpenShown ? "chevron.down" : "chevron.up")
                                         }
