@@ -134,7 +134,7 @@ struct SettingsMainView: View {
                                 
                                 // ARKADAŞINLA PAYLAŞ BUTTON
                                 FormLinkRowView(icon: "square.and.arrow.up.fill", color: Color(AppColor1), text: "shareWithFriends".localized()) {
-                                    homeData.sharePost(message: "shareWithFriends_ShareText".localized())
+                                    homeData.sharePost(message: "\("shareWithFriends_ShareText".localized()) https://apps.apple.com/us/app/id1565858619" )
                                     haptics.impactOccurred()
                                 }
                                 

@@ -138,7 +138,7 @@ struct StatsView: View {
                             .font(.headline)
                             .bold()
                             .padding(.trailing)
-                            .lineLimit(2)
+                            .lineLimit(3)
                             .minimumScaleFactor(0.1)
                             .fixedSize(horizontal: false, vertical: true)
                         
@@ -233,7 +233,7 @@ struct StatsView: View {
         case 0:
             return "\(todayAllTask) \("motivationalMessageFor_0".localized())"
         case 1...20:
-            return "motivationalMessageFor_1-20"
+            return "motivationalMessageFor_1-20".localized()
             
         case 21...49:
             return "motivationalMessageFor_21-49".localized()

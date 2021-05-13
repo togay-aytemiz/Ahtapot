@@ -79,7 +79,7 @@ struct RemindMeView: View {
                         homeData.isNotifResponseShow = true
                         haptics.impactOccurred()
                     }, label: {
-                        Text("firstTimeOpenReminder".localized())
+                        Text("firstTimeOpenReminder".localized().uppercased())
                             .font(.system(.headline, design: .rounded))
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .padding(.vertical, 6)

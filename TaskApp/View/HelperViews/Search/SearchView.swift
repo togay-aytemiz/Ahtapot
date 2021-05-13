@@ -136,7 +136,7 @@ struct SearchView: View {
                     VStack {
                         
                         Spacer()
-                        EmptyViewIllustrations(image: "NoSearchView", text: "noSearchResultBody".localized(), header: "noSearchResultHeader".localized())
+                        EmptyViewIllustrations(image: "NoSearchView", text: "noSearchResultBody".localized(), header: "noSearchResultHeader".localized().uppercased())
                         Spacer()
                         Spacer()
                     }

@@ -172,42 +172,42 @@ class HomeViewModel: ObservableObject {
     func firstTimeAddTasks(context: NSManagedObjectContext){
         
         let newTask1 = Task(context: context)
-        newTask1.date = Date(timeIntervalSinceNow: 3600)
-        newTask1.content = "Üzerime basılı tut 👆🏻"
+        newTask1.date = Date(timeIntervalSinceNow: 1)
+        newTask1.content = "\("newUserTask1".localized()) 👆🏻"
         newTask1.completion = false
         newTask1.isRemindMe = false
         
         
         let newTask2 = Task(context: context)
-        newTask2.date = Date(timeIntervalSinceNow: 3600)
-        newTask2.content = "Sağdaki oka dokun 👉🏻 "
+        newTask2.date = Date(timeIntervalSinceNow: 2)
+        newTask2.content = "\("newUserTask2".localized()) 👉🏻"
         newTask2.completion = false
         newTask2.isRemindMe = false
 
         
         let newTask3 = Task(context: context)
-        newTask3.date = Date(timeIntervalSinceNow: 3600)
-        newTask3.content = " 👀 Beni tamamlandı işaretle"
+        newTask3.date = Date(timeIntervalSinceNow: 3)
+        newTask3.content = "👀 \("newUserTask3".localized())"
         newTask3.completion = false
         newTask3.isRemindMe = false
 
         
         let newTask4 = Task(context: context)
-        newTask4.date = Date(timeIntervalSinceNow: 3600)
-        newTask4.content = "Aşağıdaki + ile görev ekle 👇🏻"
+        newTask4.date = Date(timeIntervalSinceNow: 4)
+        newTask4.content = "\("newUserTask4".localized()) 👇🏻"
         newTask4.completion = false
         newTask4.isRemindMe = false
         
         let newTask5 = Task(context: context)
-        newTask5.date = Date(timeIntervalSinceNow: 3600)
-        newTask5.content = "Yukarıdaki sepete tıkla 🛒"
+        newTask5.date = Date(timeIntervalSinceNow: 5)
+        newTask5.content = "\("newUserTask5".localized()) 🛒"
         newTask5.completion = false
         newTask5.isRemindMe = false
 
         
         let newTask6 = Task(context: context)
-        newTask6.date = Date(timeIntervalSinceNow: 3600)
-        newTask6.content = "Ayarlara bir göz at ⚙️"
+        newTask6.date = Date(timeIntervalSinceNow: 6)
+        newTask6.content = "newUserTask6".localized()
         newTask6.completion = false
         newTask6.isRemindMe = false
         
@@ -243,17 +243,17 @@ class HomeViewModel: ObservableObject {
     // Random placeholder for newData
     func randomTextGenerator() -> String {
         let pht = [
-            "Yarın faturaları ödemeyi unutma",
-            "Pazar günü aile kahvaltısı",
-            "Eve giderken yoğurt al",
-            "Çarşamba 3'e toplantı ayarla",
-            "Bugün akşam 9'da Ela ile buluş",
-            "Perşembe Portekizce sınavına gir",
-            "2 hafta sonra Mehmet'e doğum günü hediyesi al",
-            "Cuma günü dergi aboneliğini iptal ettir",
-            "20 Aralık'da spor salonu üyeliğini yenile"
+            "randomNewTaskGenerator1".localized(),
+            "randomNewTaskGenerator2".localized(),
+            "randomNewTaskGenerator3".localized(),
+            "randomNewTaskGenerator4".localized(),
+            "randomNewTaskGenerator5".localized(),
+            "randomNewTaskGenerator6".localized(),
+            "randomNewTaskGenerator7".localized(),
+            "randomNewTaskGenerator8".localized(),
+            "randomNewTaskGenerator9".localized()
         ]
-        let randomText = "Eklemek için dokun\nör: \(pht.randomElement()!)"
+        let randomText = "\("tapToAddTask".localized()) \n\("ie".localized()) \(pht.randomElement()!)"
         return String(randomText)
         
     }
@@ -343,7 +343,7 @@ class HomeViewModel: ObservableObject {
     func findNextWeekDates() -> String {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM"
+        formatter.dateStyle = .short
         
         // Başlangıç Tarihi
         var dateComponents1 = DateComponents()

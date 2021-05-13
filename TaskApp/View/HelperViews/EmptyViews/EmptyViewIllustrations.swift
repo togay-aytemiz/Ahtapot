@@ -37,8 +37,10 @@ struct EmptyViewIllustrations: View {
                 Text(text)
                     .font(.system(.headline, design: .rounded))
                     .fontWeight(.light)
+                
                     
             }
+            .frame(width: UIScreen.main.bounds.width - 30)
             .multilineTextAlignment(.center)
             .minimumScaleFactor(0.7)
             .lineLimit(3)

@@ -7,221 +7,143 @@
 */
 
 
-// GENERAL
+"brandSubheadline" = "Personal assistant";
+"onboardingTitle1" = "Forever Free";
+"onboardingDescription1" = "Yes, correct. No fee, ad-free, no more conditions. Completely new generation personal task management app. 🥳";
+"onboardingTitle2" = "Forget to forget!";
+"onboardingDescription2" = "I had something it in my mind but what was is? Is it familiar? You can forget these now 🙈";
+"onboardingTitle3" = "To-do list or shopping list";
+"onboardingDescription3" = "An application that answers the needs it anyway. Flexible, fast, eye-catching and easy to use 🤩";
+"onboardingTitle4" = "Spend More Time In Your Life";
+"onboardingDescription4" = "Plan your work, add it to the app and forget about the rest. You will be more planned now 😎";
+"back" = "Back";
+"next" = "Next";
+"letsGo" = "Let's start";
+"beforeStart" = "Before Begin";
+"firstUserMessageDescription1" = "It is nice to see you among us. We have a few very small tasks for you. In this way, you can start using the application quickly.";
+"firstUserMessageDescription2" = "You can share your opinions and suggestions about the application with us from the settings section.";
+"firstUserLetsGo" = "Let's go 😎";
+"addTask" = "Add Task";
+"editTask" = "Edit Task";
+"completedTask" = "Completed Tasks";
+"cancel" = "Cancel";
+"tapTextToEdit" = "👇🏻 Tap to edit the text";
+"update" = "Update";
+"remindMeOpen" = "Reminder On";
+"remindMeClosed" = "Reminder Off";
+"howToOpenReminder" = "Open with the right button 👉🏻";
+"firstTimeOpenReminder" = "Open";
+"tapToAddTask" = "Tap to add";
+"ie" = "eg:";
+"randomNewTaskGenerator1" = "Do not forget to pay bills tomorrow";
+"randomNewTaskGenerator2" = "Sunday family breakfast";
+"randomNewTaskGenerator3" = "Buy some fruits while going home";
+"randomNewTaskGenerator4" = "Set meeting at Wednesday noon";
+"randomNewTaskGenerator5" = "TV warranty will expire";
+"randomNewTaskGenerator6" = "Take the Thursday Portuguese quiz";
+"randomNewTaskGenerator7" = "Buy a birthday gift after 2 weeks";
+"randomNewTaskGenerator8" = "Cancel your magazine subscription on Friday";
+"randomNewTaskGenerator9" = "Renew gym membership on December 20";
+"newUserTask1" = "Tap and hold on me";
+"newUserTask2" = "Tap the right arrow";
+"newUserTask3" = "Mark me complete";
+"newUserTask4" = "Add task with the + below";
+"newUserTask5" = "Click on the cart above";
+"newUserTask6" = "Take a look at the top left menu";
+"when" = "When?";
+"1HourLater" = "1 hour later";
+"tomorrow" = "Tomorrow";
+"nextDay" = "Next day";
+"1WeekLater" = "1 week later";
+"15DaysLater" = "15 days later";
+"notNow" = "Skip for now";
+"openNotifsHeader" = "Open notifications. Never miss a thing";
+"openNotifsBody" = "By allowing notifications, you can remind you of the events you have planned.";
+"openNotifsLittlePromise" = "We promise not to send any notifications other than the tasks you have planned 😇";
+"openNotifsButton" = "Allow Notifications";
+"searchTasks" = "Search within tasks ...";
+"noSearchResultHeader" = "No results";
+"noSearchResultBody" = "We couldn't find any results for the search term 😢 Please try with another search term";
+"waitingTasks" = "Pending";
+"allTasks" = "All";
+"noWaitingTasks" = "You have no tasks waiting 💪🏻";
+"today" = "Today";
+"tomorrow" = "Tomorrow";
+"next7Days" = "Next 7 days";
+"allTasksSideBar" = "All Tasks";
+"settings" = "Settings";
+"goodMorning" = "Morning ☀️";
+"goodAfternoon" = "Good day 👋🏻";
+"goodEvening" = "Good evening 👋🏻";
+"goodNight" = "Good night 🌒";
+"closedTasksHeader" = "Completed Tasks";
+"deleteAllClosedTasksRowBody" = "Delete all completed tasks";
+"numberOfClosedTaskBodyDescription" = "The number of completed tasks:";
+"settingsHeader_Visual" = "Visual Settings";
+"settingsHeader_Other" = "Other";
+"darkMode" = "Dark Mode";
+"miniStats" = "Mini Statistics";
+"miniStats_disclaimer" = "Not recommend to close";
+"shareWithFriends" = "Share with your friends";
+"shareWithFriends_ShareText" = "I found a very nice task management app. Take a look!";
+"rateTheApp" = "Rate App";
+"findBugOrSuggestFeature" = "Suggest Feature & Share Bug";
+"findBugOrSuggestFeature_MailTitle" = "Feature / Bug";
+"findBugOrSuggestFeature_MailBody" = "I enjoy using the application, but I have some suggestions";
+"deleteAllPopupText" = "Everything in the app will be deleted. This action is irreversible!";
+"deleteAllClosedTasksPopupText" = "All completed tasks will be deleted. This action is irreversible";
+"whyShouldYouUseAhtapot" = "Why you should use Ahtapot?";
+"whyShouldYouUseAhtapot_Claim1" = "Unlimited and ad-free";
+"whyShouldYouUseAhtapot_Claim2" = "Free forever";
+"whyShouldYouUseAhtapot_Claim3" = "It does not receive any data, secure";
+"whyShouldYouUseAhtapot_Claim4" = "Simple and useful interface";
+"dontShow_WSYUA" = "Do not show again";
+"deleteAllDataRowHeader" = "Delete all data";
+"deleteAllDataRowBody" = "This action is irreversible";
+"changeAppThemeColor" = "Change Application Theme";
+"addNewTasksEmptyView" = "Add New Task";
+"close" = "Close";
+"deleteList" = "Clear List";
+"shoppingList" = "My Shopping List";
+"hideCompleted" = "Hide My Received";
+"showCompleted" = "Show My Received";
+"shoppingListEmptyHeader" = "Your list is empty";
+"shoppingListEmptyDescription" = "Your shopping list is empty. You can add it below 👇🏻";
+"deleteShoppingListMessage" = "Everything on your list will be deleted. This action is irreversible";
+"whatDoYouWantToAdd" = "What would you like to add?";
+"welcomeShoppingListHeader" = "Welcome to Shopping Lists";
+"shoppingListClaimHeader1" = "Don't forget your items";
+"shoppingListClaimDescription1" = "Do you have things that you forget to buy from the store when you get home? Will not happen anymore";
+"shoppingListClaimHeader2" = "Always at hand";
+"shoppingListClaimDescription2" = "When you open the application, you can quickly access the list of things you want to take";
+"shoppingListClaimHeader3" = "Easy to follow and use";
+"shoppingListClaimDescription3" = "You can add anything you want, mark what you've bought and easily follow the list";
+"numberOfTaskCompleted" = "task completed";
+"pastTaskNumber" = "Past";
+"futureTaskNumber" = "Future";
+"motivationalMessageFor_0" = "task is waiting for you today 🤞🏻";
+"motivationalMessageFor_1-20" = "Getting started is half the time to finish, you're doing well 💪🏻";
+"motivationalMessageFor_21-49" = "Today is almost halfway, don't stop 😇";
+"motivationalMessageFor_50-65" = "You even halfway today, keep it right 👍🏻";
+"motivationalMessageFor_66-80" = "You're doing so well, it's almost done 🔥";
+"motivationalMessageFor_81-99" = "It's about to end, there is so little left 🚀";
+"motivationalMessageFor_100" = "You are great, you have completed all your tasks for today 🥳";
+"motivationalMessageWhen_NoToday-YesPast" = "There are no tasks to be done today, but those who are out of time need to be completed 😅";
+"motivationalMessageWhen_NoToday-NoPast" = "There is no task to be done today, rest well 😴";
+"addNewTask" = "Add New Task";
+"editTask" = "Edit Task";
+"delete" = "Delete";
+"deleting" = "Deleting";
+"yesDelete" = "Sure, Delete";
+"mainViewEmptyHeader" = "No tasks";
+"mainViewEmptyDescription" = "Your to-do list is empty. Let's add it right now... 💪🏻";
+"tomorrowViewEmptyHeader" = "No task for tomorrow";
+"tomorrowViewEmptyDescription" = "Your to-do list for tomorrow is empty. Let's add it right now... 💪🏻";
+"7daysViewEmptyHeader" = "There is no task";
+"7daysViewEmptyDescription" = "The to-do list for this date range is empty. Let's add it right now... 💪🏻";
+"pastTask" = "Past";
+"showCompletedTasks" = "Show completed";
+"hideCompletedTasks" = "Hide completed";
 
-"brandSubheadline" = "Kişisel asistanın";
 
 
-
-// ONBOARDING
-
-
-
-"onboardingTitle1" = "Sonsuza Kadar Ücretsiz";
-"onboardingDescription1" = "Evet yanlış okumadın.\nÜcretsiz, reklamsız, şartsız. Tamamen koşulsuz yeni nesil görev yönetim uygulaması 🥳";
-
-
-"onboardingTitle2" = "Unutmaya Son!";
-"onboardingDescription2" = "'Yaa aklımda bi şey vardı ama neydi' kelimeleri tanıdık geldi mi. Bunları unutabilirsin 🙈";
-
-
-"onboardingTitle3" = "İster yapılacaklar,\nister alışveriş listesi";
-"onboardingDescription3" = "İhtiyaçların neyse buna cevap veren bir uygulama. Esnek, hızlı, göz alıcı ve kullanımı kolay 🤩";
-
-"onboardingTitle4" = "Hayatına Daha Fazla Zaman Ayır";
-"onboardingDescription4" = "İşlerini planla, uygulamaya giriş yap ve gerisini unut. Artık daha planlı olacaksın 😎";
-
-"back" = "Geri";
-"next" = "İleri";
-"letsGo" = "Hadi Başlayalım";
-
-
-// first user message
-"beforeStart" = "Başlamadan\nÖnce";
-"firstUserMessageDescription1" = "Seni aramızda görmek çok güzel. Senin için çok küçük bir kaç görevimiz var. Bu sayede uygulamayı hızlıca kullanmaya başlayabilirsin.";
-"firstUserMessageDescription2" = "Uygulama ile ilgili görüş ve önerilerini ayarlar kısmından bizimle paylaşabilirsin";
-"firstUserLetsGo" = "Hadi Başlayalım 😎";
-
-
-// ------------------------------------------------------------------------------------
-
-
-// NEW DATA VIEW
-
-"addTask" = "Görev Ekle";
-"editTask" = "Görev Düzenle";
-"completedTask" = "Tamamlanmış Görev";
-"cancel" = "Vazgeç";
-"tapTextToEdit" = "👇🏻 Düzenlemek için metne dokun";
-"update" = "Güncelle";
-"remindMeOpen" = "Hatırlatma Açık";
-"remindMeClosed" = "Hatırlatma Kapalı";
-"howToOpenReminder" = "Sağdaki düğme ile aç 👉🏻";
-"firstTimeOpenReminder" = "AÇ";
-
-// yeni task eklerken çıkan random textler eklenecek ***************************************************************************
-
-
-// custom date selection
-"when" = "Ne zaman?";
-"1HourLater" = "1 saat sonra";
-"tomorrow" = "Yarın";
-"nextDay" = "Öbür Gün";
-"1WeekLater" = "1 Hafta Sonra";
-"15DaysLater" = "15 Gün Sonra";
-
-// notification permission
-"notNow" = "Şimdilik Geç";
-"openNotifsHeader" = "Bildirimleri Aç\nHiç Bir Şeyi Kaçırma";
-"openNotifsBody" = "Bildirimlere izin vererek, planlamasını yaptığın etkinliklerin sana hatırlatılmasını sağlayabilirsin.";
-"openNotifsLittlePromise" = "Planladığın görevler dışında hiç bir bildirim göndermeyeğimize söz veriyoruz 😇";
-"openNotifsButton" = "Bildirimlere İzin Ver";
-
-
-// ------------------------------------------------------------------------------------
-
-
-// SEARCH
-
-
-"searchTasks" = "Görevler içinde ara...";
-"noSearchResultHeader" = "SONUÇ BULUNAMADI";
-"noSearchResultBody" ="Arama terimine ait sonuç bulamadık 😢\nLütfen başka bir arama terimi ile dene";
-"waitingTasks" = "Bekleyenler";
-"allTasks" = "Tümü";
-"noWaitingTasks" = "Bekleyen hiç görevin yok 💪🏻";
-
-
-// ------------------------------------------------------------------------------------
-
-// SIDEBAR
-
-"today" = "Bugün";
-"tomorrow" = "Yarın";
-"next7Days" = "Sonraki 7 gün";
-"allTasksSideBar" = "Tüm Görevler";
-"settings" = "Ayarlar";
-
-"goodMorning" = "Günaydın ☀️";
-"goodAfternoon" = "İyi günler 👋🏻";
-"goodEvening" = "İyi akşamlar 👋🏻";
-"goodNight" = "İyi geceler 🌒";
-
-
-
-// ------------------------------------------------------------------------------------
-
-// SEARCH
-
-"closedTasksHeader" = "Tamamlanan Görevler";
-"deleteAllClosedTasksRowBody" = "Tüm tamamlanan görevleri sil";
-"numberOfClosedTaskBodyDescription" = "Tamamlanan görev sayısı:";
-"settingsHeader_Visual" = "Görsel Ayarlar";
-"settingsHeader_Other" = "Diğer";
-"darkMode" = "Karanlık Mod";
-"miniStats" = "Mini İstatistik";
-"miniStats_disclaimer" = "Kapatman Önerilmez";
-"shareWithFriends" = "Arkadaşlarınla Paylaş";
-"shareWithFriends_ShareText" = "Çok güzel bir görev yönetim uygulaması buldum. Bi baksana sen de! : https://apps.apple.com/us/app/id1565858619";
-"rateTheApp" = "Uygulamayı Değerlendir";
-"findBugOrSuggestFeature" = "Özellik Öner & Hata Paylaş";
-"findBugOrSuggestFeature_MailTitle" = "Özellik / Hata";
-"findBugOrSuggestFeature_MailBody" = "Uygulamayı keyifle kullanıyorum ancak şu özellik olsaydı çok iyi olurdu, ya da şu hata olmasa daha güzel olurdu :";
-"deleteAllPopupText" = "Uygulamadaki her şey silinecek. Bu işlem geri alınamaz!";
-"deleteAllClosedTasksPopupText" = "Tamamlanan tüm görevler silinecek. Bu işlem geri alınamaz";
-
-
-// internal ads view
-"whyShouldYouUseAhtapot" = "Neden Ahtapot Kullanmalısın?";
-"whyShouldYouUseAhtapot_Claim1" = "Sınırsız ve Reklamsız";
-"whyShouldYouUseAhtapot_Claim2" = "Sonsuza kadar ücretsiz";
-"whyShouldYouUseAhtapot_Claim3" = "Hiç bir veri almaz, güvenli";
-"whyShouldYouUseAhtapot_Claim4" = "Basit ve kullanışlı arayüz";
-"dontShow_WSYUA" = "Bir daha gösterme";
-
-// other
-"deleteAllDataRowHeader" = "Tüm verileri sil" ;
-"deleteAllDataRowBody" = "Bu işlem geri alınamaz";
-"changeAppThemeColor" = "Uygulama Temasını Değiştir";
-
-
-// ------------------------------------------------------------------------------------
-
-// EMPTY VIEW
-"addNewTasksEmptyView" = "Yeni Görev Ekle";
-
-
-
-// ------------------------------------------------------------------------------------
-
-// SHOPPING LIST VIEW
-
-"close" = "Kapat";
-"deleteList" = "Listeyi Temizle";
-"shoppingList" = "Alışveriş Listem";
-"hideCompleted" = "Aldıklarımı Gizle";
-"showCompleted" = "Aldıklarımı Göster";
-"shoppingListEmptyHeader" = "LİSTEN BOŞ";
-"shoppingListEmptyDescription" = "Alışveriş listen boş.\nAşağıdan ekleyebilirsin 👇🏻";
-"deleteShoppingListMessage" = "Listendeki her şey silinecek. Bu işlem geri alınamaz";
-"whatDoYouWantToAdd" = "Ne eklemek istersin?";
-
-// first time shopping List
-"welcomeShoppingListHeader" = "🤗🛍\nAlışveriş Listem'e\nHoşgeldin";
-
-"shoppingListClaimHeader1" = "Alacaklarını unutmak yok";
-"shoppingListClaimDescription1" = "Artık eve gittiğinde, 'aaa elma almayı unuttum yaa!' demek yok.";
-
-"shoppingListClaimHeader2" = "Elinin altında hazır";
-"shoppingListClaimDescription2" = "Uygulamayı açtığında alacağın şeylerin listesine hızlıca ulaşabilirsin";
-
-"shoppingListClaimHeader3" = "Takibi ve kullanımı kolay";
-"shoppingListClaimDescription3" = "Alacağın her şeyi ekleyebilir, aldıklarını işaretleyebilir ve listeyi kolayca takip edebilirsin";
-
-
-// ------------------------------------------------------------------------------------
-
-// STAT VIEWS
-"numberOfTaskCompleted" = "görev tamamlandı";
-"pastTaskNumber" = "Zamanı Geçen";
-"futureTaskNumber" = "Gelecek Zaman";
-
-"motivationalMessageFor_0" = "görev bugün yapılmak üzere seni bekliyor 🤞🏻";
-"motivationalMessageFor_1-20" = "Başlamak bitirmenin yarısıdır, iyi gidiyorsun 💪🏻";
-"motivationalMessageFor_21-49" = "Bugünü yarılamaya az kaldı, durmak yok 😇";
-"motivationalMessageFor_50-65" = "Bugünü yarıladın bile, aynen devam 👍🏻";
-"motivationalMessageFor_66-80" = "Çok iyi gidiyorsun, neredeyse bitmek üzere 🔥";
-"motivationalMessageFor_81-99" = "Son düzlüktesin, sık dişini 🚀";
-"motivationalMessageFor_100" = "Harikasın, bugünlük tüm görevlerini tamamladın 🥳";
-"motivationalMessageWhen_NoToday-YesPast" = "Bugün yapılacak görev yok ama zamanı geçenlerin tamamlanması lazım 😅";
-"motivationalMessageWhen_NoToday-NoPast" = "Bugün yapılacak görev yok, güzelce dinlenebilirsin 😴";
-
-
-
-// ------------------------------------------------------------------------------------
-
-// OTHERS
-"addNewTask" = "Yeni Görev Ekle";
-"editTask" = "Görev Düzenle";
-"delete" = "Sil";
-"deleting" = "Siliniyor";
-"yesDelete" = "Eminim, Sil";
-
-
-// ------------------------------------------------------------------------------------
-
-// MAIN VIEWS
-
-"mainViewEmptyHeader" = "Hiç Görev Yok";
-"mainViewEmptyDescription" = "Yapılacaklar listen boş.\nHadi hemen ekleyelim... 💪🏻";
-
-"tomorrowViewEmptyHeader" = "Yarın Yapılacak Yok";
-"tomorrowViewEmptyDescription" = "Yarın için yapılacak listen boş.\nHadi hemen ekleyelim... 💪🏻";
-
-"7daysViewEmptyHeader" = "Yapılacak Görev Yok";
-"7daysViewEmptyDescription" = "Bu tarih aralığı için yapılacak listen boş.\nHadi hemen ekleyelim... 💪🏻";
-
-
-"pastTask" = "Geçmiş";
-"showCompletedTasks" = "Tamamlananları Göster";
-"hideCompletedTasks" = "Tamamlananları Gizle";

@@ -34,7 +34,7 @@ struct FirstTimeShoppingList: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Text("welcomeShoppingListHeader".localized())
+                    Text("🤗🛍\n \("welcomeShoppingListHeader".localized())")
                         .font(.system(.title, design: .rounded))
                         .fontWeight(.heavy)
                         .foregroundColor(isDarkMode ? Color.white : Color.primary)

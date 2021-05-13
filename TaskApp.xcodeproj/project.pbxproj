@@ -127,7 +127,7 @@
 		4B569C73262E0CE700280ED6 /* addTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskButton.swift; sourceTree = "<group>"; };
 		4B605EB0262D97B1001ACEA5 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		4B698E3D264C7C36006F4275 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4B698E3E264C7CDA006F4275 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B698E3F264DC17D006F4275 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4B75A538262C69D900B2214E /* TaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B75A53B262C69D900B2214E /* TaskAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAppApp.swift; sourceTree = "<group>"; };
 		4B75A53D262C69D900B2214E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -702,7 +702,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4B698E3D264C7C36006F4275 /* en */,
-				4B698E3E264C7CDA006F4275 /* tr */,
+				4B698E3F264DC17D006F4275 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -31,7 +31,7 @@ struct TaskAppApp: App {
                 ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .environment(\.locale, Locale(identifier: "tr"))
+                    //.environment(\.locale, Locale(identifier: "tr"))
                     .environmentObject(obj)
                     
             }

@@ -150,7 +150,7 @@ struct ShoppingListView: View {
                     if list.count == 0 {
                         
                         Spacer()
-                        EmptyViewIllustrations(image: "cart", text: "shoppingListEmptyDescription".localized(), header: "shoppingListEmptyHeader".localized())
+                        EmptyViewIllustrations(image: "cart", text: "shoppingListEmptyDescription".localized(), header: "shoppingListEmptyHeader".localized().uppercased())
                         Spacer()
                         Spacer()
                         Spacer()

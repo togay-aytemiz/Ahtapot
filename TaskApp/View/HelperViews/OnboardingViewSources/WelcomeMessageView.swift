@@ -66,7 +66,7 @@ struct WelcomeMessageView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding()
                 
-                Text("firstUserMessageDescription1".localized())
+                Text("firstUserMessageDescription2".localized())
                     .font(.system(.footnote, design: .rounded))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)

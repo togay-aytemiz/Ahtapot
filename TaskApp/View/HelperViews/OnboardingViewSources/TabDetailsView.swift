@@ -51,6 +51,7 @@ struct TabDetailsView: View {
                 .padding(.horizontal)
                         
         } //VSTACK
+        .frame(width: UIScreen.main.bounds.width - 30)
         .animation(.default)
         .foregroundColor(Color("Color1"))
 //        .minimumScaleFactor(0.5)
