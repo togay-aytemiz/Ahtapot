@@ -14,8 +14,8 @@
 	<string>6.0</string>
 	<key>CFBundleLocalizations</key>
 	<array>
-		<string>Turkish</string>
 		<string>en</string>
+		<string>Turkish</string>
 	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>

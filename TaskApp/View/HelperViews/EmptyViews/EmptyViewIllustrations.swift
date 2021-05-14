@@ -14,7 +14,7 @@ struct EmptyViewIllustrations: View {
     var text: String
     var header: String
     
-    //@AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
 
     
     // MARK: BODY
@@ -45,7 +45,7 @@ struct EmptyViewIllustrations: View {
             .minimumScaleFactor(0.7)
             .lineLimit(3)
             .fixedSize(horizontal: false, vertical: true)
-            .foregroundColor(Utils.isDarkMode ? Color.white.opacity(0.7) : Color.black.opacity(0.6))
+            .foregroundColor(isDarkMode ? Color.white.opacity(0.7) : Color.black.opacity(0.6))
             .padding(.top, -15)
 
             Spacer()
