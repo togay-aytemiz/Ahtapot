@@ -151,7 +151,7 @@ struct SideMenuView: View {
                     .fill(Color.white)
                     .frame(width: 150, height: 1.5)
                     .cornerRadius(12)
-                    .padding()
+                    .padding(.leading)
                     .padding(.leading)
                 
                 
@@ -160,21 +160,22 @@ struct SideMenuView: View {
                         .resizable()
                         .scaledToFill()
                         .clipped()
-                        .frame(width: 64, height: 64)
+                        .frame(width: UIScreen.screenWidth / 10, height: UIScreen.screenWidth / 10)
                     
                     VStack(alignment: .leading){
                         Text("Ahtapot")
-                            .font(.system(.title2, design: .rounded))
+                            .font(.system(.title3, design: .rounded))
                             .fontWeight(.heavy)
                             .foregroundColor(.white)
                         
                         Text("brandSubheadline".localized())
-                            .font(.system(.headline, design: .rounded))
+                            .font(.system(.subheadline, design: .rounded))
                                 .fontWeight(.light)
                                 .foregroundColor(.white)
                     }
                 }
                 .padding()
+                .padding(.bottom)
                 .padding(.leading)
                 
             }

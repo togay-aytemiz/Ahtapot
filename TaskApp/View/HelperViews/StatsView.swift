@@ -22,8 +22,8 @@ struct StatsView: View {
     
     var numberOfPreviousTask = 1    // geçmiş tasklar
     var numberOfFutureTasks = 0     // gelecek tasklar
-    var todayClosedTask = 12        // bugün kapatılan tasklar
-    var todayAllTask = 78           // bugün yapılacak tüm tasklar
+    var todayClosedTask = 78        // bugün kapatılan tasklar
+    var todayAllTask = 100          // bugün yapılacak tüm tasklar
     
     
     
@@ -82,7 +82,7 @@ struct StatsView: View {
                                     }
                                     .padding(7)
                                     .scaledToFit()
-                                    .minimumScaleFactor(0.5)
+                                    .minimumScaleFactor(0.1)
                                 }
                                 
                                 
@@ -96,7 +96,7 @@ struct StatsView: View {
                                                 .font(.system(.headline, design: .rounded))
                                                 .fontWeight(.heavy)
                                             Text(String(format: "%.0f", calculatedCompletionForText))
-                                                .font(.system(.largeTitle, design: .rounded))
+                                                .font(.system(.title, design: .rounded))
                                                 .fontWeight(.heavy)
                                                 .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
                                                 .lineLimit(1)
@@ -138,7 +138,7 @@ struct StatsView: View {
                             .font(.headline)
                             .bold()
                             .padding(.trailing)
-                            .lineLimit(3)
+                            .lineLimit(2)
                             .minimumScaleFactor(0.1)
                             .fixedSize(horizontal: false, vertical: true)
                         
@@ -232,21 +232,21 @@ struct StatsView: View {
         switch calculatedCompletionForText {
         case 0:
             return "\(todayAllTask) \("motivationalMessageFor_0".localized())"
-        case 1...20:
+        case 1..<21:
             return "motivationalMessageFor_1-20".localized()
             
-        case 21...49:
+        case 21..<50:
             return "motivationalMessageFor_21-49".localized()
             
-        case 50...65:
+        case 50..<65:
             return "motivationalMessageFor_50-65".localized()
             
             
-        case 66...80:
+        case 65..<80:
             return "motivationalMessageFor_66-80".localized()
             
             
-        case 81...99:
+        case 80..<100:
             return "motivationalMessageFor_81-99".localized()
             
         case 100:

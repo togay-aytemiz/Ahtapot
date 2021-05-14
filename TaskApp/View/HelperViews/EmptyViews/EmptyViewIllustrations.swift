@@ -40,7 +40,7 @@ struct EmptyViewIllustrations: View {
                 
                     
             }
-            .frame(width: UIScreen.main.bounds.width - 30)
+            .frame(width: UIScreen.main.bounds.width - 40)
             .multilineTextAlignment(.center)
             .minimumScaleFactor(0.7)
             .lineLimit(3)

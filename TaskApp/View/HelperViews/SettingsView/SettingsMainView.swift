@@ -189,6 +189,11 @@ struct SettingsMainView: View {
                                         .fontWeight(.light)
                                         .foregroundColor(.secondary)
                                 
+                                Text(UIApplication.appVersion ?? "")
+                                    .font(.system(.footnote, design: .rounded))
+                                        .fontWeight(.light)
+                                        .foregroundColor(.secondary)
+                                
                             }
                             .padding()
                             .padding(.vertical)
@@ -208,7 +213,7 @@ struct SettingsMainView: View {
                     
                     // EMAIL SHEETI
                     .sheet(isPresented: $showSheet, content: {
-                        MailView(result: self.$result, newSubject: "findBugOrSuggestFeature_MailTitle".localized(), newMsgBody: "findBugOrSuggestFeature_MailBody".localized())
+                        MailView(result: self.$result, newSubject: "findBugOrSuggestFeature_MailTitle".localized(), newMsgBody: "\("findBugOrSuggestFeature_MailBody".localized())\n\(UIApplication.appVersion ?? "")" )
                     })
                     
                     

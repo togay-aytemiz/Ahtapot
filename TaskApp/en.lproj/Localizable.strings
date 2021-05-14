@@ -91,7 +91,7 @@
 "findBugOrSuggestFeature_MailTitle" = "Feature / Bug";
 "findBugOrSuggestFeature_MailBody" = "I enjoy using the application, but I have some suggestions";
 "deleteAllPopupText" = "Everything in the app will be deleted. This action is irreversible!";
-"deleteAllClosedTasksPopupText" = "All completed tasks will be deleted. This action is irreversible";
+"deleteAllClosedTasksPopupText" = "All completed tasks will be deleted. This action is irreversible!";
 "whyShouldYouUseAhtapot" = "Why you should use Ahtapot?";
 "whyShouldYouUseAhtapot_Claim1" = "Unlimited and ad-free";
 "whyShouldYouUseAhtapot_Claim2" = "Free forever";
@@ -122,13 +122,13 @@
 "pastTaskNumber" = "Past";
 "futureTaskNumber" = "Future";
 "motivationalMessageFor_0" = "task is waiting for you today 🤞🏻";
-"motivationalMessageFor_1-20" = "Getting started is half the time to finish, you're doing well 💪🏻";
-"motivationalMessageFor_21-49" = "Today is almost halfway, don't stop 😇";
-"motivationalMessageFor_50-65" = "You even halfway today, keep it right 👍🏻";
+"motivationalMessageFor_1-20" = "A journey of 100 miles begins with one step 💪🏻";
+"motivationalMessageFor_21-49" = "You're halfway there, don't stop 😇";
+"motivationalMessageFor_50-65" = "Already halfway, keep going 👍🏻";
 "motivationalMessageFor_66-80" = "You're doing so well, it's almost done 🔥";
 "motivationalMessageFor_81-99" = "It's about to end, there is so little left 🚀";
-"motivationalMessageFor_100" = "You are great, you have completed all your tasks for today 🥳";
-"motivationalMessageWhen_NoToday-YesPast" = "There are no tasks to be done today, but those who are out of time need to be completed 😅";
+"motivationalMessageFor_100" = "You are great, you've completed all your tasks 🥳";
+"motivationalMessageWhen_NoToday-YesPast" = "There are no tasks to be done today, but past tasks need to be completed 😅";
 "motivationalMessageWhen_NoToday-NoPast" = "There is no task to be done today, rest well 😴";
 "addNewTask" = "Add New Task";
 "editTask" = "Edit Task";
@@ -139,7 +139,7 @@
 "mainViewEmptyDescription" = "Your to-do list is empty. Let's add it right now... 💪🏻";
 "tomorrowViewEmptyHeader" = "No task for tomorrow";
 "tomorrowViewEmptyDescription" = "Your to-do list for tomorrow is empty. Let's add it right now... 💪🏻";
-"7daysViewEmptyHeader" = "There is no task";
+"7daysViewEmptyHeader" = "No tasks";
 "7daysViewEmptyDescription" = "The to-do list for this date range is empty. Let's add it right now... 💪🏻";
 "pastTask" = "Past";
 "showCompletedTasks" = "Show completed";
