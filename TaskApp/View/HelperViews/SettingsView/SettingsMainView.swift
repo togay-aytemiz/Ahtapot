@@ -213,7 +213,7 @@ struct SettingsMainView: View {
                     
                     // EMAIL SHEETI
                     .sheet(isPresented: $showSheet, content: {
-                        MailView(result: self.$result, newSubject: "findBugOrSuggestFeature_MailTitle".localized(), newMsgBody: "\("findBugOrSuggestFeature_MailBody".localized())\n\(UIApplication.appVersion ?? "")" )
+                        MailView(result: self.$result, newSubject: "findBugOrSuggestFeature_MailTitle".localized(), newMsgBody: "\("findBugOrSuggestFeature_MailBody".localized())\nv:\(UIApplication.appVersion ?? "")" )
                     })
                     
                     
