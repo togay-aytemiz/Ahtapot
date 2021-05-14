@@ -41,7 +41,7 @@ let shortDateFormat: DateFormatter = {
 
 let miniDateAndTimeFormat: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateFormat = "EEEE | dd MMM - HH:mm"
+    formatter.dateFormat = "EEE | dd MMM"
     return formatter
 }()
 

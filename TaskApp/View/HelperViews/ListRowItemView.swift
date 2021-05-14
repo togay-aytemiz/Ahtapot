@@ -75,12 +75,28 @@ struct ListRowItemView: View {
                     HStack(spacing: 2) {
                         Image(systemName: "alarm")
                             .font(.system(.caption2, design: .rounded))
+                            .opacity(homeData.completion ? 0.7 : 1)
                         
                         Text(homeData.date ?? Date(), formatter: miniDateAndTimeFormat)
                             .font(.system(.subheadline, design: .rounded))
                             .fontWeight(.light)
                             .scaledToFit()
                             .minimumScaleFactor(0.7)
+                            .opacity(homeData.completion ? 0.7 : 1)
+                        
+                        Text(homeData.date ?? Date(), formatter: shortDateFormat)
+                            .font(.system(.footnote, design: .rounded))
+                            .fontWeight(.light)
+                            .scaledToFit()
+                            .minimumScaleFactor(0.7)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 3)
+                            .background(Utils.isDarkMode ? Color.gray.opacity(0.4) : Color.white.opacity(0.75))
+                            .cornerRadius(6)
+                            .padding(.leading, 5)
+                            .opacity(homeData.completion ? 0.65 : 1)
+                        
+                        
                     }
                     .foregroundColor(homeData.completion ? (Utils.isDarkMode ? Color.white.opacity(0.3) : Color.gray.opacity(0.5)) : (Utils.isDarkMode ? Color.white.opacity(0.7) : Color.gray))
 
