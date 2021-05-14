@@ -72,7 +72,7 @@
 "next7Days" = "Next 7 days";
 "allTasksSideBar" = "All Tasks";
 "settings" = "Settings";
-"goodMorning" = "Morning ☀️";
+"goodMorning" = "Good Morning ☀️";
 "goodAfternoon" = "Good day 👋🏻";
 "goodEvening" = "Good evening 👋🏻";
 "goodNight" = "Good night 🌒";
@@ -105,8 +105,8 @@
 "close" = "Close";
 "deleteList" = "Clear List";
 "shoppingList" = "My Shopping List";
-"hideCompleted" = "Hide My Received";
-"showCompleted" = "Show My Received";
+"hideCompleted" = "Hide Completed";
+"showCompleted" = "Show Completed";
 "shoppingListEmptyHeader" = "Your list is empty";
 "shoppingListEmptyDescription" = "Your shopping list is empty. You can add it below 👇🏻";
 "deleteShoppingListMessage" = "Everything on your list will be deleted. This action is irreversible";

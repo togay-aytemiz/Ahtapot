@@ -29,6 +29,9 @@
  - DONE ///// Uygulama değerlendir bağlantısı düzenelnecek
 
  
+ - 
+ 
+ 
  - Quick Actions
  - Task detayından silme
  - Tarih'in isteğe bağlı alınması
