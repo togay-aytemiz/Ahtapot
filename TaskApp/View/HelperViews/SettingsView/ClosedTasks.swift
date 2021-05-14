@@ -61,7 +61,7 @@ struct ClosedTasks: View {
                                 HStack(spacing: 2) {
                                     Image(systemName: "chevron.down")
                                         .font(.system(size: 18, weight: .semibold, design: .rounded))
-                                    Text("Kapat")
+                                    Text("close".localized())
                                         .font(.system(.headline, design: .rounded))
                                         .fontWeight(.semibold)
                                 }

@@ -16,25 +16,28 @@ struct MiniAddTaskButtonView: View {
     
     // MARK: BODY
     var body: some View {
-        ZStack {
-            
-            Button(action: {
-                haptics.impactOccurred()
-                action()
-            }, label: {
-                Utils.AppThemeBackgroundColor
-                    .mask(Image(systemName: "plus.circle.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    ).frame(width: 60, height: 60, alignment: .center)
-            })
-            .background(Color.white)
-            .clipShape(Circle())
-            .shadow(color: Color(Utils.AppColor1).opacity(0.3), radius: 8, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 6.0)
-            .padding()
-            
-            
-            
+        HStack {
+            Spacer()
+            VStack {
+                Spacer()
+                Button(action: {
+                    haptics.impactOccurred()
+                    action()
+                }, label: {
+                    Utils.AppThemeBackgroundColor
+                        .mask(Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        ).frame(width: 60, height: 60, alignment: .center)
+                })
+                .background(Color.white)
+                .clipShape(Circle())
+                .shadow(color: Color(Utils.AppColor1).opacity(0.3), radius: 8, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 6.0)
+                .padding()
+                
+                
+                
+            }
         }
     }
 }

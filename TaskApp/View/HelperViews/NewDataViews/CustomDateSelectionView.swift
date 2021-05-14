@@ -71,7 +71,7 @@ struct CustomDateSelectionView: View {
                             .foregroundColor(Color(Utils.AppColor1))
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
                         
-                        DatePicker("", selection: $homeData.date,  in: Date()..., displayedComponents: [.date, .hourAndMinute])
+                        DatePicker("", selection: $homeData.date, in: Date()..., displayedComponents: [.date, .hourAndMinute])
                             .labelsHidden()
                             //.environment(\.locale, Locale.init(identifier: "tr"))
                             .animation(.easeInOut)
