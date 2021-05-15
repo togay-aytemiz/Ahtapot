@@ -13,6 +13,7 @@ struct TaskAppApp: App {
     
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    @StateObject private var store = Store()
     
 //    @Environment(\.managedObjectContext) var context
 
@@ -24,15 +25,14 @@ struct TaskAppApp: App {
                 OnboardingView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-                    //.environment(\.locale, Locale(identifier: "tr"))
                     
                     
             } else {
                 ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-                    //.environment(\.locale, Locale(identifier: "tr"))
                     .environmentObject(obj)
+                    .environmentObject(store)
                     
             }
     

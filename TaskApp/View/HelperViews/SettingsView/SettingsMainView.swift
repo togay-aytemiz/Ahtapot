@@ -127,8 +127,8 @@ struct SettingsMainView: View {
                         
                         
                         // MARK: SECTION 3.5 - TIP BUTTON
-                        //TipButtonView()
-                        
+                        TipButtonView()
+                            .padding(.bottom, 15)
                         
                         
                         

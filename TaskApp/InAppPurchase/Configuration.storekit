@@ -1,0 +1,78 @@
+{
+  "identifier" : "5B85F752",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "7391BF11",
+      "localizations" : [
+        {
+          "description" : "This small gift, make us very happy!",
+          "displayName" : "Small Gift",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Vereceğin bu hediye, bizi çok sevindirecek.",
+          "displayName" : "Küçük Hediye",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "gift_small_01",
+      "referenceName" : "gift_small_01",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "F5702195",
+      "localizations" : [
+        {
+          "description" : "This medium gift, make us very happy!",
+          "displayName" : "Medium Gift",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Vereceğin bu hediye, bizi çok sevindirecek.",
+          "displayName" : "Orta Hediye",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "gift_medium_01",
+      "referenceName" : "gift_medium_01",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "759692CD",
+      "localizations" : [
+        {
+          "description" : "This large gift, make us very happy!",
+          "displayName" : "Large Gift",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Vereceğin bu hediye, bizi çok sevindirecek.",
+          "displayName" : "Büyük Hediye",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "gift_large_01",
+      "referenceName" : "gift_large_01",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}
