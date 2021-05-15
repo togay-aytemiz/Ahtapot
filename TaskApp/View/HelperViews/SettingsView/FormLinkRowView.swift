@@ -14,7 +14,7 @@ struct FormLinkRowView: View {
     var icon : String
     var color: Color
     var text: String
-    
+    var text2 : String = ""
     var action: () -> Void
     
     //@AppStorage("isDarkMode") private var isDarkMode: Bool = false
@@ -43,9 +43,25 @@ struct FormLinkRowView: View {
                     }
                     .frame(width: 36, height: 36, alignment: .center)
                     
-                    Text(text)
-                        .padding(.leading, 6)
-                        .foregroundColor(.primary)
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text(text)
+                            .font(.system(.body, design: .rounded))
+                            .foregroundColor(.primary)
+                            .padding(.leading, 6)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.1)
+                        
+                        if text2 != "" {
+                            Text(text2)
+                                .padding(.leading, 6)
+                                .font(.system(.subheadline, design: .rounded))
+                                .foregroundColor(.secondary)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .lineLimit(2)
+                                .minimumScaleFactor(0.1)
+                        }
+                    }
 
                     Spacer()
                     

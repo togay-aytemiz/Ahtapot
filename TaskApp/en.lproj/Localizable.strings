@@ -88,8 +88,8 @@
 "shareWithFriends_ShareText" = "I found a very nice task management app. Take a look!";
 "rateTheApp" = "Rate App";
 "findBugOrSuggestFeature" = "Suggest Feature & Share Bug";
-"findBugOrSuggestFeature_MailTitle" = "Feature / Bug";
-"findBugOrSuggestFeature_MailBody" = "I enjoy using the application, but I have some suggestions";
+"findBugOrSuggestFeature_MailTitle" = "Feature / Bug / Translation";
+"findBugOrSuggestFeature_MailBody" = "I want to suggest features, share errors or help with translation.";
 "deleteAllPopupText" = "Everything in the app will be deleted. This action is irreversible!";
 "deleteAllClosedTasksPopupText" = "All completed tasks will be deleted. This action is irreversible!";
 "whyShouldYouUseAhtapot" = "Why you should use Ahtapot?";
@@ -144,6 +144,7 @@
 "pastTask" = "Past";
 "showCompletedTasks" = "Show completed";
 "hideCompletedTasks" = "Hide completed";
-
-
-
+"translationFormRow" = "Do you want to use Ahtapot in a different language?";
+"helpUsToTranslate" = "Help us to translate";
+"giftButtonHeader" = "Do you want give us a gift?";
+"giftButtonDescription" = "By giving us gifts, you can encourage us to do this app in a more motivated way.";

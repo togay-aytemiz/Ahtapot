@@ -88,8 +88,8 @@
 "shareWithFriends_ShareText" = "Çok güzel bir görev yönetim uygulaması buldum. Bi baksana sen de! : https://apps.apple.com/us/app/id1565858619";
 "rateTheApp" = "Uygulamayı Değerlendir";
 "findBugOrSuggestFeature" = "Özellik Öner & Hata Paylaş";
-"findBugOrSuggestFeature_MailTitle" = "Özellik / Hata";
-"findBugOrSuggestFeature_MailBody" = "Uygulamayı keyifle kullanıyorum ancak şu özellik olsaydı çok iyi olurdu, ya da şu hata olmasa daha güzel olurdu :";
+"findBugOrSuggestFeature_MailTitle" = "Özellik / Hata / Çeviri";
+"findBugOrSuggestFeature_MailBody" = "Özellik önermek, hata paylaşmak ya da çeviriyle ilgili yardımcı olmak istiyorum.";
 "deleteAllPopupText" = "Uygulamadaki her şey silinecek. Bu işlem geri alınamaz!";
 "deleteAllClosedTasksPopupText" = "Tamamlanan tüm görevler silinecek. Bu işlem geri alınamaz";
 "whyShouldYouUseAhtapot" = "Neden Ahtapot Kullanmalısın?";
@@ -144,3 +144,7 @@
 "pastTask" = "Geçmiş";
 "showCompletedTasks" = "Tamamlananları Göster";
 "hideCompletedTasks" = "Tamamlananları Gizle";
+"translationFormRow" = "Ahtapot'u farklı bir dilde mi kullanmak istiyorsunuz?";
+"helpUsToTranslate" = "Çevirilerde bize yardım edin";
+"giftButtonHeader" = "Bize hediye vermek ister misin?";
+"giftButtonDescription" = "Hediye vererek, bu uygulamayı daha motive bir şekilde geliştirmemizde bizi cesaretlendirebilirsin.";

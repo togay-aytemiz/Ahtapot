@@ -67,7 +67,7 @@ struct SettingsMainView: View {
         
         NavigationView {
             ZStack {
-                VStack(spacing : 0) {
+                VStack(spacing :0) {
 
                     
                     // MARK: HEADER
@@ -125,6 +125,13 @@ struct SettingsMainView: View {
                             
                         }
                         
+                        
+                        // MARK: SECTION 3.5 - TIP BUTTON
+                        //TipButtonView()
+                        
+                        
+                        
+                        
                         // MARK: SECTION 4 - OTHER LINKS & BUTTONS
                         Group {
                             VStack{
@@ -134,7 +141,7 @@ struct SettingsMainView: View {
                                 
                                 // ARKADAŞINLA PAYLAŞ BUTTON
                                 FormLinkRowView(icon: "square.and.arrow.up.fill", color: Color(AppColor1), text: "shareWithFriends".localized()) {
-                                    homeData.sharePost(message: "\("shareWithFriends_ShareText".localized()) https://apps.apple.com/us/app/id1565858619" )
+                                    homeData.sharePost(message: "shareWithFriends_ShareText".localized())
                                     haptics.impactOccurred()
                                 }
                                 
@@ -152,6 +159,16 @@ struct SettingsMainView: View {
                                     suggestFeatures()
                                     haptics.impactOccurred()
                                 }
+                                
+                                
+                                // TRANSLATION SECTION
+                                FormLinkRowView(icon: "doc.append.fill", color: Color(AppColor1), text: "translationFormRow".localized(), text2: "helpUsToTranslate".localized()) {
+                                    suggestFeatures()
+                                    haptics.impactOccurred()
+                                }
+                                
+                                
+                            
                             }
                             .padding()
                             .background(Color(AppColor1).opacity(0.1))
@@ -159,6 +176,13 @@ struct SettingsMainView: View {
                             .padding(.bottom, 15)
                         }
  
+                        
+                        
+                        
+
+                        
+                        
+                        
                         // MARK: SECTION 5 - DELETE ALL TASKS (OPEN & CLOSED) BUTTON
                         Group{
                             Button(action: {
@@ -171,37 +195,7 @@ struct SettingsMainView: View {
                         }
              
                         // MARK: SECTION 6 - LOGO & FOOTER
-                        Group{
-                            VStack{
-                                
-                                Image("iconColorized")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 60, height: 60)
-                                
-                                Text("Ahtapot")
-                                    .font(.system(.title2, design: .rounded))
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.primary)
-                                
-                                Text("brandSubheadline".localized())
-                                    .font(.system(.headline, design: .rounded))
-                                        .fontWeight(.light)
-                                        .foregroundColor(.secondary)
-                                
-                                Text(UIApplication.appVersion ?? "")
-                                    .font(.system(.footnote, design: .rounded))
-                                        .fontWeight(.light)
-                                        .foregroundColor(.secondary)
-                                
-                            }
-                            .padding()
-                            .padding(.vertical)
-                            .padding(.bottom, 20)
-                            
-                        }
-    
-                        
+                        SettingsFooterIconView()
                         
                     }
                     .padding()
@@ -211,14 +205,20 @@ struct SettingsMainView: View {
 
                     
                     
-                    // EMAIL SHEETI
-                    .sheet(isPresented: $showSheet, content: {
-                        MailView(result: self.$result, newSubject: "findBugOrSuggestFeature_MailTitle".localized(), newMsgBody: "\("findBugOrSuggestFeature_MailBody".localized())\nv:\(UIApplication.appVersion ?? "")" )
-                    })
+
                     
                     
                 }
-                .background(EmptyView().sheet(isPresented : $closedTaskView) {ClosedTasks()})
+                // EMAIL SHEETLERİ AÇMA VE TAMAMLANAN TASKLARI AÇMAK İÇİN
+                .background(EmptyView()
+                                .sheet(isPresented : $closedTaskView) {ClosedTasks()}
+                                .background(EmptyView()
+                                                .sheet(isPresented : $showSheet) {
+                                                    MailView(result: self.$result, newSubject: "findBugOrSuggestFeature_MailTitle".localized(), newMsgBody: "\("findBugOrSuggestFeature_MailBody".localized())\nv:\(UIApplication.appVersion ?? "")" )
+                                                })
+                )
+                
+                
                 Rectangle()
                     .fill(Color.black).edgesIgnoringSafeArea(.all)
                     .opacity(isShowingSideMenu ? 0.1 : 0)
@@ -308,25 +308,6 @@ struct SettingsMainView: View {
     
     func rateApp() {
 
-//        if #available(iOS 10.3, *) {
-//
-//            SKStoreReviewController.requestReview()
-//
-//        } else {
-//
-//            let appID = "1565858619"
-//            //let urlStr = "https://itunes.apple.com/app/id\(appID)" // (Option 1) Open App Page
-//            let urlStr = "https://itunes.apple.com/app/id\(appID)?action=write-review" // (Option 2) Open App Review Page
-//
-//            guard let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) else { return }
-//
-//            if #available(iOS 10.0, *) {
-//                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//            } else {
-//                UIApplication.shared.openURL(url) // openURL(_:) is deprecated from iOS 10.
-//            }
-//        }
-        
         if let windowScene = UIApplication.shared.windows.first?.windowScene {
             SKStoreReviewController.requestReview(in: windowScene)
             

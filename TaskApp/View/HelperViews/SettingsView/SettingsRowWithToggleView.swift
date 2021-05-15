@@ -44,6 +44,8 @@ struct SettingsRowWithToggleView: View {
                 // MARK: CONTENT
                 VStack(alignment: .leading){
                     Text(text1)
+                        .font(.system(.body, design: .rounded))
+
                     
                     if !text2.isEmpty {
                         Text(text2)

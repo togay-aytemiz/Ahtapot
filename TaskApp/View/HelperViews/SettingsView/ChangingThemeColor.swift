@@ -48,6 +48,8 @@ struct ChangingThemeColor: View {
         VStack(alignment: .leading) {
             
             Text("changeAppThemeColor".localized())
+                .font(.system(.body, design: .rounded))
+
                 
          
             
