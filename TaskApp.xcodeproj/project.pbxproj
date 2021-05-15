@@ -30,6 +30,7 @@
 		4B3B360026504D8700C6A4CC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3B35FF26504D8700C6A4CC /* StoreKit.framework */; };
 		4B3B3605265050C100C6A4CC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B3604265050C100C6A4CC /* Store.swift */; };
 		4B3B36072650582800C6A4CC /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B36062650582800C6A4CC /* GiftModel.swift */; };
+		4B3B360B26507DB500C6A4CC /* GiftRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B360A26507DB500C6A4CC /* GiftRowView.swift */; };
 		4B42229C26359D89000AEA36 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42229B26359D89000AEA36 /* MailView.swift */; };
 		4B46AF042638385500232F64 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46AF032638385500232F64 /* NotificationPermissionView.swift */; };
 		4B4A6FE22639F48200F9D01C /* ShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A6FE12639F48200F9D01C /* ShoppingListViewModel.swift */; };
@@ -131,6 +132,7 @@
 		4B3B360326504F9D00C6A4CC /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		4B3B3604265050C100C6A4CC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		4B3B36062650582800C6A4CC /* GiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
+		4B3B360A26507DB500C6A4CC /* GiftRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftRowView.swift; sourceTree = "<group>"; };
 		4B42229B26359D89000AEA36 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4B46AF032638385500232F64 /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
 		4B4A6FE12639F48200F9D01C /* ShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewModel.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				4B3B35FA264FF54E00C6A4CC /* SettingsFooterIconView.swift */,
 				4B3B35F8264FF36400C6A4CC /* TipButtonView.swift */,
 				4B3B35FC264FF6C900C6A4CC /* TipActionDetailView.swift */,
+				4B3B360A26507DB500C6A4CC /* GiftRowView.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				4B83503E263AF05C00AAD479 /* FirstTimeShoppingList.swift in Sources */,
 				4B3B3605265050C100C6A4CC /* Store.swift in Sources */,
 				4B8AFD7B262CC7FF006DA14E /* CheckBoxStyle.swift in Sources */,
+				4B3B360B26507DB500C6A4CC /* GiftRowView.swift in Sources */,
 				4BC5706B2632B7330018910F /* EmptyTodayTaskView.swift in Sources */,
 				4B2833F32649E393003BFC40 /* TomorrowTaskView.swift in Sources */,
 				4B2833E7264947F4003BFC40 /* SideMenuHeaderView.swift in Sources */,
