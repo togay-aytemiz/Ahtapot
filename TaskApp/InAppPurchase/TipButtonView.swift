@@ -14,7 +14,8 @@ struct TipButtonView: View {
     let haptics = UIImpactFeedbackGenerator()
     @AppStorage("appColor1") private var AppColor1: String = "Color1A"
     @AppStorage("appColor2") private var AppColor2: String = "Color1B"
-    
+    @Binding var selectedTab: String
+
     
     
     
@@ -81,7 +82,7 @@ struct TipButtonView: View {
             })
         }
         .sheet(isPresented: $tipActionDetailView, content: {
-            TipActionDetailView()
+            TipActionDetailView(selectedTab: $selectedTab)
     })
     }
 }
@@ -90,7 +91,7 @@ struct TipButtonView: View {
 // MARK: PREVIEW
 struct TipButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TipButtonView()
+        TipButtonView(selectedTab: .constant("settings"))
             .previewLayout(.sizeThatFits)
     }
 }

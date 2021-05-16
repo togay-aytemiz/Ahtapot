@@ -127,7 +127,7 @@ struct SettingsMainView: View {
                         
                         
                         // MARK: SECTION 3.5 - TIP BUTTON
-                        TipButtonView()
+                        TipButtonView(selectedTab: $selectedTab)
                             .padding(.bottom, 15)
                         
                         

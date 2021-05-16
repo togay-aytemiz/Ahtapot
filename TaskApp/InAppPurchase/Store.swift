@@ -12,6 +12,8 @@ typealias PurchaseCompletionHandler = ((SKPaymentTransaction?) -> Void)
 
 class Store: NSObject, ObservableObject {
     
+    @Published var loadingState = false
+    @Published var successfullyPurchased = false
     
     @Published var allGifts = [Gift]()
     
@@ -99,9 +101,12 @@ extension Store: SKPaymentTransactionObserver{
             case .purchased, .restored:
                 completedPurchases.append(transaction.payment.productIdentifier)
                 shouldFinishTransaction = true
+                successfullyPurchased = true
             case .failed:
                 shouldFinishTransaction = true
+                print("fail")
             case .deferred, .purchasing:
+                loadingState = false
                 break
             @unknown default:
                 break

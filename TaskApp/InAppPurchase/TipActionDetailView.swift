@@ -15,6 +15,7 @@ struct TipActionDetailView: View {
     @EnvironmentObject private var store: Store
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    @Binding var selectedTab: String
 
     let haptics = UIImpactFeedbackGenerator()
     
@@ -24,6 +25,7 @@ struct TipActionDetailView: View {
         ZStack(alignment: .top) {
             
             Utils.isDarkMode ? Color.black.edgesIgnoringSafeArea(.all) : Color.white.edgesIgnoringSafeArea(.all)
+            
             
             
             
@@ -98,6 +100,12 @@ struct TipActionDetailView: View {
                             Group {
                                 GiftRowView(gift: gift) {
                                     if let product = store.product(for: gift.id) {
+                                        store.loadingState = true
+//                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                                            store.purchaseProduct(product)
+//
+//                                        }
+                                        
                                         store.purchaseProduct(product)
                                     }
                                 }
@@ -147,9 +155,6 @@ struct TipActionDetailView: View {
                                 .padding()
                                 .background(Color(.systemGray6))
                                 .clipShape(Circle())
-//                            Text("close".localized())
-//                                .font(.system(.headline, design: .rounded))
-//                                .fontWeight(.semibold)
                         }
                     })
                     .foregroundColor(.primary)
@@ -158,6 +163,23 @@ struct TipActionDetailView: View {
                 }
                 .padding()
             }
+            
+            
+            StoreLoadingView().opacity(store.loadingState ? 1 : 0)
+                .animation(.spring())
+            
+            
+            // MARK: POPUP
+            if $store.successfullyPurchased.wrappedValue {
+                
+                SuccesfullyPurchasedPopup(showingModal: $store.successfullyPurchased, selectedTab: $selectedTab) {
+                    presentationMode.wrappedValue.dismiss()
+                    haptics.impactOccurred()
+                }
+
+                
+            }
+            
         }
         
     }
@@ -167,7 +189,7 @@ struct TipActionDetailView: View {
 // MARK: PREVIEW
 struct TipActionDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TipActionDetailView()
+        TipActionDetailView(selectedTab: .constant("settings"))
            
     }
 }

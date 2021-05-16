@@ -148,9 +148,13 @@
 "helpUsToTranslate" = "Çevirilerde bize yardım edebilirsin";
 "giftButtonHeader" = "Bize hediye vermek ister misin?";
 "giftButtonDescription" = "Hediye vererek, bu uygulamayı daha motive bir şekilde geliştirmemizde bize yardımcı olabilirsin.";
-"giftButtonDescription" = "Hediye vererek, bu uygulamayı daha motive bir şekilde geliştirmemizde bize yardımcı olabilirsin.";
-"giveUsAGift" = "Hediye";
+"giveUsAGift" = "Hediye Gönder";
 "giveUsAGiftDesctription" = "Ahtapot tamamen ücretsiz bir uygulamadır ve sonsuza kadar da böyle kalacak, bundan emin olabilirsin. Aşağıdaki hediyelerden birini seçerek, bu uygulamayı senin için daha iyi yerlere getirmemizde bizi motive edebilirsin.";
-"giveUsAGift_MoreGift" = "Birden fazla hediye verebilirsiniz 🎁";
-"giftFooterDescription" = "Yukarıda yer alan hediye türleri yalnızca 1 kereliktir ve yenilenmez. Belirli sürede tekrar eden üyelik değildir. Ama siz dilerseniz istediğiniz kadar satın alarak bize hediye edebilirsiniz 😇";
+"giveUsAGift_MoreGift" = "Birden fazla hediye verebilirsin 🎁";
+"giftFooterDescription" = "Yukarıda yer alan hediye türleri yalnızca 1 kereliktir ve yenilenmez. Belirli sürede tekrar eden üyelik değildir. Ama istediğin kadar satın alarak bize hediye edebilirsin 😇";
 "select" = "Seç";
+"succesfullyPurchasedPopupHeader" = "Teşekkürler!";
+"succesfullyPurchasedPopupContext" = "Güzel hediyen için çok teşekkür ederiz. Ahtapot'u daha iyi yerlere getirmemizde bu hediye bizi çok motive edecek.";
+"succesfullyPurchasedPopupAct_Again" = "Tekrar gönder";
+"succesfullyPurchasedPopupAct_HomePage" = "Ana ekrana dön";
+"loadingStateText" = "Yükleniyor...";
