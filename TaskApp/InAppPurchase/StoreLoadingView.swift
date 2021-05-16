@@ -33,6 +33,9 @@ struct StoreLoadingView: View {
                     .foregroundColor(.white)
                 
                 
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                
             }
         }
     }

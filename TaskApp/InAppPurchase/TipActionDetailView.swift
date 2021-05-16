@@ -13,6 +13,7 @@ struct TipActionDetailView: View {
     // MARK: PROPERTIES
     
     @EnvironmentObject private var store: Store
+    
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @Binding var selectedTab: String
@@ -99,12 +100,9 @@ struct TipActionDetailView: View {
                         ForEach(store.allGifts, id: \.self) { gift in
                             Group {
                                 GiftRowView(gift: gift) {
+                                    store.loadingState = true
+
                                     if let product = store.product(for: gift.id) {
-                                        store.loadingState = true
-//                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                                            store.purchaseProduct(product)
-//
-//                                        }
                                         
                                         store.purchaseProduct(product)
                                     }
@@ -165,8 +163,8 @@ struct TipActionDetailView: View {
             }
             
             
-            StoreLoadingView().opacity(store.loadingState ? 1 : 0)
-                .animation(.spring())
+            
+            
             
             
             // MARK: POPUP
@@ -178,6 +176,10 @@ struct TipActionDetailView: View {
                 }
 
                 
+            }
+            
+            if $store.loadingState.wrappedValue {
+                StoreLoadingView()
             }
             
         }

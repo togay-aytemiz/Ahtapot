@@ -305,7 +305,6 @@
 		4B75A53A262C69D900B2214E /* TaskApp */ = {
 			isa = PBXGroup;
 			children = (
-				4B3B360226504F8A00C6A4CC /* InAppPurchase */,
 				4B5229CD262F8B430044052A /* Yapılacaklar.swift */,
 				4B75A53B262C69D900B2214E /* TaskAppApp.swift */,
 				4B75A53D262C69D900B2214E /* ContentView.swift */,
@@ -315,6 +314,7 @@
 				4B8AFD79262CC7E9006DA14E /* Style */,
 				4B8AFD8B262CC88E006DA14E /* Utility */,
 				4B8AFD78262CC79B006DA14E /* Model */,
+				4B3B360226504F8A00C6A4CC /* InAppPurchase */,
 				4B75A53F262C69D900B2214E /* Assets.xcassets */,
 				4B75A549262C69D900B2214E /* Info.plist */,
 				4B75A541262C69D900B2214E /* Preview Content */,
@@ -892,7 +892,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N6AWWV899Q;
@@ -903,7 +903,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.togayaytemiz.TaskApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -918,7 +918,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N6AWWV899Q;
@@ -929,7 +929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.togayaytemiz.TaskApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

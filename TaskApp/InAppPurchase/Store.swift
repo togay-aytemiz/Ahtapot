@@ -104,19 +104,21 @@ extension Store: SKPaymentTransactionObserver{
                 successfullyPurchased = true
             case .failed:
                 shouldFinishTransaction = true
-                print("fail")
             case .deferred, .purchasing:
-                loadingState = false
                 break
             @unknown default:
                 break
             }
             
             if shouldFinishTransaction {
+                // satın alma butona basınca loading çıkartır
+                self.loadingState = false
                 SKPaymentQueue.default().finishTransaction(transaction)
                 DispatchQueue.main.async {
+                    
                     self.purchaseCompletionHandler?(transaction)
                     self.purchaseCompletionHandler = nil
+                    
                 }
             }
         }
