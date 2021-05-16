@@ -144,7 +144,13 @@
 "pastTask" = "Geçmiş";
 "showCompletedTasks" = "Tamamlananları Göster";
 "hideCompletedTasks" = "Tamamlananları Gizle";
-"translationFormRow" = "Ahtapot'u farklı bir dilde mi kullanmak istiyorsunuz?";
-"helpUsToTranslate" = "Çevirilerde bize yardım edin";
+"translationFormRow" = "Ahtapot'u farklı bir dilde mi kullanmak istiyorsun?";
+"helpUsToTranslate" = "Çevirilerde bize yardım edebilirsin";
 "giftButtonHeader" = "Bize hediye vermek ister misin?";
-"giftButtonDescription" = "Hediye vererek, bu uygulamayı daha motive bir şekilde geliştirmemizde bizi cesaretlendirebilirsin.";
+"giftButtonDescription" = "Hediye vererek, bu uygulamayı daha motive bir şekilde geliştirmemizde bize yardımcı olabilirsin.";
+"giftButtonDescription" = "Hediye vererek, bu uygulamayı daha motive bir şekilde geliştirmemizde bize yardımcı olabilirsin.";
+"giveUsAGift" = "Hediye";
+"giveUsAGiftDesctription" = "Ahtapot tamamen ücretsiz bir uygulamadır ve sonsuza kadar da böyle kalacak, bundan emin olabilirsin. Aşağıdaki hediyelerden birini seçerek, bu uygulamayı senin için daha iyi yerlere getirmemizde bizi motive edebilirsin.";
+"giveUsAGift_MoreGift" = "Birden fazla hediye verebilirsiniz 🎁";
+"giftFooterDescription" = "Yukarıda yer alan hediye türleri yalnızca 1 kereliktir ve yenilenmez. Belirli sürede tekrar eden üyelik değildir. Ama siz dilerseniz istediğiniz kadar satın alarak bize hediye edebilirsiniz 😇";
+"select" = "Seç";

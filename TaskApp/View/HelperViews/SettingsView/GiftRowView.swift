@@ -10,65 +10,76 @@ import SwiftUI
 struct GiftRowView: View {
     // MARK: PROPERTIES
     
+    let gift: Gift
     
-    
+    let action: () -> Void
     
     // MARK: BODY
     var body: some View {
         
-        HStack(spacing: 15) {
-            Image("gift_small_01")
+        HStack(alignment: .center, spacing: 15) {
+            Image(gift.imageName!)
                 .resizable()
                 .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                 .frame(width: 40, height: 40, alignment: .center)
             
             VStack(alignment: .leading) {
-                Text("Title")
-                    .font(.system(.headline, design: .rounded))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Utils.isDarkMode ? .white : .black)
-                
-                
-                Text("Description")
-                    .font(.system(.body, design: .rounded))
-                    .fontWeight(.regular)
-                    .foregroundColor(Utils.isDarkMode ? .white : .black)
-                    .opacity(0.7)
-                    .lineLimit(2)
+                Text(gift.title.uppercased())
+                    .font(.system(.footnote, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(.gray)
+                    .lineLimit(1)
                     .minimumScaleFactor(0.1)
                     .fixedSize(horizontal: false, vertical: true)
-
                 
-            
                 
+                Text(gift.price!)
+                    .font(.system(.title3, design: .rounded))
+                    .fontWeight(.heavy)
+                    .foregroundColor(.black)
+  
             }
             
             Spacer()
             
             
-            //price
-            Text("$9.99")
-                .font(.system(.title3, design: .rounded))
-                .fontWeight(.heavy)
-                .foregroundColor(Utils.isDarkMode ? .white : .black)
+            Button(action: {
+                action()
+            }, label: {
+                Text("select".localized().uppercased())
+                    .font(.system(.subheadline, design: .rounded))
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal, 14)
+                    
+                    .cornerRadius(6)
+                    .foregroundColor(Color(Utils.AppColor1))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color(Utils.AppColor1), lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                    )
+            })
+            
+            
+            
             
         }
         .padding()
-        .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Utils.isDarkMode ? Color.white : Color.gray, lineWidth: 0.5 )
-            )
+        .padding(.vertical,5)
+        .padding(5)
+        
+        .background(Color(gift.imageName!))
+        .cornerRadius(12)
+        .padding(.horizontal)
         
     }
 }
 
-
-
-// MARK: PREVIEW
-struct GiftRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        GiftRowView()
-            .previewLayout(.sizeThatFits)
-            .padding()
-    }
-}
+//
+//
+//// MARK: PREVIEW
+//struct GiftRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TipActionDetailView()
+//    }
+//}
