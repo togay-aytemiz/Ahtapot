@@ -156,7 +156,7 @@ struct ListRowItemView: View {
         
         // kendi içinde padding
         .padding(.leading)
-        .background(Utils.isDarkMode ? Color.gray.opacity(0.3) : Color.gray.opacity(0.12))
+        .background(Utils.isDarkMode ? Color.gray.opacity(0.3) : Color.gray.opacity(0.1))
         .cornerRadius(12)
         .contextMenu(ContextMenu(menuItems: {
             Button(action: {

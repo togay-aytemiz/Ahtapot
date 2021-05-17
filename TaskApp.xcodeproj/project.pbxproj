@@ -23,7 +23,6 @@
 		4B2833F7264A8EB9003BFC40 /* MiniAddTaskButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F6264A8EB9003BFC40 /* MiniAddTaskButtonView.swift */; };
 		4B2833F9264A9C9A003BFC40 /* AllTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2833F8264A9C9A003BFC40 /* AllTaskView.swift */; };
 		4B28999E263D430C00A0E270 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B28999D263D430C00A0E270 /* UITextField+Extension.swift */; };
-		4B2F0080264F246200D77AC2 /* AboutAhtapotRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F007F264F246200D77AC2 /* AboutAhtapotRowView.swift */; };
 		4B3B35F9264FF36400C6A4CC /* TipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B35F8264FF36400C6A4CC /* TipButtonView.swift */; };
 		4B3B35FB264FF54E00C6A4CC /* SettingsFooterIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B35FA264FF54E00C6A4CC /* SettingsFooterIconView.swift */; };
 		4B3B35FD264FF6C900C6A4CC /* TipActionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B35FC264FF6C900C6A4CC /* TipActionDetailView.swift */; };
@@ -126,7 +125,6 @@
 		4B2833F6264A8EB9003BFC40 /* MiniAddTaskButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAddTaskButtonView.swift; sourceTree = "<group>"; };
 		4B2833F8264A9C9A003BFC40 /* AllTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTaskView.swift; sourceTree = "<group>"; };
 		4B28999D263D430C00A0E270 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
-		4B2F007F264F246200D77AC2 /* AboutAhtapotRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAhtapotRowView.swift; sourceTree = "<group>"; };
 		4B3B35F8264FF36400C6A4CC /* TipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipButtonView.swift; sourceTree = "<group>"; };
 		4B3B35FA264FF54E00C6A4CC /* SettingsFooterIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFooterIconView.swift; sourceTree = "<group>"; };
 		4B3B35FC264FF6C900C6A4CC /* TipActionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipActionDetailView.swift; sourceTree = "<group>"; };
@@ -385,7 +383,6 @@
 				4B049FC22634B1E6004DAA27 /* ClosedTasks.swift */,
 				4B42229B26359D89000AEA36 /* MailView.swift */,
 				4BEF3BEE26393BE7003C7820 /* SettingsRowWithToggleView.swift */,
-				4B2F007F264F246200D77AC2 /* AboutAhtapotRowView.swift */,
 				4B3B35FA264FF54E00C6A4CC /* SettingsFooterIconView.swift */,
 			);
 			path = SettingsView;
@@ -658,7 +655,6 @@
 				4B75A548262C69D900B2214E /* TaskApp.xcdatamodeld in Sources */,
 				4B95C5CC263458FA00EC24A0 /* DeleteAllView.swift in Sources */,
 				4BF5E8FF262F7271004084F1 /* OnboardingView.swift in Sources */,
-				4B2F0080264F246200D77AC2 /* AboutAhtapotRowView.swift in Sources */,
 				4B95C5B22634047C00EC24A0 /* SettingsLabelView.swift in Sources */,
 				4B2833F12649611A003BFC40 /* CustomNavigationBarView.swift in Sources */,
 				4B8345E2263228AF004A08DF /* TitleView.swift in Sources */,
@@ -892,7 +888,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N6AWWV899Q;
@@ -903,7 +899,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.togayaytemiz.TaskApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -918,7 +914,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskApp/Preview Content\"";
 				DEVELOPMENT_TEAM = N6AWWV899Q;
@@ -929,7 +925,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.togayaytemiz.TaskApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -69,6 +69,7 @@ struct FormLinkRowView: View {
                     Image(systemName: "chevron.right")
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                         .accentColor(Color(.systemGray2))
+                        .padding(.leading)
                     
                 }
             }

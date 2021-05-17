@@ -52,15 +52,34 @@ struct RemindMeView: View {
                         .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
                     
                     if someStatus {
-                        Text("\(homeData.date, formatter: miniDateAndTimeFormat)")
-                            .font(.system(.subheadline, design: .rounded))
-                            .fontWeight(.light)
-                            .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                        HStack {
+                            Text("\(homeData.date, formatter: miniDateAndTimeFormat)")
+                                .font(.system(.subheadline, design: .rounded))
+                                .fontWeight(.light)
+                                .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                            
+                            Text("-")
+                                .font(.system(.subheadline, design: .rounded))
+                                .fontWeight(.light)
+                                .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                            
+                            Text("\(homeData.date, formatter: shortDateFormat)")
+                                .font(.system(.subheadline, design: .rounded))
+                                .fontWeight(.light)
+                                .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                        }
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.1)
+                        
+                        
+                        
                     } else {
                         Text("howToOpenReminder".localized())
-                            .font(.system(.subheadline, design: .rounded))
+                            .font(.system(.footnote, design: .rounded))
                             .fontWeight(.light)
                             .foregroundColor(Utils.isDarkMode ? Color.white : Color.black)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
                     }
                     
                     
