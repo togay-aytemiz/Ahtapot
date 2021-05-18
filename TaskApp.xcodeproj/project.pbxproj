@@ -199,6 +199,8 @@
 		4BF5E8FE262F7271004084F1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4BF5E903262F728A004084F1 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 		4BF5E908262F7462004084F1 /* PageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTabView.swift; sourceTree = "<group>"; };
+		4BF6C9BB2653B52E00F33A6A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BF6C9BC2653B57600F33A6A /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -594,6 +596,8 @@
 				en,
 				Base,
 				tr,
+				es,
+				"es-419",
 			);
 			mainGroup = 4B75A52F262C69D900B2214E;
 			packageReferences = (
@@ -757,6 +761,8 @@
 			children = (
 				4B698E3D264C7C36006F4275 /* en */,
 				4B698E3F264DC17D006F4275 /* tr */,
+				4BF6C9BB2653B52E00F33A6A /* es */,
+				4BF6C9BC2653B57600F33A6A /* es-419 */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
