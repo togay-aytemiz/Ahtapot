@@ -54,6 +54,8 @@ struct SideMenuOptionView: View {
                         Text(text)
                             .font(.system(.headline, design: .rounded))
                             .fontWeight(.semibold)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
                         
                         if descriptionText != ""  {
                             Text(descriptionText)
