@@ -129,7 +129,7 @@
 "motivationalMessageFor_81-99" = "It's about to end, there is so little left 🚀";
 "motivationalMessageFor_100" = "You are great, you've completed all your tasks 🥳";
 "motivationalMessageWhen_NoToday-YesPast" = "There are no tasks to be done today, but past tasks need to be completed 😅";
-"motivationalMessageWhen_NoToday-NoPast" = "There is no task to be done today, rest well 😴";
+"motivationalMessageWhen_NoToday-NoPast" = "There are no tasks to be done today, rest well 😴";
 "addNewTask" = "Add New Task";
 "editTask" = "Edit Task";
 "delete" = "Delete";

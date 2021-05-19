@@ -113,6 +113,7 @@
 		4B049FBD2634AFB5004DAA27 /* ImportantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantRowView.swift; sourceTree = "<group>"; };
 		4B049FC22634B1E6004DAA27 /* ClosedTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedTasks.swift; sourceTree = "<group>"; };
 		4B0E1065263FF2340000170B /* DarkModeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeUtils.swift; sourceTree = "<group>"; };
+		4B112E042655998F003F72BA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4B1EA946263A85350092DD9D /* ShoppingListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRowView.swift; sourceTree = "<group>"; };
 		4B1EA948263A8FBE0092DD9D /* AddShoppingTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShoppingTextFieldView.swift; sourceTree = "<group>"; };
 		4B2833E4264947EA003BFC40 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
@@ -598,6 +599,7 @@
 				tr,
 				es,
 				"es-419",
+				"zh-Hans",
 			);
 			mainGroup = 4B75A52F262C69D900B2214E;
 			packageReferences = (
@@ -763,6 +765,7 @@
 				4B698E3F264DC17D006F4275 /* tr */,
 				4BF6C9BB2653B52E00F33A6A /* es */,
 				4BF6C9BC2653B57600F33A6A /* es-419 */,
+				4B112E042655998F003F72BA /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
